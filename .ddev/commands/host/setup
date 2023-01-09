@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Start Containers.
+ddev start
+
+# Install the packages.
+ddev composer install
+
+# Open the app in web browser.
+ddev launch
