@@ -1,4 +1,4 @@
-# NOBS
+# GT HONORS PROGRAM
 
 `TODO` A brief description of the project.
 
