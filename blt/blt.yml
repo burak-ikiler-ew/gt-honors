@@ -1,0 +1,60 @@
+
+project:
+  human_name: GT Honors Program
+  machine_name: gt_honors
+  local:
+    hostname: ${project.machine_name}.ddev.site
+    protocol: https
+    uri: ${project.local.protocol}://${project.local.hostname}:9443
+  theme:
+    name: 'gt_honors'
+  profile:
+    name: minimal
+
+# Deploy.
+deploy:
+  tag_source: false
+  dir: deploy
+  docroot: ${deploy.dir}/web
+
+# Drupal docroot.
+docroot: ${repo.root}/web
+
+# Settings for installing Drupal.
+drupal:
+  db:
+    database: db
+    username: db
+    password: db
+    host: ddev-gt-honors-db
+    port: 3306
+
+# Drush.
+drush:
+  aliases:
+    remote: '${project.machine_name}.test'
+    local: self
+    ci: self
+  default_alias: '${drush.aliases.local}'
+
+# Hooks.
+command-hooks:
+  post-deploy-build:
+    dir: ${repo.root}
+    command: ./vendor/evolvingweb/drupal-ci/pantheon/post-deploy-build && cp ./pantheon.yml deploy
+  frontend-reqs:
+    dir: ${docroot}/themes/custom/
+    command: 'bash -c "if [ -d ${project.theme.name} ] ; then source ~/.profile && cd ${project.theme.name} && nvm install && npm install --global yarn && yarn install --immutable && yarn build ; fi"'
+
+# Git configuration.
+git:
+  user:
+    name: 'Drupal CI'
+    email: 'drupal-ci@ewdev.ca'
+  default_branch: master
+  commit-msg:
+    pattern: "/(^refs #[0-9]+(: )[^ ].{15,}\\.)|(Merge branch (.)+)/"
+    help_description: "The commit message should start with refs,
+                      followed by a # and ticket number, followed by a colon and a space,
+                      fifteen characters or more describing the commit, and end with a period."
+    example: "refs #123: Update site configuration."

@@ -1,0 +1,124 @@
+// Colors
+//
+// All Sass color variables prefixed with $color-.
+// This makes it easy to figure out what a variable
+// is for later.
+//
+// Markup:
+// <h3>Primary</h3>
+// <div class="kss-swatch" style="background-color: #B3A369">
+//   <div class="kss-swatch__hex">color-tech-gold<br>#B3A369</div>
+// </div>
+// <div class="kss-swatch" style="background-color: #EAAA00">
+//   <div class="kss-swatch__hex">$color-buzz-gold<br>#EAAA00</div>
+// </div>
+// <div class="kss-swatch" style="background-color: #004F9F">
+//   <div class="kss-swatch__hex">$color-link-blue<br>#004F9F</div>
+// </div>
+// <div class="kss-swatch" style="background-color: #B7C42F">
+//   <div class="kss-swatch__hex">$color-burger-bowl<br>#B7C42F</div>
+// </div>
+// <div class="kss-swatch" style="background-color: #262626">
+//   <div class="kss-swatch__hex">$color-off-black<br>#262626</div>
+// </div>
+// <h3>Grays</h3>
+// <div class="kss-swatch" style="background-color: #3B3B3B">
+//   <div class="kss-swatch__hex">$color-footer-gray<br>#3B3B3B</div>
+// </div>
+// <div class="kss-swatch" style="background-color: #D6DBD4">
+//   <div class="kss-swatch__hex">$color-pie-mild<br>#D6DBD4</div>
+// </div>
+//
+// Weight: 999
+//
+// Style guide: Colors.colors
+// Primary
+$color-tech-gold: #B3A369;
+$color-tech-light-gold: #bfb37c;
+$color-tech-dark-gold: #A4925A;
+$color-tech-button-gold: #857437;
+$color-tech-gold-contrast: $color-tech-button-gold;
+$color-buzz-gold: #EAAA00;
+$color-navy-blue: #003057;
+$color-burger-bowl: #B7C42F;
+$color-white: #FFF;
+$color-black: #000;
+$color-off-black: #262626;
+//Grandients and opacity
+$color-white-0: rgba(255, 255, 255, 0);
+$color-white-75: rgba(255, 255, 255, 0.75);
+$color-white-100: rgba(255, 255, 255, 1);
+$color-grey-0: rgba(244, 244, 244, 0);
+$color-grey-75: rgba(244, 244, 244, 0.75);
+$color-grey-100: rgba(244, 244, 244, 1);
+$color-white-80: rgba(255, 255, 255, 0.8);
+$color-black-75: rgba(0, 0, 0, 0.75);
+$color-off-black-100: rgba(70, 70, 70, 0.75);
+$color-black-100: rgba(0, 0, 0, 0.75);
+$color-black-30: rgba(0, 0, 0, 0.25);
+$color-black-25: rgba(0, 0, 0, 0.25);
+$color-box-shadow-menu: 0px 6px 6px 3px rgba(0, 0, 0, 0.1);
+$color-box-shadow-hover: 0 4px 16px 0 rgba(38, 38, 38, 0.24);
+$color-gray-black-fade: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%,rgba(70, 70, 70, 0.9) 100%);
+$color-black-fade: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%,rgba(0, 0, 0, 0.95) 100%);
+$color-black-fade-alternative: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.66) 100%);
+$color-white-fade: linear-gradient(to bottom, $color-white-0 0%, $color-white-100 100%);
+$color-white-cta-fade: linear-gradient(to bottom, $color-white-75 0%, $color-white-100 100%);
+$color-grey-cta-fade: linear-gradient(to bottom, $color-grey-75 0%, $color-grey-100 100%);
+$color-black-cta-fade: linear-gradient(to bottom,rgba(40, 40, 40, 0.75) 0%, rgba(0, 0, 0, 1) 100%);
+
+// Secondary Golds
+$color-lightest-gold: #F7F5F0;
+$color-hover-gold: #EDE9DB;
+$color-darkest-gold: #7D7042;
+$color-tech-gold-24: rgba(179, 163, 105, 0.24);
+$color-navy-blue-50: rgba(0, 48, 87, 0.5);
+
+// Grays
+$color-footer-gray: #3B3B3B;
+$color-pie-mild: #D6DBD4;
+$color-silver: #bbb;
+$color-alto: #ddd;
+$color-gallery: #eee;
+$color-block-quote-back: #efefef;
+$color-alabaster: #f7f7f7;
+$color-gray-46: #464646;
+
+// Utility Colors
+$color-error-red: #9b2743;
+$color-focus-blue: #2d7abf;
+$color-link-blue: #004F9F;
+$color-radio-blue: $color-link-blue;
+$color-hover-blue: #1879db;
+$color-open-green: #B7C42F;
+$color-available-green: #377117;
+$color-unavailable-red: #AD4025;
+
+//Secondary new colors
+$color-secondary000: #FFCD00;
+
+//Tertiary new colors
+$color-tertiary000: #F8B400;
+$color-tertiary100: #A4D233;
+$color-tertiary200: #E04F39;
+$color-tertiary300: #BC1900;
+
+//Tags
+$color-tag1: #B1E5E4;
+$color-tag2: #FCC5BD;
+$color-tag3: #D1E899;
+$color-tag4: #F8DB68;
+$color-tag5: #EACD80;
+$color-tag6: #C1E2F5;
+$color-tag7: #D9DB84;
+$color-tag8: #FFCA99;
+$color-tag9: #CFBDE2;
+$color-tag10: #B7E8BC;
+
+//Neutral
+$color-neutral000: #222222;
+$color-neutral100: #54585A;
+$color-neutral200: #D6DBD4;
+$color-neutral300: #EAEDE9;
+$color-neutral400: #F7F8F6;
+$color-neutral500: #F4F4F4;

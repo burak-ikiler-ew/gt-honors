@@ -1,0 +1,271 @@
+{
+  "site_url": "/",
+  "page_title": "Library ",
+  "page_subtitle": "Archives and Special Collections",
+  "slogan": "Creating The Next",
+  "navigation": [
+    {
+      "text": "Find",
+      "url": "#",
+      "submenu": [
+        {
+          "text": "Optional Column Heading",
+          "url": "#",
+          "submenu": [
+            {
+              "text": "Plan a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Attend a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Request a Proposal",
+              "url": "#"
+            },
+            {
+              "text": "Facility Floor Plans",
+              "url": "#"
+            },
+            {
+              "text": "Directions",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "text": "Unclickable Heading",
+          "url": "#",
+          "submenu": [
+            {
+              "text": "Plan a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Attend a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Meeting Services",
+              "url": "#"
+            },
+            {
+              "text": "Request a Proposal",
+              "url": "#"
+            },
+            {
+              "text": "Room Types",
+              "url": "#"
+            },
+            {
+              "text": "Directions",
+              "url": "#"
+            }
+          ],
+          "footer_link": [
+            {
+              "text": "See All",
+              "url": "#"
+            }
+          ]
+        }
+      ],
+      "footer_link": [
+        {
+          "text": "See All",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "text": "Services",
+      "nav_url": "#",
+      "submenu": [
+        {
+          "text": "Unclickable Heading",
+          "url": "#",
+          "submenu": [
+            {
+              "text": "eBooks",
+              "url": "#"
+            },
+            {
+              "text": "Library Catalog",
+              "url": "#"
+            },
+            {
+              "text": "Digital Library",
+              "url": "#"
+            }
+          ]
+        }
+      ],
+      "footer_link": [
+        {
+          "text": "See All",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "text": "About",
+      "nav_url": "#",
+      "submenu": [
+        {
+          "text": "This is an optional title",
+          "url": "",
+          "submenu": [
+            {
+              "text": "Plan a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Attend a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Request a Proposal",
+              "url": "#"
+            },
+            {
+              "text": "Facility Floor Plans",
+              "url": "#"
+            },
+            {
+              "text": "Directions",
+              "url": "#"
+            }
+          ]
+        }
+      ],
+      "footer_link": [
+        {
+          "text": "See All",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "text": "Help",
+      "nav_url": "#",
+      "submenu": [
+        {
+          "text": "Way to find help",
+          "url": "#",
+          "submenu": [
+            {
+              "text": "Plan a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Attend a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Request a Proposal",
+              "url": "#"
+            },
+            {
+              "text": "Facility Floor Plans",
+              "url": "#"
+            },
+            {
+              "text": "Directions",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "text": "Facilities",
+          "url": "#",
+          "submenu": [
+            {
+              "text": "Plan a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Attend a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Meeting Services",
+              "url": "#"
+            },
+            {
+              "text": "Request a Proposal",
+              "url": "#"
+            },
+            {
+              "text": "Room Types",
+              "url": "#"
+            },
+            {
+              "text": "Directions",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "text": "Conference Management",
+          "url": "#",
+          "submenu": [
+            {
+              "text": "Plan a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Attend a Meeting",
+              "url": "#"
+            },
+            {
+              "text": "Meeting Services",
+              "url": "#"
+            },
+            {
+              "text": "Request a Proposal",
+              "url": "#"
+            },
+            {
+              "text": "Room Types",
+              "url": "#"
+            },
+            {
+              "text": "Directions",
+              "url": "#"
+            }
+          ]
+        }
+      ],
+      "footer_link": [
+        {
+          "text": "See All",
+          "url": "#"
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "text": "Give Now",
+    "url": "#"
+  },
+  "search_bar": {
+    "full_width": true,
+
+    "select_list": {
+      "select_name": "list of items",
+      "select_label": "This is a list of items",
+      "options": [
+        {
+          "text": "Everything"
+        },
+        {
+          "text": "Option 1"
+        },
+        {
+          "text": "Option 2"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{#{% set top_menu = simplify_menu('footer').menu_tree %}
+#}{#{% set primary_menu = top_menu[:3] %}
+{% set footer_menus = top_menu[3:]|batch(4) %}#}{#
+
+#}{#{% set demi_footer = {
+  primary_menu: primary_menu,
+  footer_menus: footer_menus,
+  social: social_menu
+} %}
+
+{% set bottom_menu = simplify_menu('footer-bottom').menu_tree %}
+{% set gold_footer = {
+  site_url: url('<front>'),
+  footer_menus: bottom_menu|batch(4)
+} %}#}
+
+{% include '@gtl_theme/footer_new/footer_new.twig' %}

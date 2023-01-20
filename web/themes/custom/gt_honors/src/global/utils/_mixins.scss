@@ -1,0 +1,556 @@
+//=======================================================
+// Mixins
+//=======================================================
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin instant-transition-on-touch-devices {
+  @media (hover: none) {
+    transition-duration: 0ms;
+  }
+}
+
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+// Helper function for working with Sass maps.
+// Example: @include print($configuration);
+@mixin print($declarations) {
+  @each $property, $value in $declarations {
+    #{$property}: $value;
+  }
+}
+@mixin gtl-button {
+  @include font-stack-slab;
+  font-size: $font-18;
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background-color: $color-white;
+  color: $color-neutral000;
+  vertical-align: middle;
+  border-radius: 50px !important;
+  border: 0;
+  overflow: hidden;
+  z-index: 0;
+  padding: 0.875rem 2rem;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-hover-gold;
+    // Maintain the white text color if the button happens to be a link.
+    color: $color-tech-button-gold;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@mixin gtl-button--primary {
+  @include font-stack-slab;
+  font-size: $font-18;
+  font-weight: 400;
+  color: $color-neutral000;
+  padding: 0.875rem 2rem;
+  position: relative;
+  display: inline-block;
+  border-radius: 50px !important;
+  background-clip:  padding-box;
+  border: 0;
+  width: fit-content;
+  overflow: hidden;
+  z-index: 0;
+  background:  linear-gradient(to right, $color-secondary000 50%, $color-navy-blue 50%);
+  background-size: 200% 100% !important;
+  background-position:left bottom;
+  transition: color $transition, background $transition;
+  @include instant-transition-on-touch-devices;
+
+  svg {
+    path {
+      transition: fill $transition-duration;
+      @include instant-transition-on-touch-devices;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-white;
+    text-decoration: none;
+    background-position: right bottom;
+
+    svg {
+      path {
+        fill: $color-white;
+      }
+    }
+  }
+
+  &.btn-light {
+    background:  linear-gradient(to right, $color-secondary000 50%, $color-white 50%);
+
+    &:hover,
+    &:focus {
+      color: $color-navy-blue;
+      background-position: right bottom;
+    }
+  }
+}
+
+@mixin gtl-button--secondary {
+  @include font-stack-slab;
+  font-size: $font-18;
+  font-weight: 400;
+  color: $color-neutral000;
+  padding: 0.875rem 2rem;
+  position: relative;
+  display: inline-block;
+  border-radius: 50px !important;
+  border: 2px solid $color-navy-blue;
+  background-clip:  padding-box;
+  background:  linear-gradient(to right, transparent 50%, $color-navy-blue 50%);
+  background-size: 200% 100% !important;
+  background-position:left bottom;
+  width: fit-content;
+  overflow: hidden;
+  z-index: 0;
+  transition: background $transition, color $transition;
+  @include instant-transition-on-touch-devices;
+
+  &:hover,
+  &:focus {
+    color: $color-white;
+    text-decoration: none;
+    background-position: right bottom;
+  }
+
+  &.btn-light {
+    background:  linear-gradient(to right, transparent 50%, $color-white 50%);
+    border: 2px solid $color-white;
+    color: $color-white;
+
+    &:hover,
+    &:focus {
+      color: $color-navy-blue;
+      background-position: right bottom;
+    }
+  }
+}
+
+@mixin gtl-button--tertiary {
+  @include font-stack-slab;
+  font-size: $font-18;
+  font-weight: 400;
+  color: $color-neutral000;
+  position: relative;
+  display: inline-block;
+  border: 0;
+  padding: 0.5rem 3.75rem 0.5rem 0;
+  width: fit-content;
+  min-height: 35px;
+  overflow: hidden;
+  z-index: 0;
+  transition: color $transition;
+  @include instant-transition-on-touch-devices;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 50px;
+    height: 35px;
+    border-radius: 50px;
+    background: transparent url('/themes/custom/gtl_theme/dist/assets/chevron-right.svg') no-repeat center center / 10px;
+    transition: background $transition;
+    @include instant-transition-on-touch-devices;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 35px;
+    border-radius: 50px;
+    background:  linear-gradient(to right, $color-secondary000 50%, $color-navy-blue 50%);
+    background-size: 200% 100% !important;
+    background-position:left bottom;
+    z-index: -1;
+    transition: background $transition-duration;
+    @include instant-transition-on-touch-devices;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $color-neutral000;
+
+    &::after {
+      background: transparent url('/themes/custom/gtl_theme/dist/assets/chevron-right--white.svg') no-repeat center center / 10px;
+    }
+
+    &::before {
+      background-position: right bottom;
+    }
+  }
+}
+
+@mixin gtl-button--text-link {
+  color: $color-neutral000;
+  font-weight: $font-weight-bold;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 2px solid $color-tertiary000;
+  background-color: transparent;
+  position: relative;
+  transition: border-bottom-width $transition;
+  @include instant-transition-on-touch-devices;
+
+  &:hover {
+    color: $color-neutral000;
+    text-decoration: none;
+    border-bottom-width: 4px;
+  }
+}
+
+@mixin gtl-button-text-and-arrow {
+  position: relative;
+  color: $color-neutral100;
+  font-weight: $font-weight-regular;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color $transition-duration;
+  @include instant-transition-on-touch-devices;
+
+  &::after {
+    content: '';
+    position: absolute;
+    margin-left: 5px;
+    width: 8px;
+    height: 12px;
+    transform: translateY(8px);
+    background: url('/themes/custom/gtl_theme/dist/assets/chevron-right--yellow.svg') no-repeat center center / 8px;
+    transition: margin-left $transition-duration;
+    @include instant-transition-on-touch-devices;
+  }
+
+  &:hover {
+    text-decoration: none;
+    border-bottom: 2px solid $color-secondary000;
+
+    &::after {
+      margin-left: 10px;
+    }
+  }
+}
+
+@mixin gtl-button--back {
+  @include font-stack-slab;
+  font-size: $font-18;
+  font-weight: 400;
+  color: $color-neutral000;
+  position: relative;
+  background: transparent;
+  display: inline-block;
+  border: 0;
+  border-radius: 0 !important;
+  padding: 0.5rem 0 0.5rem 3.75rem;
+  width: fit-content;
+  min-height: 35px;
+  overflow: hidden;
+  z-index: 0;
+  transition: color $transition;
+  @include instant-transition-on-touch-devices;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 0;
+    width: 50px;
+    height: 35px;
+    border-radius: 50px;
+    background: transparent url('/themes/custom/gtl_theme/dist/assets/chevron-left.svg') no-repeat center center / 10px;
+    transition: background $transition;
+    @include instant-transition-on-touch-devices;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 35px;
+    border-radius: 50px;
+    background:  linear-gradient(to right, $color-secondary000 50%, $color-navy-blue 50%);
+    background-size: 200% 100%;
+    background-position:left bottom;
+    z-index: -1;
+    transition: background $transition-duration;
+    @include instant-transition-on-touch-devices;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $color-neutral000;
+    background: transparent;
+
+    &::after {
+      background: transparent url('/themes/custom/gtl_theme/dist/assets/chevron-left--white.svg') no-repeat center center / 10px;
+    }
+
+    &::before {
+      background-position: right bottom;
+    }
+  }
+}
+
+@mixin gtl-pager--next {
+  @include font-stack-slab;
+  font-size: $font-16;
+  font-weight: 400;
+  color: $color-neutral000;
+  position: relative;
+  display: inline-block;
+  border: 0;
+  padding: 0.625rem 3.75rem 0.625rem 0;
+  width: fit-content;
+  overflow: hidden;
+  z-index: 0;
+  transition: color $transition;
+  @include instant-transition-on-touch-devices;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    border-radius: 50px;
+    background: transparent url('/themes/custom/gtl_theme/dist/assets/chevron-right.svg') no-repeat center center / 10px;
+    transition: background $transition;
+    @include instant-transition-on-touch-devices;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    border-radius: 50px;
+    background:  linear-gradient(to right, $color-secondary000 50%, $color-navy-blue 50%);
+    background-size: 200% 100%;
+    background-position:left bottom;
+    z-index: -1;
+    transition: background $transition;
+    @include instant-transition-on-touch-devices;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $color-neutral000;
+
+    &::after {
+      background: transparent url('/themes/custom/gtl_theme/dist/assets/chevron-right--white.svg') no-repeat center center / 10px;
+    }
+
+    &::before {
+      background-position: right bottom;
+    }
+  }
+}
+
+@mixin gtl-pager--previous {
+  @include font-stack-slab;
+  font-size: $font-16;
+  font-weight: 400;
+  color: $color-neutral000;
+  position: relative;
+  display: inline-block;
+  border: 0;
+  padding: 0.625rem 0 0.625rem 3.75rem;
+  width: fit-content;
+  overflow: hidden;
+  z-index: 0;
+  transition: color $transition;
+  @include instant-transition-on-touch-devices;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    border-radius: 50px;
+    background: transparent url('/themes/custom/gtl_theme/dist/assets/chevron-left.svg') no-repeat center center / 10px;
+    transition: background $transition;
+    @include instant-transition-on-touch-devices;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    border-radius: 50px;
+    background:  linear-gradient(to right, $color-secondary000 50%, $color-navy-blue 50%);
+    background-size: 200% 100%;
+    background-position:left bottom;
+    z-index: -1;
+    transition: background $transition;
+    @include instant-transition-on-touch-devices;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $color-neutral000;
+
+    &::after {
+      background: transparent url('/themes/custom/gtl_theme/dist/assets/chevron-left--white.svg') no-repeat center center / 10px;
+    }
+
+    &::before {
+      background-position: right bottom;
+    }
+  }
+}
+
+@mixin hexagon {
+  $hexagon-size: 34px;
+  $hexagon-color-default: $color-secondary000;
+  $hexagon-color-hover: $color-white;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, $hexagon-color-default, $hexagon-color-default);
+  height: ($hexagon-size * 0.645);
+  width: $hexagon-size;
+  border-radius: ($hexagon-size / 10);
+  margin-bottom: (($hexagon-size / 2) + 10px);
+  transition: transform $transition, background $transition;
+  @include instant-transition-on-touch-devices;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: inherit;
+    height: inherit;
+    background-image: inherit;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  &:before {
+    transform: rotate(60deg);
+  }
+
+  &:after {
+    transform: rotate(-60deg);
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+    background: linear-gradient(90deg, $hexagon-color-hover, $hexagon-color-hover);
+  }
+}
+
+@mixin search-item-label {
+  width: fit-content;
+  border-radius: 70px;
+  padding: 0 20px;
+  height: 30px;
+  line-height: 30px;
+  color: $color-neutral000;
+  font-size: $font-12;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  background-color: $color-tag5; // default
+
+  &.journal {
+    background-color: $color-tag9;
+  }
+  &.book {
+    background-color: $color-tag6;
+  }
+  &.book_chapter {
+    background-color: $color-tag4;
+  }
+  &.article {
+    background-color: $color-tag1;
+  }
+  &.video {
+    background-color: $color-tag7;
+  }
+  &.image {
+    background-color: $color-tag2;
+  }
+  &.audio {
+    background-color: $color-tag3;
+  }
+}

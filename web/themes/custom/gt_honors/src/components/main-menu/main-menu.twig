@@ -1,0 +1,32 @@
+{{ attach_library('gtl_theme/main-navigation') }}
+
+<nav class="main-menu main-navigation">
+  <ul class="nav-menu-mega-menu accessible-megamenu main-navigation__menu">
+    {% for item in navigation %}
+    <li class="nav-item-mega-menu main-navigation__item accessible-megamenu-top-nav-item">
+      <a href="{{item.url}}" class="main-navigation__navbar-text">
+        {{ item.text }}
+      </a>
+      <div class="sub-nav-mega-menu main-navigation__mega-menu">
+        <div class="main-navigation__mega-menu-inner">
+          {% for subitem in item.submenu %}
+            <div class="main-navigation__mega-menu-group {{ subitem.submenu_classes }}">
+              <span class="main-navigation__group-title">{{ subitem.text }}</span>
+            {% if subitem.submenu %}
+              <ul class="sub-nav-mega-menu-group main-navigation__group-menu" role="menu">
+                {% for link in subitem.submenu %}
+                  <li class="main-navigation__group-item accessible-megamenu-panel-group" role="menuitem">
+                    <a class="main-navigation__group-link" href="{{ link.url }}">{{ link.text }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </li>
+    {% if not loop.last %}<svg class="main-navigation__separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 15"><path fill="none" stroke="#b3a369" stroke-miterlimit="10" d="M16.5 1v13"/></svg>{% endif %}
+    {% endfor %}
+  </ul>
+</nav>

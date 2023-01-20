@@ -1,0 +1,28 @@
+{% set navigation = [] %}
+{% set last_item = [] %}
+{% for primary in main_menu.menu_tree %}
+  {% if not loop.last %}
+    {% if primary.submenu is not empty %}
+      {% set primary = primary|merge({
+        footer_link: [{
+          text: 'See All'|t,
+          url: primary.url
+        }]
+      }) %}
+    {% endif %}
+    {% set navigation = navigation|merge([primary]) %}
+  {% else %}
+    {% set last_item = primary %}
+  {% endif %}
+{% endfor %}
+{% if last_item is not empty %}
+  {% set cta = last_item %}
+{% endif %}
+{% include '@gtl_theme/header_new/header_new.twig' with {
+  site_url: url('<front>'),
+  page_title: 'Library'|t,
+  navigation: navigation,
+  search_bar: search_bar,
+  hide_search: hide_search,
+  cta: cta
+} only %}

@@ -1,0 +1,8 @@
+{% for item in items %}
+  {%
+    include '@gtl_theme/search-item/search-item.twig' with {
+      search_item: item
+    } only
+  %}
+  <div style="margin-bottom: 2rem"></div>
+{% endfor %}

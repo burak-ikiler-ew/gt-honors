@@ -1,0 +1,467 @@
+// Search Bar
+//
+// The search bar is part of the header on the homepage, and is controlled by
+// the search icon.
+// The search bar also appears on interior pages. Here it is always visible.
+// The search bar contains a filter and search input and submit button.
+// The search bar can contain a title and text field.
+// The search bar can contain an hours and open closed field.
+// If the variables have values, these will appear.
+// There is a js file that controls the radio filter buttons.
+// They are populated as a html blob based on a variable.
+// The html is output to the page and shown or hidden based
+// on a relationship with the filter option.
+//
+// Markup: search-bar-kss.twig
+//
+// Style guide: Components.Search Bar
+
+// Import site utilities.
+@import '../../global/utils/init';
+
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  z-index: 1;
+
+  @include breakpoint($bp-md) {
+    position: unset;
+  }
+}
+
+.search-bar__header {
+  margin-bottom: 2.5rem;
+
+  h1 {
+    color: $color-white;
+    position: relative;
+    max-width: 37.5rem;
+    margin: auto;
+    z-index: 1;
+
+    @include breakpoint($bp-sm) {
+      line-height: 5.5rem;
+    }
+
+    strong {
+      @include  heading-h1-slab;
+    }
+
+    &::before {
+      width: 6.563rem;
+      height: 8.438rem;
+      content: '';
+      background: url('/themes/custom/gtl_theme/dist/assets/hex-title-group.svg') no-repeat center / 6.563rem;
+      position: absolute;
+      left: 2rem;
+      top: 0;
+      z-index: -1;
+
+      @include breakpoint($bp-md) {
+        width: 10.25rem;
+        height: 11.625rem;
+        background: url('/themes/custom/gtl_theme/dist/assets/hex-title-group.svg') no-repeat center / 10.25rem;
+      }
+    }
+
+    &::after {
+      width: 3.75rem;
+      height: 4.375rem;
+      content: '';
+      background: url('/themes/custom/gtl_theme/dist/assets/hex-title-single.svg') no-repeat center / 3.75rem;
+      position: absolute;
+      right: 6rem;
+      top: -1rem;
+      z-index: -1;
+
+      @include breakpoint($bp-md) {
+        width: 6rem;
+        height: 6.875rem;
+        background: url('/themes/custom/gtl_theme/dist/assets/hex-title-single.svg') no-repeat center / 6rem;
+      }
+    }
+  }
+}
+
+.search-bar__inner {
+  width: 100%;
+  text-align: center;
+  z-index: $zi-lowest;
+
+  .search-bar__full & {
+    padding: 1rem 0;
+  }
+
+  .search-bar__semi & {
+    padding: 3.125rem 1rem 1.875rem;
+
+    @include breakpoint ($bp-sm) {
+      padding: 3.125rem 0 1.875rem;
+    }
+  }
+
+  .social-share {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+
+    @include breakpoint($bp-md) {
+      position: absolute;
+      right: $gutter-unit;
+      bottom: $gutter-unit;
+    }
+  }
+}
+
+.search-bar__form-footer {
+  display: none;
+  color: $color-white;
+  margin: 1.5rem 0;
+
+  .search-bar__semi &.js-html-show {
+    display: flex;
+    justify-content: center;
+  }
+
+  input:not([type='radio']) {
+    height: 42px;
+    padding: 1rem;
+    margin: 0 0 1rem;
+    font-size: $font-18;
+
+    @include breakpoint($bp-sm) {
+      margin: 0 1rem 0 0;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+
+    @include breakpoint($bp-sm) {
+      flex-direction: row;
+    }
+  }
+
+  select {
+    height: 42px;
+    border-radius: 0;
+    border: 0;
+    font-size: $font-18;
+    margin: 0 0 1rem;
+    width: 100%;
+
+    @include breakpoint($bp-sm) {
+      margin: 0 1rem 1rem 0;
+      width: auto;
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include breakpoint($bp-sm) {
+      flex-direction: row;
+      margin-right: 1rem;
+    }
+  }
+
+  label {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.search-bar__form-container {
+  padding: 1.25rem;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint($bp-md) {
+    background: $color-navy-blue-50;
+    border-radius: 30px;
+    padding: 2.813rem 2.813rem 3.75rem 2.813rem;
+  }
+
+  .form-item + .form-item {
+    margin-top: 0;
+  }
+
+  .button--wrapper {
+    position: relative;
+
+    .half--white {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 0;
+      background-color: $color-white;
+    }
+  }
+
+  .form-search {
+    @include body-font-size;
+    border: 0;
+    height: 50px;
+    width: 100%;
+    padding: 0 2rem;
+    position: relative;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+
+  .btn {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.375rem;
+    z-index: 1;
+
+    @include breakpoint ($bp-sm) {
+      padding: 1rem 2.813rem;
+    }
+
+    svg {
+      width: 27px;
+      height: 27px;
+
+      @include breakpoint ($bp-sm) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.search-bar__hours-of-op {
+  color: $color-white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  font-weight: $font-weight-bold;
+  margin-top: 5rem;
+
+  @include breakpoint($bp-md) {
+    justify-content: center;
+  }
+
+  .hours-statement {
+    font-weight: $font-weight-bold;
+    margin: 0 0.5rem 0 0;
+  }
+}
+
+.search-bar__hours-open,
+.search-bar__hours-closed {
+  font-weight: 700;
+  color: $color-tertiary100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 1rem;
+
+  svg {
+    width: 22px;
+    height: 13px;
+
+    path {
+      fill: $color-tertiary100;
+    }
+  }
+}
+
+.search-bar__hours-open {
+  flex: 1 1 100%;
+  margin: unset;
+  justify-content: left;
+
+  @include breakpoint($bp-md) {
+    flex: unset;
+    margin: 0 0 0 1rem;
+    justify-content: unset;
+  }
+}
+
+.search-bar__hours-closed {
+  color: $color-tertiary200;
+
+  svg {
+    width: 25px;
+    height: 25px;
+
+    path {
+      fill: $color-tertiary200;
+    }
+  }
+}
+
+.search-bar__input {
+  flex: 1 1 85%;
+
+  @include breakpoint ($bp-sm) {
+    flex: 1 1 78%;
+  }
+}
+
+.search-bar__form {
+  display: flex;
+  flex: 1 1 80%;
+}
+
+.search-bar__radio-buttons {
+  margin-bottom: 1.25rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @include breakpoint($bp-md) {
+    display: flex;
+  }
+
+  input[type="radio"] {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  label {
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    padding: 0.5rem 1.375rem;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    z-index: 1;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .radio-selector {
+    min-width: 50px;
+    height: 100%;
+    position: absolute;
+    border-radius: 50px;
+    z-index: 0;
+    border: 2px solid $color-white;
+    transition: left $transition, width $transition;
+  }
+}
+
+// Only relevant to use in Drupal hero search paragraph
+.paragraph--type--hero-search {
+  position: relative;
+  min-height: 570px;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+
+  @include breakpoint ($bp-md) {
+    min-height: 780px;
+    padding: 5rem 2rem;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgba(57, 57, 57, 0.948);
+
+    @supports (backdrop-filter: blur(10px)) {
+      background-color: $color-black-30;
+      backdrop-filter: blur(10px);
+    }
+  }
+
+  .image-video-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    article,
+    article div:not(.contextual),
+    article img {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    article img {
+      object-fit: cover;
+    }
+
+    .video-embed-field-responsive-video iframe {
+      @include breakpoint($bp-sm) {
+        height: 150%;
+        margin: auto;
+      }
+    }
+  }
+
+  .play-pause-buttons {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    left: $gutter-unit;
+    bottom: $gutter-unit;
+
+    svg {
+      width: 20px;
+      height: 20px;
+
+      path {
+        fill: $color-white;
+      }
+    }
+
+    .play-video,
+    .pause-video {
+      background: transparent;
+      border: 0;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity $transition, trasnform $transition;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    .play-video {
+      display: none;
+    }
+  }
+
+  &.has-video {
+    .play-pause-buttons {
+      display: inline-block;
+    }
+  }
+}
