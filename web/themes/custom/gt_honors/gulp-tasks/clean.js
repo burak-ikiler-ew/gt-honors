@@ -1,25 +1,8 @@
-/*eslint strict: ["error", "global"]*/
-'use strict';
+import { parallel }       from 'gulp';
+import { cleanJs }        from './js';
+import { cleanCss }       from './sass';
+import { cleanPatterns }  from './patterns';
 
-//=======================================================
-// Include Our Plugins
-//=======================================================
-var del = require('del');
+const clean = (done) => parallel(cleanJs, cleanCss, cleanPatterns)(done);
 
-// Export our tasks.
-module.exports = {
-
-  // Clean CSS files.
-  css: function() {
-    return del([
-      './dist/css/*'
-    ], {force: true});
-  },
-
-  // Clean JS files.
-  js: function() {
-    return del([
-      './dist/js/*'
-    ], {force: true});
-  }
-};
+export default clean;
