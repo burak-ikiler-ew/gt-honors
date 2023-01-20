@@ -168,3 +168,4 @@ sitediff/snapshot/*
 
 # Composer cache in CI
 .composer-cache
+.phpcs-cache

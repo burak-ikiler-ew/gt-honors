@@ -3,7 +3,7 @@ type: theme
 description: 'GT Honors Program Theme based on GT Bootstrap 4 Theme.'
 core_version_requirement: ^8.8 || ^9
 package: GT
-base theme: gt
+base theme: stable
 
 regions:
   alert: 'Alert'
