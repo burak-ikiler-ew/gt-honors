@@ -47,6 +47,8 @@ gt-webform:
 # Accordion.
 gt-accordion:
   version: "1.0.x"
+  component:
+    dist/css/accordion.css: {}
   css:
     base:
       templates/block/accordion/css/gt-accordion.css: { }
@@ -193,3 +195,67 @@ views-table:
       templates/views_table/css/views-table.css: { }
 
 
+# These lines define the gtl_theme/global library.
+global:
+  css:
+    base:
+      dist/css/global.css: {}
+      https://fonts.googleapis.com/css2?family=Abel&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap: {}
+
+accessible-menu:
+  css:
+    component:
+      dist/css/accessible-menu.css: {}
+
+main-menu:
+  css:
+    component:
+      dist/css/main-menu-new.css: {}
+  js:
+    /libraries/accessible-megamenu/mega-menu.js: {}
+    dist/js/main-menu-new.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - gtl_honors/accessible-menu
+
+btn:
+  css:
+    component:
+      dist/css/btn.css: {}
+
+search-bar:
+  css:
+    component:
+      dist/css/search-bar.css: {}
+  js:
+    dist/js/search-bar.js: {}
+    dist/js/hero-video.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - gtl_honors/btn
+
+search-item:
+  css:
+    component:
+      dist/css/search-item.css: {}
+  js:
+    dist/js/search-item.js: {}
+    dist/js/hero-video.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - gtl_honors/btn
+
+header:
+  css:
+    component:
+      dist/css/header_new.css: {}
+  js:
+    dist/js/header.js: {}
+  dependencies:
+    - gtl_honors/main-menu
+    - gtl_honors/search-bar
+    - gtl_honors/search-item

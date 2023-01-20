@@ -1,0 +1,29 @@
+//=======================================================
+// Variables
+//=======================================================
+
+$zi-highest: 50;
+$zi-high: 40;
+$zi-medium: 30;
+$zi-low: 20;
+$zi-lowest: 10;
+$zi-ground: 0;
+$zi-below-ground: -1;
+
+// The bootstrap like layout has a consistent gutter of 30px;
+$gutter-unit: 1.25rem;
+
+$vertical-gap: 7.5rem;
+$vertical-gap-mobile: 3.125rem;
+$column-gap: 2.5rem;
+
+// Transition speeds.
+$transition: 0.3s ease-in-out;
+$transition-fast: 0.1s linear;
+$motion-slow: 1000ms ease-in-out;
+$motion-default: 500ms ease-in-out;
+$motion-fast: 250ms ease-in-out;
+$motion-super-fast: 50ms ease-in-out;
+
+$transition-duration: .3s;
+$transition-bezier: 0.190,1.000,0.220,1.000;

@@ -1,0 +1,76 @@
+// Import site utilities.
+@import '../../global/utils/init';
+
+// Generic node styling.
+.node-padding {
+
+  // Add standard top and bottom padding for nodes.
+  // Ensure that `.l-center` is not overriding padding settings.
+  &,
+  &.l-center {
+    padding-top: 1.5 * $gutter-unit;
+    padding-bottom: 4 * $gutter-unit;
+  }
+}
+
+// Article node styling.
+.node--article {
+
+  .article-content {
+    position: relative;
+  }
+}
+
+.recent-articles {
+  background-color: $color-lightest-gold;
+  padding-top: 2 * $gutter-unit;
+  padding-bottom: 2 * $gutter-unit;
+
+  .headline-band {
+    &::before,
+    &::after {
+      background: none;
+    }
+  }
+}
+
+.featured-events--container {
+  overflow: hidden;
+  background: linear-gradient(0deg, rgba(0,48,87,0) 50%, rgba(0,48,87,1) 50%, rgba(0,48,87,1) 100%);
+  margin-bottom: 2.625rem;
+
+  @include breakpoint($bp-sm) {
+    margin-bottom: 5.938rem;
+  }
+
+  &.type--3item {
+    padding: $gutter-unit;
+  }
+
+  .featured-events--row {
+    margin-left: -$gutter-unit;
+    margin-right: -$gutter-unit;
+    width: calc(100% + #{$gutter-unit} * 2);
+
+    .gtl-column-3 {
+      padding: $gutter-unit;
+
+      &.swiper-slide {
+        padding: 0;
+        height: unset;
+      }
+    }
+
+    &.swiper-wrapper {
+      flex-wrap: unset;
+      width: 100%;
+      margin: unset;
+    }
+  }
+
+  & + .paragraph.paragraph--type--view {
+    &::after {
+      transform: translateY(-26rem);
+    }
+  }
+}

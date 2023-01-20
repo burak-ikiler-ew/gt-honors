@@ -1,0 +1,82 @@
+{{ attach_library('gtl_theme/footer') }}
+{% import '@gtl_theme/icons/icons.twig' as icons %}
+
+{% set prefix = 'footer' %}
+
+<div class="{{ prefix }}-subscribe">
+  <div class="l-center gtl-row">
+    <div class="gtl-column-2">
+      <div class="{{ prefix }}-subscribe__header">
+        <h2>{{ 'Subscribe '|t }} <strong>{{ 'to Newsletter'|t }}</strong></h2>
+        <div class="hex-container">
+          <div class="hex-large"></div>
+          <div class="hex-small"></div>
+        </div>
+      </div>
+    </div>
+    <div class="gtl-column-2 subscription-form-column">
+
+    </div>
+  </div>
+  <div class="{{ prefix }}__top-bar-hatch"></div>
+</div>
+<div class="{{ prefix }}-container">
+  <div class="l-center gtl-row">
+    <div class="{{ prefix }}-info-column gtl-column-4 {{ prefix }}-column">
+      <div class="{{ prefix }}-info__content">
+        <div class="social-media__links">
+          {% for item in social_menu %}
+            <a href="{{ item.url }}" class="{{ prefix }}__social-links">
+              {{ icons.get(item.name, item.name) }}
+              <span class="sr-only">{{ item.name }}</span>
+            </a>
+          {% endfor %}
+        </div>
+        <address class="{{ prefix }}__address">
+          <span class="{{ prefix }}__address-name">
+            {{ 'Georgia Tech Library'|t }}
+          </span>
+          <span class="{{ prefix }}__address-street">
+            {{ '260 4th Street NW, Atlanta, GA 30332'|t }}
+          </span>
+        </address>
+        <div class="{{ prefix }}__telephone">
+          <a aria-label="{{ 'Call Georgia Tech on this number'|t }}" href="{{ 'tel:1-404-894-4500'|t }}">
+            <span class="icon">
+              {{ icons.get('phone', 'footer__telephone_icon') }}
+            </span>
+            {{ '+1 404.894.4500'|t }}
+          </a>
+        </div>
+        <div class="{{ prefix }}__map">
+          <a href="https://g.page/gtlibrary?share">
+            <span class="icon">
+              {{ icons.get('map-marker', 'footer__map_icon') }}
+            </span>
+            {{ 'Campus map'|t }}
+            <span class="sr-only">{{ 'This is an external link'|t }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="{{ prefix }}-menu-column gtl-column-4 footer-column">
+      <ul class="{{ prefix }}-menu__list">
+
+      </ul>
+    </div>
+    <div class="{{ prefix }}-menu-column gtl-column-4 footer-column">
+      <ul class="{{ prefix }}-menu__list">
+
+      </ul>
+    </div>
+    <div class="{{ prefix }}-logo-column gtl-column-4 footer-column">
+      <a href="{{ url('<front>') }}" class="{{ prefix }}__logo">
+        <img src="/{{ active_theme_path() ~ '/dist/assets/gtl_logo_white.svg' }}" alt="{{ 'Homepage'|t }}">
+      </a>
+
+      <div class="{{ prefix }}__logo-legal" aria-label="copyright information">
+        {{ '©' }} {{ "now"|date('Y') }} Georgia Institute of Technology
+      </div>
+    </div>
+  </div>
+</div>
