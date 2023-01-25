@@ -9,23 +9,11 @@ module.exports = {
     extend: {
       fontSize: {
         xxs   : ['0.625rem', '0.75rem'],
-        // xs    : ['0.75rem', '1rem'], // included in TW code
-        // sm    : ['0.875rem', '1.125rem'], // included in TW code
-        // 15:   ['.9375rem', '1.5rem'], // Custom size
         md    : ['1rem', '1.5rem'],
-        // lg    : ['1.125rem', '1.5rem'],  // included in TW code
-        // xl    : ['1.25rem', '1.5rem'],  // included in TW code
-        // '2xl' : ['1.5rem', '2rem'],  // included in TW code
-        // '3xl' : ['1.875rem', '2.5rem'],  // included in TW code
-        // '4xl' : ['2.25rem', '2.5rem'],  // included in TW code
-        // '5xl' : ['3rem', '3.5rem'],  // included in TW code
       },
       fontFamily: {
-        title:  ['Sharp Sans', 'sans-serif'],
-        button: ['Sharp Sans', 'sans-serif'],
-        serif: ['Sharp Sans', 'sans-serif'],
-        sans:   ['Inter', 'sans-serif'],
-        body:   ['Inter', 'sans-serif'],
+        sans:   ['Roboto', 'sans-serif'],
+        body:   ['Roboto', 'sans-serif'],
       },
       minWidth: {
       },
