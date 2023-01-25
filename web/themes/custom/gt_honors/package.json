@@ -13,7 +13,6 @@
     "@storybook/addon-links": "^6.1.14",
     "@storybook/react": "^6.1.14",
     "babel-loader": "^8.2.2",
-    "bootstrap": "^4",
     "browser-sync": "^2.26.13",
     "cross-env": "^7.0.3",
     "del": "^6.0.0",
@@ -105,8 +104,10 @@
   "dependencies": {
     "add-attributes-twig-extension": "^0.1.0",
     "bem-twig-extension": "^0.1.1",
+    "bootstrap": "^5.2.0",
     "css-loader": "^5.0.1",
     "drupal-attribute": "^1.0.2",
+    "eslint": "^7.32.0",
     "gulp-sass": "^5.1.0",
     "js-yaml-loader": "^1.2.2",
     "react": "^17.0.1",

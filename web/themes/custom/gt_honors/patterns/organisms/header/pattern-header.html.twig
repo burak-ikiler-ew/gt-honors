@@ -1,0 +1,29 @@
+{% set prefix = 'header' %}
+{% set attributes = attributes.setAttribute('id', 'header') %}
+{% set classes = [
+  prefix
+] %}
+
+<header{{ attributes.addClass(classes) }}>
+  <div class="header__hatch"></div>
+  <div class="header__inner container">
+    <div class="row">
+      <div class="col-6 col-lg-3 {{ prefix }}__logo__wrapper">
+        <a href="{{ site_url }}" class="{{ prefix }}__logo">
+          <img src="/{{ active_theme_path() ~ '/images/gt_honors_logo.svg' }}" alt="{{ 'Homepage'|t }}">
+        </a>
+      </div>
+      <div class="col-6 col-lg-9 {{ prefix }}__menu">
+        <div class="primary-menu">
+          {{ menu }}
+        </div>
+        <button class="{{ prefix }}__search search-toggler">
+          <img src="/{{ active_theme_path() ~ '/src/icons/pictos/search.svg' }}" alt="{{ 'Search'|t }}"/>
+        </button>
+        <a id="mobile-menu-toggler" class="d-lg-none mobile-menu-toggle" href="#mobile-menu">
+          <span class="sr-only">{{ 'Show menu'|t }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

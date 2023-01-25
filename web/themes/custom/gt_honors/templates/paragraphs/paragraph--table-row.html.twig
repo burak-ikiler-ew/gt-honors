@@ -1,9 +1,0 @@
-{% set values = [] %}
-{% for item in paragraph.field_table_row__row %}
-  {% set values = values|merge([item.value]) %}
-{% endfor %}
-
-
-{{ pattern('table_row', {
-  values: values,
-}, 'default') }}

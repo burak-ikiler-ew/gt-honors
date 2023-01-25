@@ -1,64 +1,23 @@
+bootstrap:
+  version: 5.2.0
+  css:
+    theme:
+      dist/css/base.min.css: { minified: true }
+      dist/css/grid-system.min.css: { minified: true }
+  js:
+    dist/js/bootstrap.custom.bundle.min.js: { minified: true}
+  dependencies:
+    - core/jquery
+
 # These lines define the gtl_theme/global library.
-global:
+global_styles:
   css:
-    base:
-      dist/css/global.css: {}
+    theme:
+      dist/css/styles.min.css: { minified: true }
       https://fonts.googleapis.com/css2?family=Abel&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap: {}
-
-accessible-menu:
-  css:
-    component:
-      dist/css/accessible-menu.css: {}
-
-main-menu:
-  css:
-    component:
-      dist/css/main-menu-new.css: {}
   js:
-    /libraries/accessible-megamenu/mega-menu.js: {}
-    dist/js/main-menu-new.js: {}
+    dist/js/theme.min.js: { minified: true }
   dependencies:
-    - core/drupal
     - core/jquery
-    - core/jquery.once
-    - gtl_honors/accessible-menu
-
-btn:
-  css:
-    component:
-      dist/css/btn.css: {}
-
-search-bar:
-  css:
-    component:
-      dist/css/search-bar.css: {}
-  js:
-    dist/js/search-bar.js: {}
-    dist/js/hero-video.js: {}
-  dependencies:
     - core/drupal
-    - core/jquery
-    - gtl_honors/btn
-
-search-item:
-  css:
-    component:
-      dist/css/search-item.css: {}
-  js:
-    dist/js/search-item.js: {}
-    dist/js/hero-video.js: {}
-  dependencies:
-    - core/drupal
-    - core/jquery
-    - gtl_honors/btn
-
-header:
-  css:
-    component:
-      dist/css/header_new.css: {}
-  js:
-    dist/js/header.js: {}
-  dependencies:
-    - gtl_honors/main-menu
-    - gtl_honors/search-bar
-    - gtl_honors/search-item
+    - core/once

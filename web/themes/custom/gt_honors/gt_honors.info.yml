@@ -38,4 +38,5 @@ regions:
   other: 'Other / Placeholder region'
 
 libraries:
-  - 'gt_honors/global-styling'
+  - gt_honors/bootstrap
+  - gt_honors/global_styles
