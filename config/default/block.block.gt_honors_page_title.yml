@@ -1,0 +1,20 @@
+uuid: e6f3009a-0d48-47f8-b9db-8952a5d0e28b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gt_honors
+_core:
+  default_config_hash: EhiENWehpB_uG-vtaBD2a0v1GpxBCEaO-UqVVCV9jfM
+id: gt_honors_page_title
+theme: gt_honors
+region: breadcrumbs
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

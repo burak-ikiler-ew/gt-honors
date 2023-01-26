@@ -1,0 +1,27 @@
+_core:
+  default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM
+definitions:
+  gt_footer_general__general:
+    weight: -44
+    menu_name: gt-footer-general
+    parent: ''
+    enabled: false
+    expanded: false
+  gt_footer_general__directory:
+    weight: -43
+    menu_name: gt-footer-general
+    parent: ''
+    expanded: false
+    enabled: false
+  gt_footer_general__employment:
+    weight: -42
+    menu_name: gt-footer-general
+    parent: ''
+    expanded: false
+    enabled: false
+  gt_footer_general__emergency:
+    weight: -41
+    menu_name: gt-footer-general
+    parent: ''
+    expanded: false
+    enabled: false

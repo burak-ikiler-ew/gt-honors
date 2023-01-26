@@ -1,0 +1,22 @@
+uuid: 2cda19ee-c029-4f59-9ab4-2a7307fcf36f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gt_honors
+_core:
+  default_config_hash: 7p2WUoIhVZbSlvyUBDOnc2HKqRNQF6yJogWZP0m_ce8
+id: gt_honors_local_tasks
+theme: gt_honors
+region: help
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 2e8943db-365e-4aa8-8ca2-cb85e540ff7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gt_honors
+_core:
+  default_config_hash: fEXmvhXSHFjanAL1m4kgAmvFRH43L4LYPcrt5DvpoPE
+id: gt_honors_content
+theme: gt_honors
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

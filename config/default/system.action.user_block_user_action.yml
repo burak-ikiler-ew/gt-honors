@@ -1,0 +1,13 @@
+uuid: 485832a4-4bd9-4752-b15a-d3b9a75849ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: NxG6Fvgch7AeAh38qFx9jXN-e4SdXwFCIV12MRCMsMY
+id: user_block_user_action
+label: 'Block the selected user(s)'
+type: user
+plugin: user_block_user_action
+configuration: {  }
