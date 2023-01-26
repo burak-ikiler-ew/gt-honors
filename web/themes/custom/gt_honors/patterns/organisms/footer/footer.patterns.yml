@@ -1,0 +1,60 @@
+footer:
+  label: Footer
+  description: Page footer.
+  fields:
+    footer01:
+      type: mixed
+      label: Footer01
+      description: Footer region 01.
+      preview: Site footer region block
+    footer02:
+      type: mixed
+      label: Footer02
+      description: Footer region 02.
+      preview: Site footer region block
+    footer03:
+      type: mixed
+      label: Footer03
+      description: Footer region 03.
+      preview: Site footer region block
+    footer04:
+      type: mixed
+      label: Footer04
+      description: Footer region 04.
+      preview: Site footer region block
+    footer05:
+      type: mixed
+      label: Footer05
+      description: Footer region 05.
+      preview: Site footer region block
+    footer06:
+      type: mixed
+      label: Footer06
+      description: Footer region 06.
+      preview: Site footer region block
+    footer07:
+      type: mixed
+      label: Footer07
+      description: Footer region 07.
+      preview: Site footer region block
+    footer08:
+      type: mixed
+      label: Footer08
+      description: Footer region 08.
+      preview: Site footer region block
+    footer09:
+      type: mixed
+      label: Footer09
+      description: Footer region 09.
+      preview: Site footer region block
+    footer10:
+      type: mixed
+      label: Footer10
+      description: Footer region 10.
+      preview: Site footer region block
+  libraries:
+    -
+      footer:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }

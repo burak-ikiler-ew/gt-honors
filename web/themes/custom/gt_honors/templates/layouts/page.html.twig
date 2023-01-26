@@ -81,10 +81,11 @@
 
   </main>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+  {{ pattern('footer', {
+    footer05: page.footer_05,
+    footer06: page.footer_06,
+    footer07: page.footer_07,
+    footer08: page.footer_08,
+  }) }}
 
 </div>{# /.layout-container #}
