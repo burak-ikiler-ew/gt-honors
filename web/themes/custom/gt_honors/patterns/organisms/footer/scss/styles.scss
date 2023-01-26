@@ -1,0 +1,45 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.footer {
+  background-color: $color-tech-gold;
+  padding: 4.125rem 0 3.125rem 0;
+  position: relative;
+
+  &__hatch {
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("/themes/custom/gt_honors/images/background-body-white.svg") repeat-x top left / 20px 20px;
+  }
+
+  .gt-phone,
+  .gt-campus-map {
+    display: block;
+
+    &::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 14px;
+      margin-right: 1rem;
+      display: inline-block;
+    }
+  }
+
+  .gt-phone {
+    &::before {
+      background-image: url("/themes/custom/gt_honors/src/icons/pictos/phone.svg");
+    }
+  }
+
+  .gt-campus-map {
+    &::before {
+      background-image: url("/themes/custom/gt_honors/src/icons/pictos/email.svg");
+    }
+  }
+}
