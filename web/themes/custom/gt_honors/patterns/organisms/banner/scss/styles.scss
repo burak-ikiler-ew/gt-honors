@@ -1,0 +1,45 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.banner {
+  max-width: 100%;
+
+  .row {
+    margin: 0;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    padding: 1.875rem 3rem !important;
+    min-height: 550px;
+    background: $color-navy-blue url("/themes/custom/gt_honors/images/title_hexagons.svg") no-repeat right 3rem center / 320px;
+    color: $color-white;
+
+    @include media-breakpoint-up(lg) {
+      padding: 6.25rem !important;;
+    }
+
+    span.h1,
+    span.h1-slab {
+      padding-right: 0.75rem;
+    }
+
+    h1 {
+      max-width: 1200px;
+    }
+  }
+
+  &__image {
+    padding: 0 !important;;
+
+    & * {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+}

@@ -16,6 +16,7 @@
   @extend %font-stack-base;
   font-size: $font-40;
   line-height: 2.813rem;
+  font-weight: $font-weight-regular;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-80;
@@ -27,6 +28,7 @@
   @extend %font-stack-slab;
   font-size: $font-40;
   line-height: 2.813rem;
+  font-weight: $font-weight-semibold;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-80;
@@ -38,6 +40,7 @@
   @extend %font-stack-slab;
   font-size: $font-30;
   line-height: 2.375rem;
+  font-weight: $font-weight-semibold;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-46;
@@ -49,6 +52,7 @@
   @extend %font-stack-slab;
   font-size: $font-20;
   line-height: 1.875rem;
+  font-weight: $font-weight-semibold;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-32;
@@ -60,6 +64,7 @@
   @extend %font-stack-slab;
   font-size: $font-20;
   line-height: 1.625rem;
+  font-weight: $font-weight-semibold;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-26;
@@ -71,6 +76,7 @@
   @extend %font-stack-slab;
   font-size: $font-16;
   line-height: 1.375rem;
+  font-weight: $font-weight-semibold;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-20;
