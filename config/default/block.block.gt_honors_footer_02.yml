@@ -1,6 +1,6 @@
 uuid: ab96af11-9b2a-4395-9241-4c6f68e14e84
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.gt-footer-02
@@ -12,7 +12,7 @@ _core:
   default_config_hash: xnRhDdXXRGj3WNfvL_R7HSE_ZPPfs0aiPrn2SZXQvHo
 id: gt_honors_footer_02
 theme: gt_honors
-region: footer_02
+region: alert
 weight: 0
 provider: null
 plugin: 'system_menu_block:gt-footer-02'
