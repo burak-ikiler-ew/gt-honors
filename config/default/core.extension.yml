@@ -3,6 +3,7 @@ _core:
 module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
+  allowed_formats: 0
   automated_cron: 0
   block: 0
   block_content: 0
@@ -59,6 +60,9 @@ module:
   toolbar: 0
   tour: 0
   twig_tweak: 0
+  ui_patterns: 0
+  ui_patterns_library: 0
+  ui_patterns_views: 0
   update: 0
   user: 0
   video_embed_field: 0

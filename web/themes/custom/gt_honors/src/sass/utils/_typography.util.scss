@@ -1,0 +1,31 @@
+@import "../placeholders/typography.placeholder";
+
+h1,
+.h1 {
+  @extend %h1-base;
+}
+
+.h1-slab,
+h1.h1-slab {
+  @extend %h1-slab;
+}
+
+h2,
+.h2 {
+  @extend %h2;
+}
+
+h3,
+.h3 {
+  @extend %h3;
+}
+
+h4,
+.h4 {
+  @extend %h4;
+}
+
+h5,
+.h5 {
+  @extend %h5;
+}

@@ -2,8 +2,11 @@ uuid: 0417ebf9-e45f-4559-b0ce-2c4304c8d54e
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.basic_html
   module:
     - contact
+    - filter
     - search
     - shortcut
     - system

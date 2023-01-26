@@ -6,16 +6,21 @@ dependencies:
     - block_content.type.banner
     - field.storage.block_content.body
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - multi_style_title
 _core:
   default_config_hash: 3VtOipPOEREJqD6mIfbIlvjcUGIZWDE9tg8FnOUZWVs
 id: block_content.banner.body
 field_name: body
 entity_type: block_content
 bundle: banner
-label: Body
+label: Title
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

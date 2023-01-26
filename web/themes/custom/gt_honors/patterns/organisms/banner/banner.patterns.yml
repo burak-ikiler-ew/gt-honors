@@ -1,0 +1,23 @@
+banner:
+  label: Banner
+  description: Hero banner.
+  fields:
+    image:
+      type: mixed
+      label: Banner image
+      description: Banner image.
+    title:
+      type: text
+      label: Banner Title
+      description: Banner title.
+    description:
+      type: text
+      label: Banner Title
+      description: Banner title.
+
+  libraries:
+    -
+      banner:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }

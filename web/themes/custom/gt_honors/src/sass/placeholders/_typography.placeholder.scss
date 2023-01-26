@@ -1,0 +1,100 @@
+@import "../variables";
+
+%font-stack-base {
+  font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+%font-stack-secondary {
+  font-family: 'Roboto Condensed', 'Arial', sans-serif;
+}
+
+%font-stack-slab {
+  font-family: 'Roboto Slab', serif;
+}
+
+%h1-base {
+  @extend %font-stack-base;
+  font-size: $font-40;
+  line-height: 2.813rem;
+  font-weight: $font-weight-regular;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-80;
+    line-height: 5.625rem;
+  }
+}
+
+%h1-slab {
+  @extend %font-stack-slab;
+  font-size: $font-40;
+  line-height: 2.813rem;
+  font-weight: $font-weight-semibold;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-80;
+    line-height: 5.625rem;
+  }
+}
+
+%h2 {
+  @extend %font-stack-slab;
+  font-size: $font-30;
+  line-height: 2.375rem;
+  font-weight: $font-weight-semibold;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-46;
+    line-height: 4rem;
+  }
+}
+
+%h3 {
+  @extend %font-stack-slab;
+  font-size: $font-20;
+  line-height: 1.875rem;
+  font-weight: $font-weight-semibold;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-32;
+    line-height: 2.625rem;
+  }
+}
+
+%h4 {
+  @extend %font-stack-slab;
+  font-size: $font-20;
+  line-height: 1.625rem;
+  font-weight: $font-weight-semibold;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-26;
+    line-height: 2.375rem;
+  }
+}
+
+%h5 {
+  @extend %font-stack-slab;
+  font-size: $font-16;
+  line-height: 1.375rem;
+  font-weight: $font-weight-semibold;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-20;
+    line-height: 1.875rem;
+  }
+}
+
+%font-icons {
+  font-family: $font-icons;
+}
+
+%icon {
+  @extend %font-icons;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

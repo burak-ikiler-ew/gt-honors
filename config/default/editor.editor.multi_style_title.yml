@@ -1,0 +1,29 @@
+uuid: 7035df80-e40e-4622-b58d-b4c83896cf28
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.multi_style_title
+  module:
+    - ckeditor
+format: multi_style_title
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Styles
+  plugins:
+    stylescombo:
+      styles: "span.h1|Title (Sans-serif)\r\nspan.h1-slab|Title (Slab)"
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

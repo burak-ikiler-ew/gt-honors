@@ -1,0 +1,37 @@
+#block-gt-honors-local-tasks {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: $color-black;
+
+  &.scrolled-bottom {
+    bottom: -60px;
+  }
+
+  .tabs {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    & > li {
+      margin: 0;
+      padding: 0;
+
+      & > a {
+        color: $color-white;
+        border-radius: 0;
+        padding: 10px 20px;
+        display: block;
+
+        &:hover,
+        &:focus,
+        &.is-active {
+          background-color: $color-tech-gold;
+          color: $color-black;
+        }
+      }
+    }
+  }
+}

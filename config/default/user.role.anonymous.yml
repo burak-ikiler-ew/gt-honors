@@ -2,8 +2,11 @@ uuid: 6030f235-2003-491e-960f-c1b0fdeb114f
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.restricted_html
   module:
     - contact
+    - filter
     - search
     - system
 _core:

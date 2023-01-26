@@ -6,11 +6,8 @@ dependencies:
     - block_content.type.banner
     - field.field.block_content.banner.body
     - field.field.block_content.banner.field_image
-    - field.field.block_content.banner.field_link
-    - field.field.block_content.banner.field_style
   module:
     - image
-    - link
     - text
 _core:
   default_config_hash: VBkp-CnNMjLG5X1YI9oJY6W_mxAmaaOAENdLmI1iAuo
@@ -20,41 +17,21 @@ bundle: banner
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
   field_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    type: image
-    region: content
-  field_link:
-    weight: 2
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_style:
-    weight: 3
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+    weight: 0
     region: content
 hidden: {  }

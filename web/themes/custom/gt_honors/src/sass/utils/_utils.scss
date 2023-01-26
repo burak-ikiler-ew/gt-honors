@@ -1,0 +1,11 @@
+.debug {
+  outline: red thin;
+
+  &--green {
+    outline: green thin;
+  }
+
+  &--blue {
+    outline: blue thin;
+  }
+}

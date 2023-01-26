@@ -1,0 +1,24 @@
+{% set prefix = 'footer' %}
+{% set attributes = attributes.setAttribute('id', 'footer') %}
+{% set classes = [
+  prefix
+] %}
+
+<footer{{ attributes.addClass(classes) }}>
+  <div class="{{ prefix }}__hatch"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-5 {{ prefix }}__left">
+        <div class="{{ prefix }}__social"></div>
+        <div class="{{ prefix }}__address">{{ footer05 }}</div>
+      </div>
+      <div class="col-12 col-lg-4 {{ prefix }}__middle">
+        <div class="row">
+          <div class="col-12 col-lg-6 {{ prefix }}__menu_left">{{ footer06 }}</div>
+          <div class="col-12 col-lg-6 {{ prefix }}__menu_right">{{ footer07 }}</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-3 {{ prefix }}__right">{{ footer08 }}</div>
+    </div>
+  </div>
+</footer>

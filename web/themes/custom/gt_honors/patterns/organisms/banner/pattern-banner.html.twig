@@ -1,0 +1,17 @@
+{% set prefix = 'banner' %}
+{% set classes = [
+  prefix
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="row">
+    {% if image|render %}
+      <div class="{{ prefix }}__title col-12 col-lg-6">
+        <h1>{{ title }}</h1>
+      </div>
+      <div class="{{ prefix }}__image col-12 col-lg-6">{{ image }}</div>
+    {% else %}
+      <div class="{{ prefix }}__title col">{{ title }}</div>
+    {% endif %}
+  </div>
+</div>

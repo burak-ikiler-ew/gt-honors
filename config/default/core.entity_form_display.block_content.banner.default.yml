@@ -6,12 +6,9 @@ dependencies:
     - block_content.type.banner
     - field.field.block_content.banner.body
     - field.field.block_content.banner.field_image
-    - field.field.block_content.banner.field_link
-    - field.field.block_content.banner.field_style
     - image.style.thumbnail
   module:
     - image
-    - link
     - text
 _core:
   default_config_hash: P8nkKxafLMa5dV9onYSFJWpzFvPSaXdfc-qe9b7U8To
@@ -23,34 +20,21 @@ content:
   body:
     type: text_textarea_with_summary
     weight: 3
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
-    region: content
   field_image:
+    type: image_image
     weight: 2
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
-  field_link:
-    weight: 4
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_style:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   info:
     type: string_textfield
     weight: 0

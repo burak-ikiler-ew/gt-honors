@@ -1,0 +1,165 @@
+uuid: 3cf85b91-ae32-4982-a9f8-4295a5378919
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_media_links
+  theme:
+    - gt_honors
+id: socialmedialinks_2
+theme: gt_honors
+region: footer_05
+weight: -11
+provider: null
+plugin: social_media_links_block
+settings:
+  id: social_media_links_block
+  label: 'Social Media Links'
+  label_display: '0'
+  provider: social_media_links
+  platforms:
+    amazon:
+      value: ''
+      description: ''
+      weight: '-10'
+    behance:
+      value: ''
+      description: ''
+      weight: '-9'
+    bitbucket:
+      value: ''
+      description: ''
+      weight: '-8'
+    contact:
+      value: ''
+      description: ''
+      weight: '-7'
+    drupal:
+      value: ''
+      description: ''
+      weight: '-6'
+    email:
+      value: ''
+      description: ''
+      weight: '-5'
+    facebook:
+      value: Georgia-Tech-Honors-Program-137712035831/
+      description: ''
+      weight: '-4'
+    flickr:
+      value: ''
+      description: ''
+      weight: '-3'
+    github:
+      value: ''
+      description: ''
+      weight: '-2'
+    gitlab:
+      value: ''
+      description: ''
+      weight: '-1'
+    glassdoor:
+      value: ''
+      description: ''
+      weight: '0'
+    goodreads:
+      value: ''
+      description: ''
+      weight: '1'
+    googleplay:
+      value: ''
+      description: ''
+      weight: '2'
+    googleplus:
+      value: ''
+      description: ''
+      weight: '3'
+    instagram:
+      value: gthonors
+      description: ''
+      weight: '4'
+    linkedin:
+      value: gt-honors-program-8baa8b79/
+      description: ''
+      weight: '5'
+    mastodon:
+      value: ''
+      description: ''
+      weight: '6'
+    meetup:
+      value: ''
+      description: ''
+      weight: '7'
+    patreon:
+      value: ''
+      description: ''
+      weight: '8'
+    pinterest:
+      value: ''
+      description: ''
+      weight: '9'
+    rss:
+      value: ''
+      description: ''
+      weight: '10'
+    slideshare:
+      value: ''
+      description: ''
+      weight: '11'
+    telegram:
+      value: ''
+      description: ''
+      weight: '12'
+    tiktok:
+      value: ''
+      description: ''
+      weight: '13'
+    tumblr:
+      value: ''
+      description: ''
+      weight: '14'
+    twitter:
+      value: GTHonorsProgram
+      description: ''
+      weight: '15'
+    vkontakte:
+      value: ''
+      description: ''
+      weight: '16'
+    vimeo:
+      value: ''
+      description: ''
+      weight: '17'
+    website:
+      value: ''
+      description: ''
+      weight: '18'
+    whatsapp:
+      value: ''
+      description: ''
+      weight: '19'
+    xing:
+      value: ''
+      description: ''
+      weight: '20'
+    youtube:
+      value: ''
+      description: ''
+      weight: '21'
+    youtube_channel:
+      value: ''
+      description: ''
+      weight: '22'
+  appearance:
+    orientation: h
+    show_name: 0
+    suggestion: ''
+  link_attributes:
+    target: '<none>'
+    rel: '<none>'
+  iconset:
+    style: 'fontawesome:2x'
+    installed_iconsets:
+      fontawesome:
+        examples: ''
+visibility: {  }

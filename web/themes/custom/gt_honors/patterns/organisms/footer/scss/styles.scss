@@ -1,0 +1,142 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.footer {
+  background-color: $color-tech-gold;
+  padding: 4.125rem 0 3.125rem 0;
+  position: relative;
+
+  &__hatch {
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("/themes/custom/gt_honors/images/background-body-white.svg") repeat-x top left / 20px 20px;
+  }
+
+  &__menu_left,
+  &__menu_right {
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        margin: 0.75rem;
+
+        &:nth-child(1) {
+          margin-top: 0;
+        }
+
+        &:nth-last-child(1) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    a {
+      color: $color-black;
+      font-size: $font-14;
+      line-height: $font-22;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-black;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+  }
+
+  .gt-phone,
+  .gt-campus-map {
+    display: block;
+    margin-top: 1rem;
+
+    &::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 14px;
+      margin-right: 1rem;
+      display: inline-block;
+    }
+  }
+
+  .gt-phone {
+    &::before {
+      background-image: url("/themes/custom/gt_honors/src/icons/pictos/phone.svg");
+    }
+  }
+
+  .gt-campus-map {
+    &::before {
+      background-image: url("/themes/custom/gt_honors/src/icons/pictos/email.svg");
+    }
+  }
+
+  .block-gt-footer-contact-block {
+    p,
+    a {
+      color: $color-black;
+      text-decoration: none;
+    }
+
+    h2,
+    h3 {
+      @extend %h4;
+    }
+  }
+
+  .block-social-media-links-block {
+    ul {
+      li {
+        margin: 0 1.5rem 0 0;
+        padding: 0;
+
+        a {
+          aspect-ratio: 1 / 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: $color-black;
+          color: $color-white;
+          font-size: 10px;
+          padding: 10px;
+          text-decoration: none;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+
+  .block-gt-footer-logo-block {
+    display: flex;
+    flex-direction: column;
+
+    #gt-copyright {
+      width: fit-content;
+      align-self: end;
+    }
+
+    .gt-footer-logo {
+      max-width: 278px;
+      margin-bottom: 0.75rem;
+    }
+
+    .gt-footer-copy {
+      font-size: $font-14;
+    }
+
+    .gt-footer-login {
+      a {
+        color: $color-black;
+        text-underline-offset: 5px;
+        font-size: $font-14;
+      }
+    }
+  }
+}

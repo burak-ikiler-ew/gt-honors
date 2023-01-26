@@ -2,11 +2,25 @@ uuid: c683bdff-c851-41a1-8e60-b2161337c3ac
 langcode: en
 status: false
 dependencies:
+  config:
+    - core.entity_view_display.node.page.default
+    - filter.format.full_html
+    - node.type.article
+    - node.type.hg_boilerplate
+    - node.type.hg_event
+    - node.type.hg_external_news
+    - node.type.hg_image
+    - node.type.hg_news
+    - node.type.hg_profile
+    - node.type.hg_video
+    - node.type.page
   module:
     - block
     - block_region_permissions
     - comment
     - contextual
+    - filter
+    - layout_builder
     - node
     - quickedit
     - system
