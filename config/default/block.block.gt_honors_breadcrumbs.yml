@@ -1,0 +1,22 @@
+uuid: f0f84c67-e44a-4f71-a95c-e01e2b470a3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gt_honors
+_core:
+  default_config_hash: oWtdwWiD9OCMNsv9JgRkz9GsOyQRsNTWnYjCuTcKP68
+id: gt_honors_breadcrumbs
+theme: gt_honors
+region: breadcrumbs
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

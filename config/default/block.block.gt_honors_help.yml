@@ -1,0 +1,22 @@
+uuid: c76ffb2a-6565-43a9-9e9d-df361ad043c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - gt_honors
+_core:
+  default_config_hash: xitR9051RTmCyUsLmvqhUMzWbR401S9jdpm66GBQESs
+id: gt_honors_help
+theme: gt_honors
+region: help
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

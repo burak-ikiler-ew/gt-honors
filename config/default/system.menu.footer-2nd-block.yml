@@ -1,0 +1,8 @@
+uuid: 85ebc34c-014b-4b2a-a03a-dde86aefde57
+langcode: en
+status: true
+dependencies: {  }
+id: footer-2nd-block
+label: 'Footer 2nd Block'
+description: ''
+locked: false

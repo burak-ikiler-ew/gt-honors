@@ -1,0 +1,20 @@
+uuid: b4b20cea-ce2e-47ff-8894-82070dec686c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gt_honors
+_core:
+  default_config_hash: qichMVqUs3UKL_m7FVJZtUUdioJM2WaPzvRhgDuQRyA
+id: gt_honors_local_actions
+theme: gt_honors
+region: utility_navigation
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

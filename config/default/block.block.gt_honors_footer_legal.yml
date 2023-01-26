@@ -1,0 +1,27 @@
+uuid: fab19121-80fc-4673-be94-7d4f0146b04a
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.gt-footer-legal
+  module:
+    - system
+  theme:
+    - gt_honors
+_core:
+  default_config_hash: ThF3C8qkj0iVui86UxMyUXNjsoSsgznvjiK3QBOaxMI
+id: gt_honors_footer_legal
+theme: gt_honors
+region: footer_07
+weight: 0
+provider: null
+plugin: 'system_menu_block:gt-footer-legal'
+settings:
+  id: 'system_menu_block:gt-footer-legal'
+  label: 'GT official links: legal (required)'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,265 @@
+uuid: 240b40b6-1026-47ca-a835-9127f5662335
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hg_profile.body
+    - field.field.node.hg_profile.field_hg_alternate_job_title
+    - field.field.node.hg_profile.field_hg_city
+    - field.field.node.hg_profile.field_hg_classification
+    - field.field.node.hg_profile.field_hg_degree
+    - field.field.node.hg_profile.field_hg_fax_number
+    - field.field.node.hg_profile.field_hg_first_name
+    - field.field.node.hg_profile.field_hg_id
+    - field.field.node.hg_profile.field_hg_importer
+    - field.field.node.hg_profile.field_hg_job_title
+    - field.field.node.hg_profile.field_hg_last_name
+    - field.field.node.hg_profile.field_hg_middle_name
+    - field.field.node.hg_profile.field_hg_mobile_phone
+    - field.field.node.hg_profile.field_hg_nickname
+    - field.field.node.hg_profile.field_hg_phone_number
+    - field.field.node.hg_profile.field_hg_primary_email
+    - field.field.node.hg_profile.field_hg_related_files
+    - field.field.node.hg_profile.field_hg_related_links
+    - field.field.node.hg_profile.field_hg_research
+    - field.field.node.hg_profile.field_hg_secondary_email
+    - field.field.node.hg_profile.field_hg_source_updated
+    - field.field.node.hg_profile.field_hg_state
+    - field.field.node.hg_profile.field_hg_street_address
+    - field.field.node.hg_profile.field_hg_summary
+    - field.field.node.hg_profile.field_hg_teaching
+    - field.field.node.hg_profile.field_hg_url
+    - field.field.node.hg_profile.field_hg_zip_code
+    - node.type.hg_profile
+  module:
+    - file
+    - link
+    - options
+    - text
+    - user
+_core:
+  default_config_hash: 9lW0cc9MjoZy5pUhZ4jeclSbjTMiK5CquvnTZ06E6zw
+id: node.hg_profile.default
+targetEntityType: node
+bundle: hg_profile
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hg_alternate_job_title:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hg_city:
+    weight: 120
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hg_classification:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_hg_degree:
+    weight: 123
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_hg_fax_number:
+    weight: 114
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hg_first_name:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hg_id:
+    weight: 126
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_hg_importer:
+    weight: 113
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_hg_job_title:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hg_last_name:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hg_middle_name:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hg_mobile_phone:
+    weight: 113
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hg_nickname:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hg_phone_number:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hg_primary_email:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hg_related_files:
+    weight: 125
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_hg_related_links:
+    weight: 124
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hg_research:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hg_secondary_email:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hg_source_updated:
+    weight: 127
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  field_hg_state:
+    weight: 121
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_hg_street_address:
+    weight: 119
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hg_summary:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hg_teaching:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hg_url:
+    weight: 117
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hg_zip_code:
+    weight: 122
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

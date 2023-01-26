@@ -1,0 +1,15 @@
+uuid: bcab48d2-9f19-4c0d-80ff-470b56db7638
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: kS7hA02nedz7wWVZ6vj92mXN25c5UPfOpEEzMotcrsg
+id: node_search
+label: Content
+path: node
+weight: -10
+plugin: node_search
+configuration:
+  rankings: {  }

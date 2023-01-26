@@ -1,0 +1,8 @@
+uuid: cb09afc3-0a0b-439c-b3dd-654aeb0e1e88
+langcode: en
+status: true
+dependencies: {  }
+id: footer-1st-block
+label: 'Footer 1st Block'
+description: ''
+locked: false

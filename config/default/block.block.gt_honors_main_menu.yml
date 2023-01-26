@@ -1,0 +1,27 @@
+uuid: 7eeda13f-34f9-41c3-a568-1eef7a407e09
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - gt_honors
+_core:
+  default_config_hash: yYuH5TfZu0GwzpXaf_j6bH5iTgk_nJzRqscDcBJZ3Bg
+id: gt_honors_main_menu
+theme: gt_honors
+region: navigation
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

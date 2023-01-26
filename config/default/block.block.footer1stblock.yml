@@ -1,0 +1,25 @@
+uuid: 0c4a8be1-000b-47b6-8423-79ad530d283e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-1st-block
+  module:
+    - system
+  theme:
+    - gt_honors
+id: footer1stblock
+theme: gt_honors
+region: footer_06
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-1st-block'
+settings:
+  id: 'system_menu_block:footer-1st-block'
+  label: 'Footer 1st Block'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
