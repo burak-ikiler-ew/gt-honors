@@ -9,7 +9,7 @@ dependencies:
 id: gt_honors_footer_contact
 theme: gt_honors
 region: footer_05
-weight: 0
+weight: -10
 provider: null
 plugin: gt_footer_contact_block
 settings:
