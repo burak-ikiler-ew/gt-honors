@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e7a41f0f440849a994e357bd2745fe1",
+    "content-hash": "ba200f801a0a8b965dea144034b414f5",
     "packages": [
         {
             "name": "acquia/blt",
@@ -3396,6 +3396,24 @@
                 "source": "https://github.com/enlightn/security-checker/tree/v1.10.0"
             },
             "time": "2022-02-21T22:40:16+00:00"
+        },
+        {
+            "name": "evolvingweb/drupal-ci",
+            "version": "27301.0",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.ewdev.ca/universe/drupal-ci.git",
+                "reference": "f7cd4c002efa3b44203031492ee0328be465e282"
+            },
+            "dist": {
+                "type": "tar",
+                "url": "https://packagist.ewdev.ca/dist/evolvingweb/drupal-ci/evolvingweb-drupal-ci-27301.0-79e265.tar",
+                "reference": "f7cd4c002efa3b44203031492ee0328be465e282",
+                "shasum": "4d3b6051de8d8318b6616811498e4dd383b24085"
+            },
+            "type": "library",
+            "description": "Evolvingweb Drupal CI configs and scripts.",
+            "time": "2021-05-14T16:19:40+00:00"
         },
         {
             "name": "grasmash/expander",
@@ -8350,5 +8368,5 @@
         "php": ">=7.3"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

@@ -15,28 +15,36 @@
       "role": "Makers of things like this"
     }
   ],
-  "repositories": [
-    {
+  "repositories": {
+    "ew-packagist": {
       "type": "composer",
-      "url": "https://packages.drupal.org/8"
+      "url": "https://packagist.ewdev.ca"
     },
-    {
+    "drupal": {
+        "type": "composer",
+        "url": "https://packages.drupal.org/8"
+    },
+    "asset-packagist": {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+    },
+    "gt-profile": {
       "type": "git",
       "url": "git@gitlab.ewdev.ca:evolvingweb/georgia-tech/gt_profile.git"
     },
-    {
+    "gt-theme": {
       "type": "git",
       "url": "git@gitlab.ewdev.ca:evolvingweb/georgia-tech/gt_theme.git"
     },
-    {
+    "gt-tools": {
       "type": "git",
       "url": "git@gitlab.ewdev.ca:evolvingweb/georgia-tech/gt_tools.git"
     },
-    {
+    "hg-reader": {
       "type": "git",
       "url": "git@gitlab.ewdev.ca:evolvingweb/georgia-tech/hg_reader.git"
     }
-  ],
+  },
   "require": {
     "php": ">=7.3",
     "acquia/blt": "^13.0",
@@ -62,6 +70,7 @@
     "drupal/video_embed_field": "^2.4",
     "drupal/views_accordion": "^2.0",
     "drush/drush": "^10.0",
+    "evolvingweb/drupal-ci": "^27301.0",
     "gt/gt_profile": "^3.0",
     "gt/gt_theme": "^3.0",
     "gt/gt_tools": "^3.0",
