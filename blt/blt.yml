@@ -1,22 +1,29 @@
-
 project:
-  human_name: 'GT Honors Program'
-  machine_name: html
-  local:
-    hostname: '${project.machine_name}.ddev.site'
-    protocol: https
-    uri: '${project.local.protocol}://${project.local.hostname}:9443'
-  theme:
-    name: gt_honors
+  human_name: GT Honors Program
+  machine_name: gt_honors
   profile:
     name: minimal
+  theme:
+    name: 'gt_honors'
+  local:
+    hostname: ${project.machine_name}.ddev.site
+    protocol: https
+    uri: ${project.local.protocol}://${project.local.hostname}:9443
 
-# Deploy.
-deploy:
-  tag_source: false
-  dir: deploy
-  docroot: '${deploy.dir}/web'
-docroot: '${repo.root}/web'
+# Git configuration.
+git:
+  user:
+    name: 'Drupal CI'
+    email: 'drupal-ci@ewdev.ca'
+  default_branch: master
+  remotes:
+    - ssh://codeserver.dev.40862ced-ff04-4daa-8753-516a6a0406ed@codeserver.dev.40862ced-ff04-4daa-8753-516a6a0406ed.drush.in:2222/~/repository.git
+  commit-msg:
+    pattern: "/(^refs #[0-9]+(: )[^ ].{15,}\\.)|(Merge branch (.)+)/"
+    help_description: "The commit message should start with refs,
+                      followed by a # and ticket number, followed by a colon and a space,
+                      fifteen characters or more describing the commit, and end with a period."
+    example: "refs #123: Update site configuration."
 
 # Settings for installing Drupal.
 drupal:
@@ -27,6 +34,24 @@ drupal:
     host: ddev-gt-honors-db
     port: 3306
 
+# Deploy.
+deploy:
+  tag_source: false
+  dir: deploy
+  docroot: ${deploy.dir}/web
+
+# Drupal docroot.
+docroot: ${repo.root}/web
+
+# Hooks.
+command-hooks:
+  post-deploy-build:
+    dir: ${repo.root}
+    command: ./scripts/pantheon/post-deploy-build
+  frontend-reqs:
+    dir: ${docroot}/themes/custom/
+    command: 'bash -c "if [ -d ${project.theme.name} ] ; then source ~/.profile && cd ${project.theme.name} && nvm install && npm install && npm run build ; fi"'
+
 # Drush.
 drush:
   aliases:
@@ -35,22 +60,52 @@ drush:
     ci: self
   default_alias: '${drush.aliases.local}'
 
-# Hooks.
-command-hooks:
-  post-deploy-build:
-    dir: '${repo.root}'
-    command: './vendor/evolvingweb/drupal-ci/pantheon/post-deploy-build && cp ./pantheon.yml deploy'
-  frontend-reqs:
-    dir: '${docroot}/themes/custom/'
-    command: 'bash -c "if [ -d ${project.theme.name} ] ; then source ~/.profile && cd ${project.theme.name} && nvm install && npm install --global yarn && yarn install --immutable && yarn build ; fi"'
+# An array of modules to be enabled or uninstalled automatically in local, ci,
+# and deploy contexts.
+modules:
+  local:
+    enable:
+      - dblog
+      - devel
+      - seckit
+      - views_ui
+    uninstall:
+      - acquia_connector
+      - shield
+  ci:
+    enable: {  }
+    uninstall:
+      - acquia_connector
+      - shield
+  dev:
+    enable:
+      - acquia_connector
+      - shield
+    uninstall: {  }
+  test:
+    enable:
+      - acquia_connector
+      - shield
+    uninstall:
+      - devel
+      - views_ui
+  prod:
+    enable:
+      - acquia_connector
+      - shield
+    uninstall:
+      - devel
+      - views_ui
 
-# Git configuration.
-git:
-  user:
-    name: 'Drupal CI'
-    email: drupal-ci@ewdev.ca
-  default_branch: master
-  commit-msg:
-    pattern: '/(^refs #[0-9]+(: )[^ ].{15,}\.)|(Merge branch (.)+)/'
-    help_description: 'The commit message should start with refs, followed by a # and ticket number, followed by a colon and a space, fifteen characters or more describing the commit, and end with a period.'
-    example: 'refs #123: Update site configuration.'
+# Linting.
+validate:
+  twig:
+    functions:
+      - pattern
+      - drupal_block
+      - drupal_entity
+      - drupal_view
+    filters:
+      - truncate
+      - image_style
+      - view

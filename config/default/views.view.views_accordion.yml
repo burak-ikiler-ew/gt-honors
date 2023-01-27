@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.mercury_event
+    - node.type.hg_event
     - system.menu.main
   module:
     - node

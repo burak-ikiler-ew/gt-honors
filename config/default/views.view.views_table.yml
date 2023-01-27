@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.storage.node.body
-    - node.type.mercury_event
+    - node.type.hg_event
   module:
     - node
     - text
