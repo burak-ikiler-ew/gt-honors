@@ -75,6 +75,7 @@
     "gt/gt_theme": "^3.0",
     "gt/gt_tools": "^3.0",
     "gt/hg_reader": "^2.0",
+    "oomphinc/composer-installers-extender": "^2.0",
     "webflo/drupal-finder": "^1.0.0",
     "webmozart/path-util": "^2.3"
   },
@@ -91,7 +92,8 @@
       "drupal/console-extend-plugin": true,
       "drupal/core-composer-scaffold": true,
       "drupal/core-project-message": true,
-      "acquia/blt": true
+      "acquia/blt": true,
+      "oomphinc/composer-installers-extender": true
     }
   },
   "extra": {
@@ -100,12 +102,18 @@
         "web-root": "web"
       }
     },
+    "installer-types": [
+	"npm-asset",
+	"bower-asset"
+    ],
     "installer-paths": {
       "web/core": [
         "type:drupal-core"
       ],
       "web/libraries/{$name}": [
-        "type:drupal-library"
+        "type:drupal-library",
+	"type:npm-asset",
+	"type:bower-asset"
       ],
       "web/modules/contrib/{$name}": [
         "type:drupal-module"
