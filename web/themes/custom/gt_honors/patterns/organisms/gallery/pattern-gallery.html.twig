@@ -1,0 +1,16 @@
+{% set prefix = 'gallery' %}
+{% set attributes = attributes.setAttribute('id', 'gallery--' ~ paragraph_id) %}
+{% set classes = [
+  prefix
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="container">
+    {% if title %}
+      <div class="{{ prefix }}_header">{{ title }}</div>
+    {% endif %}
+    <div class="{{ prefix }}__images row">
+      {{ images }}
+    </div>
+  </div>
+</div>

@@ -1,22 +1,20 @@
-uuid: 082020e3-6b23-4f2e-ab90-ec5bd7ff254b
+uuid: 8680472f-af0a-409b-94a6-27e568b81a57
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.banner
-    - field.storage.block_content.field_image
+    - field.storage.media.field_media_image
+    - media.type.image
   module:
     - image
-_core:
-  default_config_hash: 2kOjSrZnCH0-xzELHElajLq3nS-uh4vbHRkyye4QQw0
-id: block_content.banner.field_image
-field_name: field_image
-entity_type: block_content
-bundle: banner
+id: media.image.field_media_image
+field_name: field_media_image
+entity_type: media
+bundle: image
 label: Image
 description: ''
-required: false
-translatable: false
+required: true
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -24,15 +22,15 @@ settings:
   handler_settings: {  }
   file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
-  max_filesize: '8 MB'
-  max_resolution: 4000x4000
+  max_filesize: ''
+  max_resolution: ''
   min_resolution: ''
   alt_field: true
-  alt_field_required: false
+  alt_field_required: true
   title_field: false
   title_field_required: false
   default_image:
-    uuid: ''
+    uuid: null
     alt: ''
     title: ''
     width: null

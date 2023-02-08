@@ -57,12 +57,15 @@
     "drupal/core-composer-scaffold": "^9",
     "drupal/core-project-message": "^9",
     "drupal/core-recommended": "^9",
+    "drupal/entity_browser": "^2.9",
     "drupal/faqfield": "^7.0",
+    "drupal/fences": "^3.0",
     "drupal/field_formatter_class": "^1.4",
     "drupal/field_group": "^3.1",
     "drupal/jquery_ui_accordion": "^1.1",
     "drupal/layout_builder_modal": "^1.1",
     "drupal/layout_builder_restrictions": "^2.7",
+    "drupal/paragraphs": "^1.15",
     "drupal/pathauto": "^1.8",
     "drupal/social_media_links": "^2.7",
     "drupal/twig_tweak": "^3.2",
@@ -75,6 +78,8 @@
     "gt/gt_theme": "^3.0",
     "gt/gt_tools": "^3.0",
     "gt/hg_reader": "^2.0",
+    "npm-asset/parvus": "^2.2",
+    "oomphinc/composer-installers-extender": "^2.0",
     "webflo/drupal-finder": "^1.0.0",
     "webmozart/path-util": "^2.3"
   },
@@ -91,7 +96,8 @@
       "drupal/console-extend-plugin": true,
       "drupal/core-composer-scaffold": true,
       "drupal/core-project-message": true,
-      "acquia/blt": true
+      "acquia/blt": true,
+      "oomphinc/composer-installers-extender": true
     }
   },
   "extra": {
@@ -100,12 +106,18 @@
         "web-root": "web"
       }
     },
+    "installer-types": [
+	"npm-asset",
+	"bower-asset"
+    ],
     "installer-paths": {
       "web/core": [
         "type:drupal-core"
       ],
       "web/libraries/{$name}": [
-        "type:drupal-library"
+        "type:drupal-library",
+	"type:npm-asset",
+	"type:bower-asset"
       ],
       "web/modules/contrib/{$name}": [
         "type:drupal-module"

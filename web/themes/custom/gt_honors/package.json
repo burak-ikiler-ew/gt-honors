@@ -110,6 +110,7 @@
     "eslint": "^7.32.0",
     "gulp-sass": "^5.1.0",
     "js-yaml-loader": "^1.2.2",
+    "parvus": "^2.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass-loader": "^10.1.1",
