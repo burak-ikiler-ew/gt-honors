@@ -506,7 +506,7 @@ h6, .h6 {
 }
 
 .breadcrumb-links li::after {
-  content: url('../images/gt-gold-chevron.svg');
+  content: url('../../images/gt-gold-chevron.svg');
   display: inline-block;
   vertical-align: middle;
   width: .5rem;

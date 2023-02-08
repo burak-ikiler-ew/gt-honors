@@ -222,7 +222,7 @@
 
 .utility-navigation a:after {
   content: ' ';
-  background-image: url(../images/gt-gold-chevron.svg);
+  background-image: url(../../images/gt-gold-chevron.svg);
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -236,7 +236,7 @@
 
 .utility-navigation a:hover:after {
   content: ' ';
-  background-image: url(../images/gt-black-chevron.svg);
+  background-image: url(../../images/gt-black-chevron.svg);
 }
 
 .utility-navigation .contextual-links a {
