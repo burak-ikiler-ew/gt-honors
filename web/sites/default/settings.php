@@ -814,14 +814,6 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
-// Automatically generated include for settings managed by ddev.
-$ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
-if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
-  require $ddev_settings;
-}
-
-# Skip permissions hardening to prevent Composer Update failure in Plesk environment
-$settings['skip_permissions_hardening'] = TRUE;
 /**
  * IMPORTANT.
  *
@@ -830,3 +822,12 @@ $settings['skip_permissions_hardening'] = TRUE;
  *
  * @link https://docs.acquia.com/blt/
  */
+
+// Automatically generated include for settings managed by ddev.
+$ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
+if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
+  require $ddev_settings;
+}
+
+# Skip permissions hardening to prevent Composer Update failure in Plesk environment
+$settings['skip_permissions_hardening'] = TRUE;
