@@ -5,6 +5,9 @@ dependencies:
   config:
     - block_content.type.image_gallery
     - field.field.block_content.image_gallery.field_gallery_images
+  module:
+    - fences
+    - field_formatter_class
 id: block_content.image_gallery.default
 targetEntityType: block_content
 bundle: image_gallery
@@ -16,7 +19,18 @@ content:
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
     weight: 0
     region: content
 hidden: {  }
