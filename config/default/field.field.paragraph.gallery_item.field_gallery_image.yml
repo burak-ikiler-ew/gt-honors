@@ -1,18 +1,18 @@
-uuid: f2f0611c-95cc-4a3d-b42e-67b8c0844166
+uuid: 129e82c1-8666-4a57-b8de-3aa3b8f2bfb1
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.image_gallery
-    - field.storage.block_content.field_gallery_images
+    - field.storage.paragraph.field_gallery_image
     - media.type.image
-id: block_content.image_gallery.field_gallery_images
-field_name: field_gallery_images
-entity_type: block_content
-bundle: image_gallery
-label: Images
+    - paragraphs.paragraphs_type.gallery_item
+id: paragraph.gallery_item.field_gallery_image
+field_name: field_gallery_image
+entity_type: paragraph
+bundle: gallery_item
+label: Image
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

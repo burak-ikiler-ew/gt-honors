@@ -38,9 +38,11 @@
   {{ title_suffix }}
 
   {% block content %}
-    {{ pattern('gallery', {
-      title:        label,
-      images:       content.field_gallery_images,
-    }) }}
+    {% if label %}
+      <div class="container">
+        <h2>{{ label }}</h2>
+      </div>
+    {% endif %}
+    {{ content }}
   {% endblock %}
 </div>

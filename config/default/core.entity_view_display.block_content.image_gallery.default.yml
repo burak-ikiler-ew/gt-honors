@@ -4,8 +4,9 @@ status: true
 dependencies:
   config:
     - block_content.type.image_gallery
-    - field.field.block_content.image_gallery.field_gallery_images
+    - field.field.block_content.image_gallery.field_image_gallery
   module:
+    - entity_reference_revisions
     - fences
     - field_formatter_class
 id: block_content.image_gallery.default
@@ -13,12 +14,12 @@ targetEntityType: block_content
 bundle: image_gallery
 mode: default
 content:
-  field_gallery_images:
-    type: entity_reference_entity_view
+  field_image_gallery:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
-      link: false
+      link: ''
     third_party_settings:
       fences:
         fences_field_tag: none

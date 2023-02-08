@@ -1,28 +1,25 @@
-uuid: 9018a0f3-76ca-4fe7-be8b-5935cd15acbc
+uuid: 14db3b6c-329e-45d2-a549-63b3725f679b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_media_image
-    - image.style.large
-    - media.type.image
+    - field.field.paragraph.image_gallery.field_gallery_images
+    - paragraphs.paragraphs_type.image_gallery
   module:
+    - entity_reference_revisions
     - fences
     - field_formatter_class
-    - image
-id: media.image.default
-targetEntityType: media
-bundle: image
+id: paragraph.image_gallery.default
+targetEntityType: paragraph
+bundle: image_gallery
 mode: default
 content:
-  field_media_image:
-    type: image
+  field_gallery_images:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: large
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      link: ''
     third_party_settings:
       fences:
         fences_field_tag: none
@@ -37,8 +34,4 @@ content:
         class: ''
     weight: 0
     region: content
-hidden:
-  created: true
-  name: true
-  thumbnail: true
-  uid: true
+hidden: {  }

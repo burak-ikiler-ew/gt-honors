@@ -11,6 +11,10 @@ gallery:
       type: mixed
       label: Gallery images
       description: Image entities.
+    paragraph_id:
+      type: mixed
+      label: Paragraph id
+      description: Id
   libraries:
     -
       gallery:

@@ -20,6 +20,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   faqfield: 0
   fences: 0
   field: 0
@@ -74,6 +75,7 @@ module:
   pathauto: 1
   externalauth: 10
   views: 10
+  paragraphs: 11
   gt_profile: 1000
 theme:
   stable: 0
