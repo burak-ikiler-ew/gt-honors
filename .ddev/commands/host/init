@@ -3,3 +3,4 @@
 # Spin up the application and start the containers.
 ddev stop
 ddev start
+ddev auth ssh
