@@ -1,0 +1,19 @@
+gallery:
+  label: Image gallery
+  description: Image gallery.
+  fields:
+    title:
+      type: text
+      label: Title
+      description: Title of the image gallery.
+      preview: "Image gallery"
+    images:
+      type: mixed
+      label: Gallery images
+      description: Image entities.
+  libraries:
+    -
+      gallery:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }

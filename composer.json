@@ -75,6 +75,7 @@
     "gt/gt_theme": "^3.0",
     "gt/gt_tools": "^3.0",
     "gt/hg_reader": "^2.0",
+    "npm-asset/parvus": "^2.2",
     "oomphinc/composer-installers-extender": "^2.0",
     "webflo/drupal-finder": "^1.0.0",
     "webmozart/path-util": "^2.3"
