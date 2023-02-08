@@ -7,6 +7,8 @@ dependencies:
     - image.style.large
     - media.type.image
   module:
+    - fences
+    - field_formatter_class
     - image
 id: media.image.default
 targetEntityType: media
@@ -21,7 +23,18 @@ content:
       image_style: large
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
     weight: 0
     region: content
 hidden:
