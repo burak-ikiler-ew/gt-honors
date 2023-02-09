@@ -9,7 +9,7 @@
 /**
  * Implements template_preprocess_block().
  */
-function simons_glider_preprocess_block(&$variables) {
+function gt_honors_preprocess_block(&$variables) {
   if (isset($variables['attributes']['id'])) {
     $variables['content']['#attributes']['block'] = $variables['attributes']['id'];
   }
@@ -18,7 +18,7 @@ function simons_glider_preprocess_block(&$variables) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for block templates.
  */
-function simons_glider_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+function gt_honors_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
   if (isset($variables['attributes']['block'])) {
     $hook = str_replace(['block-', '-'], ['', '_'], $variables['attributes']['block']);
     $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
