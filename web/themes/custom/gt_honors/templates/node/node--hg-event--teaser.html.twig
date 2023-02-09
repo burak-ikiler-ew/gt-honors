@@ -1,0 +1,122 @@
+{# HG Mercury Event Template #}
+
+{# Attached Style Sheet #}
+{{ attach_library('hg_reader/hg_reader') }}
+
+{# Content Start #}
+<div id="mercury" class="mercury row mb-5">
+    {% if event_start is not null %}
+    {# Set Sidebar Container #}
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        {# Date Wrapper #}
+        <div class="date-wrapper p-0 w-100">
+            {# Day #}
+            {% if event_start|date('l') is not empty and event_start|date('l') is same as(event_end|date('l')) %}
+                <div class="col day">
+                    {{ event_start|date('l') }}
+                </div>
+            {% else %}
+                {# Multi #}
+                <div class="col day-multi">
+                    {{ event_start|date('l')  ~ ' - ' ~ event_end|date('l') }}
+                </div>
+            {% endif %}
+
+            {# Month #}
+            {% if event_start|date('M') is not empty and event_start|date('M') is same as(event_end|date('M')) %}
+                <div class="col month">
+                    {{ event_start|date('M') }}
+                </div>
+            {% else %}
+                {# Multi #}
+                <div class="col month-multi">
+                    {{ event_start|date('M')  ~ ' - ' ~ event_end|date('M') }}
+                </div>
+            {% endif %}
+
+            {# Date #}
+            {% if event_start|date('j') is not empty and event_start|date('j') is same as(event_end|date('j')) %}
+                <div class="col date">
+                    {{ event_start|date('j') }}
+                </div>
+            {% else %}
+                {# Multi #}
+                <div class="col date-multi">
+                    {{ event_start|date('j')  ~ ' - ' ~ event_end|date('j') }}
+                </div>
+            {% endif %}
+
+            {# Year #}
+            {% if event_start|date('Y') is not empty and event_start|date('Y') is same as(event_end|date('Y')) %}
+                <div class="col year">
+                    {{ event_start|date('Y') }}
+                </div>
+            {% else %}
+                {# Multi #}
+                <div class="col year-multi">
+                    {{ event_start|date('Y')  ~ ' - ' ~ event_end|date('Y') }}
+                </div>
+            {% endif %}
+
+            {# Time #}
+            {% if event_start|date('g:iA', UTC) is not empty and event_start|date('g:iA', 'UTC') is same as(event_end|date('g:iA', 'UTC')) %}
+                <div class="d-flex justify-content-center time my-4">
+                    All day
+                </div>
+            {% else %}
+                {# Multi #}
+                <div class="d-flex justify-content-center time-multi my-4">
+                    {{ event_start|date('g:iA', false)  ~ ' - ' ~ event_end|date('g:iA', false) }}
+                </div>
+            {% endif %}
+
+        </div> <!-- end date-wrapper -->
+
+        {# Sidebar #}
+        {% if content.field_hg_sidebar|render is not empty %}
+            <div class="sidebar sidebar-left my-4 mx-2">
+                {{ content.field_hg_sidebar }}
+            </div>
+        {% endif %}
+
+    </div>{# End Sidebar #}
+    {% endif %}
+
+    {# Main Content  #}
+    <div class="col-md-8 col-sm-6 col-xs-12">
+
+        {# Images #}
+        {% if content.field_hg_images|render is not empty %}
+                <picture>
+                    {{ content.field_hg_images[0] }}
+                </picture>
+        {% endif %}
+
+        <div class="my-2">
+            <div class="hg-title">
+                <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><h3>{{ node.title.value }}</h3></a>
+            </div>
+        </div>
+
+        {# Body  #}
+        {% if content.body|render is not empty %}
+            <div class="description my-2">
+                {{ content.body }}
+            </div>
+        {% endif %}
+        {# Body  #}
+        {% if content.field_hg_location|render is not empty %}
+            <div class="description my-2">
+                {{ content.field_hg_location }}
+            </div>
+        {% endif %}
+
+        {# Render remaining Images #}
+        {% for key, item in content.field_hg_images if key > 0 %}
+            <div class="">{{ item }}</div>
+        {% endfor %}
+
+    </div>
+
+</div>
+{# End Mercury Event Template #}
