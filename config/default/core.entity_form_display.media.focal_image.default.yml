@@ -1,17 +1,17 @@
-uuid: 6382ca3c-263f-40f4-a748-f1952477d9fb
+uuid: bebaa155-2178-452c-93f8-e155497c9223
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_media_image
-    - image.style.medium
-    - media.type.image
+    - field.field.media.focal_image.field_media_image
+    - image.style.focal_large_800x800_
+    - media.type.focal_image
   module:
-    - image
+    - focal_point
     - path
-id: media.image.default
+id: media.focal_image.default
 targetEntityType: media
-bundle: image
+bundle: focal_image
 mode: default
 content:
   created:
@@ -21,12 +21,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_media_image:
-    type: image_image
+    type: image_focal_point
     weight: 0
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: medium
+      preview_image_style: focal_large_800x800_
+      preview_link: true
+      offsets: '50,50'
     third_party_settings: {  }
   name:
     type: string_textfield

@@ -1,0 +1,18 @@
+uuid: b37d5a01-4446-4c64-bb81-67a3f8da59b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
+id: focal_image
+label: 'Focal Image'
+description: 'Use Scaled and Cropped Square Focal Images for reusable media.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }
