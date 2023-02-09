@@ -21,3 +21,40 @@ gallery:
         css:
           component:
             dist/css/styles.min.css: { minified: true }
+
+gallery_item:
+  label: Gallery item
+  description: Images in gallery.
+  fields:
+    caption:
+      type: text
+      label: Caption
+      description: Caption of the image.
+      preview: 'Phonetic alphabets'
+    image:
+      type: string
+      label: Image
+      description: Markup for an image. Alternatively, provide image_* properties.
+      preview:
+        theme: image
+        uri: https://picsum.photos/1280/560
+    pid:
+      type: text
+      label: Paragraph ID
+      description: Paragraph ID
+      preview: '25025'
+    parent:
+      type: text
+      label: Paragraph ID
+      description: Paragraph ID
+      preview: '25025'
+    path:
+      type: string
+      label: Link URL
+      description: URL to the content.
+      preview: ''
+  libraries:
+    - gallery_item:
+        css:
+          component:
+            css/styles.min.css: { minified: true }

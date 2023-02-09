@@ -1,0 +1,11 @@
+@import "../variables";
+
+%margin-default {
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;
+  }
+}

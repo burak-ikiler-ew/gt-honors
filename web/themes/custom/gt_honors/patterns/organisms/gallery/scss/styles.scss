@@ -2,5 +2,30 @@
 @import "src/sass/placeholders/index";
 
 .gallery {
-  background: transparent;
+  &-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    a {
+      display: block;
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      overflow: hidden;
+
+      img,
+      article,
+      picture {
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        object-fit: cover;
+      }
+
+      .parvus-zoom__indicator {
+        display: none;
+      }
+    }
+  }
 }

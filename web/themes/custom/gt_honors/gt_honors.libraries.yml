@@ -22,7 +22,7 @@ parvus:
       /libraries/parvus/dist/css/parvus.min.css: { minified: true }
   js:
     /libraries/parvus/dist/js/parvus.min.js: {}
-    js/parvus.js: { minified: true }
+    src/js/parvus.js: { minified: true }
 
 # These lines define the gtl_theme/global library.
 global_styles:
