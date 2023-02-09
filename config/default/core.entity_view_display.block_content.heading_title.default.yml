@@ -4,31 +4,57 @@ status: true
 dependencies:
   config:
     - block_content.type.heading_title
-    - field.field.block_content.heading_title.body
-    - field.field.block_content.heading_title.field_heading_title
+    - field.field.block_content.heading_title.field_icon
+    - field.field.block_content.heading_title.field_link
   module:
+    - fences
     - field_formatter_class
-    - text
+    - link
 id: block_content.heading_title.default
 targetEntityType: block_content
 bundle: heading_title
 mode: default
 content:
-  body:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_heading_title:
+  field_icon:
     type: string
-    weight: 0
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
       field_formatter_class:
-        class: 'heading-title h1'
+        class: ''
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
 hidden: {  }
