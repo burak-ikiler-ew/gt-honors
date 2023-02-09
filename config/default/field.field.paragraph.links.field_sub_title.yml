@@ -1,0 +1,19 @@
+uuid: c22f40ee-325b-444a-ac09-49513acb4b30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sub_title
+    - paragraphs.paragraphs_type.links
+id: paragraph.links.field_sub_title
+field_name: field_sub_title
+entity_type: paragraph
+bundle: links
+label: 'Sub Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
