@@ -7,18 +7,18 @@
  */
 
 // eslint-disable-next-line func-names
-(function($, Drupal) {
+(function ($, Drupal) {
   Drupal.behaviors.parvusJS = {
-    attach(context) {
-      $("body", context)
-        .once("parvusJS")
+    attach (context) {
+      $('body', context)
+        .once('parvusJS')
         // eslint-disable-next-line func-names
-        .each(function() {
+        .each(function () {
           // eslint-disable-next-line no-undef
           const prvs = new Parvus({
-            selector: ".lightbox"
+            selector: '.lightbox',
           });
         });
-    }
+    },
   };
 })(jQuery, Drupal);

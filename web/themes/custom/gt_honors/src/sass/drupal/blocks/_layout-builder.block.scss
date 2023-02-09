@@ -1,0 +1,21 @@
+.block-layout-builder {
+  @extend %margin-default;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &.block-inline-blockimage-gallery {
+    h2 {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        color: $color-tech-gold;
+        margin-right: 1.5rem;
+        @extend %icon;
+        @include getIcon("gallery");
+      }
+    }
+  }
+}
