@@ -1,0 +1,37 @@
+uuid: 59f6ff32-2838-4c13-ac0f-1416f8755712
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.link_group
+    - field.storage.block_content.field_link_groups
+    - paragraphs.paragraphs_type.links
+  module:
+    - entity_reference_revisions
+id: block_content.link_group.field_link_groups
+field_name: field_link_groups
+entity_type: block_content
+bundle: link_group
+label: 'Link Groups'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      links: links
+    negate: 0
+    target_bundles_drag_drop:
+      gallery_item:
+        weight: 4
+        enabled: false
+      image_gallery:
+        weight: 5
+        enabled: false
+      links:
+        weight: 6
+        enabled: true
+field_type: entity_reference_revisions
