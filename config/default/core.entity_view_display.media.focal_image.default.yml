@@ -1,0 +1,44 @@
+uuid: 857d06bb-da89-4afb-bb52-6df1c7de52f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.focal_image.field_media_image
+    - image.style.focal_large_800x800_
+    - media.type.focal_image
+  module:
+    - fences
+    - field_formatter_class
+    - image
+id: media.focal_image.default
+targetEntityType: media
+bundle: focal_image
+mode: default
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: focal_large_800x800_
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -5,10 +5,9 @@ dependencies:
   config:
     - block_content.type.banner
     - field.field.block_content.banner.body
-    - field.field.block_content.banner.field_image
-    - image.style.thumbnail
+    - field.field.block_content.banner.field_media_image
   module:
-    - image
+    - media_library
     - text
 _core:
   default_config_hash: P8nkKxafLMa5dV9onYSFJWpzFvPSaXdfc-qe9b7U8To
@@ -27,13 +26,12 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  field_image:
-    type: image_image
-    weight: 2
+  field_media_image:
+    type: media_library_widget
+    weight: 26
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
   info:
     type: string_textfield

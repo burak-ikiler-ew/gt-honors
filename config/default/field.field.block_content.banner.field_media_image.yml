@@ -1,0 +1,31 @@
+uuid: 33f0f8ef-6dcd-4245-8191-f51192c9b572
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_media_image
+    - media.type.focal_image
+    - media.type.image
+id: block_content.banner.field_media_image
+field_name: field_media_image
+entity_type: block_content
+bundle: banner
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      focal_image: focal_image
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
