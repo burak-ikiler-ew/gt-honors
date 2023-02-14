@@ -1,0 +1,46 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.basic-content {
+  &__title {
+    margin-bottom: 2.25rem;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-weight: 600;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 1.25rem;
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 2.25rem;
+    }
+
+    &::before {
+      color: $color-tech-gold;
+      @extend %icon;
+      font-size: xxx-large; // TODO: temporary solution, before the actual icon is added.
+    }
+  }
+
+  &__body {
+    font-size: $font-22;
+    line-height: $font-36;
+  }
+}
+
+// Apply only inside two-column sections.
+.layout--twocol-section {
+  .basic-content {
+    @include media-breakpoint-up(sm) {
+      max-width: 80%;
+
+      &__title {
+        max-width: 60%;
+      }
+    }
+  }
+}

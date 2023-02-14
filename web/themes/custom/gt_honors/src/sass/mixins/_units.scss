@@ -4,3 +4,8 @@
   $newTarget: math.div($target, ($target * 0 + 1)); // Tip to remove the unit from target
   @return (math.div($newTarget, $context)) * 1rem;
 }
+
+@function px-to-rem($px) {
+  $value: math.div($px, ($px * 0 + 1));
+  @return (math.div($value, 16)) * 1rem;
+}
