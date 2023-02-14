@@ -1,0 +1,19 @@
+{% set prefix = 'basic-content' %}
+
+{%
+  set classes = [
+    prefix
+  ]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  {% if title %}
+  <div class="{{ prefix }}__title">
+    <i class="{{ prefix }}__icon icon-{{ icon_class }}"></i>
+    <h2>{{ title }}</h2>
+  </div>
+  {% endif %}
+  <div class="{{ prefix }}__body">
+    {{ body }}
+  </div>
+</div>
