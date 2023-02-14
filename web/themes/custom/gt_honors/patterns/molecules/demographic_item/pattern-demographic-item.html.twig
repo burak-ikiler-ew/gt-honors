@@ -1,0 +1,11 @@
+{% set prefix = 'demographic-item' %}
+{% set classes = [
+  prefix
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="row">
+      <div class="{{ prefix }}__title col">{{ title }}</div>
+      <div class="{{ prefix }}__title col">{{ description }}</div>
+  </div>
+</div>

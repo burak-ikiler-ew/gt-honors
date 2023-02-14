@@ -1,0 +1,40 @@
+uuid: d7f6eeec-d327-4ac0-85f8-bb1ffd8a1491
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.demographics
+    - field.storage.block_content.field_items
+    - paragraphs.paragraphs_type.demographic_item
+  module:
+    - entity_reference_revisions
+id: block_content.demographics.field_items
+field_name: field_items
+entity_type: block_content
+bundle: demographics
+label: Item(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      demographic_item: demographic_item
+    negate: 0
+    target_bundles_drag_drop:
+      demographic_item:
+        weight: 5
+        enabled: true
+      gallery_item:
+        weight: 6
+        enabled: false
+      image_gallery:
+        weight: 7
+        enabled: false
+      links:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

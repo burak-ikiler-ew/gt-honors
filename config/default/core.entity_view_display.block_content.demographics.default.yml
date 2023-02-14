@@ -1,0 +1,51 @@
+uuid: b6a862ea-372d-4a21-8c55-af517ea354c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.demographics
+    - field.field.block_content.demographics.field_display_type
+    - field.field.block_content.demographics.field_items
+    - field.field.block_content.demographics.field_sub_headline
+    - field.field.block_content.demographics.field_sub_title
+  module:
+    - entity_reference_revisions
+    - options
+id: block_content.demographics.default
+targetEntityType: block_content
+bundle: demographics
+mode: default
+content:
+  field_display_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_sub_headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_sub_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

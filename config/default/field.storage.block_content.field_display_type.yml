@@ -1,0 +1,30 @@
+uuid: de5655dd-537b-4c30-8bff-b17c2c276463
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_display_type
+field_name: field_display_type
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: featured
+      label: Featured
+    -
+      value: featured_with_background
+      label: 'Featured with Background'
+    -
+      value: list
+      label: List
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

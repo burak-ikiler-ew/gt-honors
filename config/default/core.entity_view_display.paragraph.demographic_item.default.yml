@@ -1,0 +1,30 @@
+uuid: 6a553e76-64cf-4cbe-966c-7d74a2c391a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.demographic_item.field_description
+    - field.field.paragraph.demographic_item.field_title
+    - paragraphs.paragraphs_type.demographic_item
+id: paragraph.demographic_item.default
+targetEntityType: paragraph
+bundle: demographic_item
+mode: default
+content:
+  field_description:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

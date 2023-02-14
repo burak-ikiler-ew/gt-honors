@@ -1,0 +1,21 @@
+uuid: 3de15776-0eef-4dd5-9aeb-d91c71989314
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.demographics
+    - field.storage.block_content.field_display_type
+  module:
+    - options
+id: block_content.demographics.field_display_type
+field_name: field_display_type
+entity_type: block_content
+bundle: demographics
+label: 'Display Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
