@@ -1,0 +1,30 @@
+uuid: 610b1966-730c-49ec-b73d-3a35b5d99289
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.icons.field_icon_class
+    - taxonomy.vocabulary.icons
+  module:
+    - text
+id: taxonomy_term.icons.default
+targetEntityType: taxonomy_term
+bundle: icons
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon_class:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

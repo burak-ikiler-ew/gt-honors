@@ -1,17 +1,16 @@
-uuid: 2121fd8f-151c-4804-bcdf-62a19bc9e53b
+uuid: 0356facc-9cf9-4ecb-843b-0fefea8c4bd2
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
+    - taxonomy
 id: block_content.field_icon
 field_name: field_icon
 entity_type: block_content
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

@@ -1,0 +1,20 @@
+basic_content:
+  label: Basic content
+  description: Basic content with a title, body text, and a link.
+  fields:
+    title:
+      type: text
+      label: Basic content title
+    icon_class:
+      type: text
+      label: Basic content icon
+    body:
+      type: mixed
+      label: Basic content body
+
+  libraries:
+    -
+      basic_content:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }
