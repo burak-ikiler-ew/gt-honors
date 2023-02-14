@@ -1,0 +1,10 @@
+uuid: 9eaabc4c-1875-4995-b00e-ebd701b3e1c7
+langcode: en
+status: true
+dependencies: {  }
+id: demographic_item
+label: 'Demographic Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

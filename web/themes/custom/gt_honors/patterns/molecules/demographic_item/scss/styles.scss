@@ -1,0 +1,10 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.demographic-item {
+  max-width: 100%;
+
+  .row {
+    margin: 0;
+  }
+}

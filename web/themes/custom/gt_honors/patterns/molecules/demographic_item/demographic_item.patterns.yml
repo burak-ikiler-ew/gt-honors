@@ -1,0 +1,26 @@
+demographic_item:
+  label: Demographic Item
+  description: Demographic Item.
+  variants:
+    default:
+      label: Default
+      description: 'Default article card.'
+    featured:
+      label: Featured
+      description: Featured article card.
+  fields:
+    title:
+      type: text
+      label: Demographic Item Title
+      description: Demographic Item title.
+    description:
+      type: text
+      label: Demographic Item Title
+      description: Demographic Item title.
+
+  libraries:
+    -
+      demographic_item:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }
