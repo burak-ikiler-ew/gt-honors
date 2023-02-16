@@ -6,23 +6,13 @@
     margin-bottom: 2.25rem;
     display: flex;
     flex-direction: column;
-
-    h2 {
-      font-weight: 600;
-    }
+    font-weight: 600;
   }
 
   &__icon {
-    margin-bottom: 1.25rem;
-
-    @include media-breakpoint-up(xl) {
-      margin-bottom: 2.25rem;
-    }
-
     &::before {
       color: $color-tech-gold;
       @extend %icon;
-      font-size: xxx-large; // TODO: temporary solution, before the actual icon is added.
     }
   }
 
