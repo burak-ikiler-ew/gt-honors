@@ -8,9 +8,9 @@ $include-font: false !default;
 
     @font-face {
         font-family: $theme-icons-font;
-        src: url("../fonts/theme-icons.woff2?890e650ed3f0f3fe47003e790071a84c") format("woff2"),
-url("../fonts/theme-icons.woff?890e650ed3f0f3fe47003e790071a84c") format("woff"),
-url("../fonts/theme-icons.ttf?890e650ed3f0f3fe47003e790071a84c") format("truetype");
+        src: url("../fonts/theme-icons.woff2?e35616176523e111b626f66e18d2491c") format("woff2"),
+url("../fonts/theme-icons.woff?e35616176523e111b626f66e18d2491c") format("woff"),
+url("../fonts/theme-icons.ttf?e35616176523e111b626f66e18d2491c") format("truetype");
     }
 
     i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -19,13 +19,32 @@ url("../fonts/theme-icons.ttf?890e650ed3f0f3fe47003e790071a84c") format("truetyp
 }
 
 $theme-icons-map: (
-    "chevron-down": "\f101",
-    "chevron-right": "\f102",
-    "chevron-up": "\f103",
-    "close": "\f104",
-    "email": "\f105",
-    "gallery": "\f106",
-    "phone": "\f107",
-    "search": "\f108",
-    "gt-icon": 'GT', // TODO: replace with an actual icon
+    "academics": "\f101",
+    "chevron-down": "\f102",
+    "chevron-right": "\f103",
+    "chevron-up": "\f104",
+    "close": "\f105",
+    "community": "\f106",
+    "contact-us": "\f107",
+    "email": "\f108",
+    "events": "\f109",
+    "exhibits": "\f10a",
+    "follow-us": "\f10b",
+    "gallery": "\f10c",
+    "general-h2": "\f10d",
+    "get-in-touch": "\f10e",
+    "grad-cap": "\f10f",
+    "gt-logo": "\f110",
+    "learning": "\f111",
+    "living": "\f112",
+    "meet-the-team": "\f113",
+    "news-and-updates": "\f114",
+    "news": "\f115",
+    "phone": "\f116",
+    "quicklinks": "\f117",
+    "related-resources": "\f118",
+    "search": "\f119",
+    "special-event": "\f11a",
+    "testimonials": "\f11b",
+    "videos": "\f11c",
 );
