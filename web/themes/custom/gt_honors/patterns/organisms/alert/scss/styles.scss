@@ -1,0 +1,23 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+
+.alert-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: px-to-rem(40px);
+  border: 2px solid $color-tech-gold;
+  border-radius: px-to-rem(10px);
+
+  &__body {
+    margin-top: 1rem;
+  }
+
+  &__link {
+    margin-top: 2rem;
+    @include media-breakpoint-down(sm) {
+      align-self: center;
+    }
+  }
+}
