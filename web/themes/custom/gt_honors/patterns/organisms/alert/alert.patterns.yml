@@ -1,0 +1,20 @@
+alert:
+  label: Alert box
+  description: Alert box with a title, body text, and a link.
+  fields:
+    title:
+      type: text
+      label: Alert box title
+    body:
+      type: mixed
+      label: Alert box body
+    link:
+      type: mixed
+      label: Alert box link
+
+  libraries:
+    -
+      alert:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }
