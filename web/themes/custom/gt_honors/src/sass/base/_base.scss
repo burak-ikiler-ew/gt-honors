@@ -2,4 +2,9 @@ html,
 body {
   min-height: 100%;
   font-family: 'Roboto', sans-serif;
+  background-color: $color-neutral500;
+
+  main {
+    margin-top: 84px;
+  }
 }

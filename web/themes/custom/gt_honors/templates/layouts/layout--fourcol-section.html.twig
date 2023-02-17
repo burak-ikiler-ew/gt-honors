@@ -13,11 +13,11 @@
   set classes = [
     'layout',
     'layout--fourcol-section',
-    'container'
+    'row'
   ]
 %}
 {% if content %}
-  <div class="layout__wrapper fourcol-section__wrapper">
+  <div class="layout__wrapper fourcol-section__wrapper container-lg">
     <div{{ attributes.addClass(classes) }}>
 
       {% if content.first %}

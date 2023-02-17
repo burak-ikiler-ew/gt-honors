@@ -5,7 +5,7 @@
 }
 
 @mixin gtl-button {
-  //@include font-stack-slab;
+  font-family: $font-secondary;
   font-size: $font-18;
   font-weight: 400;
   position: relative;
@@ -44,7 +44,7 @@
 }
 
 @mixin gtl-button--primary {
-  //@include font-stack-slab;
+  font-family: $font-secondary;
   font-size: $font-18;
   font-weight: 400;
   color: $color-neutral000;
@@ -95,7 +95,7 @@
 }
 
 @mixin gtl-button--secondary {
-  //@include font-stack-slab;
+  font-family: $font-secondary;
   font-size: $font-18;
   font-weight: 400;
   color: $color-neutral000;
@@ -135,7 +135,7 @@
 }
 
 @mixin gtl-button--tertiary {
-  //@include font-stack-slab;
+  font-family: $font-secondary;
   font-size: $font-18;
   font-weight: 400;
   color: $color-neutral000;
@@ -244,7 +244,7 @@
 }
 
 @mixin gtl-button--back {
-  //@include font-stack-slab;
+  font-family: $font-secondary;
   font-size: $font-18;
   font-weight: 400;
   color: $color-neutral000;
@@ -307,7 +307,7 @@
 }
 
 @mixin gtl-pager--next {
-  //@include font-stack-slab;
+  font-family: $font-secondary;
   font-size: $font-16;
   font-weight: 400;
   color: $color-neutral000;
@@ -366,7 +366,7 @@
 }
 
 @mixin gtl-pager--previous {
-  //@include font-stack-slab;
+  font-family: $font-secondary;
   font-size: $font-16;
   font-weight: 400;
   color: $color-neutral000;

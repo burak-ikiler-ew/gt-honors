@@ -5,10 +5,8 @@ dependencies:
   config:
     - block_content.type.video_embed
     - field.field.block_content.video_embed.body
-    - field.field.block_content.video_embed.field_video_url
   module:
     - text
-    - video_embed_field
 id: block_content.video_embed.default
 targetEntityType: block_content
 bundle: video_embed
@@ -24,11 +22,5 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  field_video_url:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
-    type: video_embed_field_textfield
-    region: content
 hidden:
   info: true

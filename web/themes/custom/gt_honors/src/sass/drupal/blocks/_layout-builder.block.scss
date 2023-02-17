@@ -1,9 +1,5 @@
 .block-layout-builder {
-  @extend %margin-default;
-
-  &:first-child {
-    margin-top: 0;
-  }
+  height: 100%;
 
   &.block-inline-blockimage-gallery {
     h2 {

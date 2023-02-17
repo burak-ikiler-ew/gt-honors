@@ -6,11 +6,11 @@ dependencies:
     - block_content.type.modal_image
     - field.field.block_content.modal_image.field_image
     - field.field.block_content.modal_image.field_quote
-    - field.field.block_content.modal_image.field_video_url
+    - field.field.block_content.modal_image.field_video
+    - field.field.block_content.modal_image.field_video_provider
     - image.style.thumbnail
   module:
     - image
-    - video_embed_field
 _core:
   default_config_hash: iQgIpAoq8kT4QVYc4fwAv3bDEYvuJZcOCfnl64NWR88
 id: block_content.modal_image.default
@@ -19,26 +19,22 @@ bundle: modal_image
 mode: default
 content:
   field_image:
+    type: image_image
     weight: 0
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
   field_quote:
+    type: string_textarea
     weight: 2
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
-  field_video_url:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: video_embed_field_textfield
-    region: content
 hidden:
+  field_video: true
+  field_video_provider: true
   info: true

@@ -1,16 +1,17 @@
-uuid: 79f3e16e-90c9-4635-9fc9-2205a0366a6e
+uuid: e8192912-c39f-4734-adc8-b3d5c68de405
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - video_embed_field
-id: block_content.field_video_url
-field_name: field_video_url
+    - media
+id: block_content.field_image_card__image
+field_name: field_image_card__image
 entity_type: block_content
-type: video_embed_field
-settings: {  }
-module: video_embed_field
+type: entity_reference
+settings:
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

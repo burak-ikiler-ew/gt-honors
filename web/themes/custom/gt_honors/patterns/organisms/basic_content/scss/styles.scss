@@ -26,10 +26,10 @@
 .layout--twocol-section {
   .basic-content {
     @include media-breakpoint-up(sm) {
-      max-width: 80%;
+      max-width: 90%;
 
       &__title {
-        max-width: 60%;
+        max-width: 70%;
       }
     }
   }

@@ -1,3 +1,77 @@
-.layout--default {
-  background: white;
+.layout,
+.layout__wrapper {
+  @extend %margin-default;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.layout {
+  &__region {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  &--threecol-section--33-34-33 {
+    & > .layout__region {
+      @include media-breakpoint-up(lg) {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+      }
+    }
+  }
+
+  &--threecol-section--25-50-25 {
+    & > .layout__region--first,
+    & > .layout__region--third {
+      @include media-breakpoint-up(lg) {
+        flex: 0 0 auto;
+        width: 25%;
+      }
+    }
+
+    & > .layout__region--second {
+      @include media-breakpoint-up(lg) {
+        flex: 0 0 auto;
+        width: 50%;
+      }
+    }
+  }
+
+  &--threecol-section--25-25-50 {
+    & > .layout__region--first,
+    & > .layout__region--second {
+      @include media-breakpoint-up(lg) {
+        flex: 0 0 auto;
+        width: 25%;
+      }
+    }
+
+    & > .layout__region--third {
+      @include media-breakpoint-up(lg) {
+        flex: 0 0 auto;
+        width: 50%;
+      }
+    }
+  }
+
+  &--threecol-section--50-25-25 {
+    & > .layout__region--first {
+      @include media-breakpoint-up(lg) {
+        flex: 0 0 auto;
+        width: 50%;
+      }
+    }
+
+    & > .layout__region--second,
+    & > .layout__region--third {
+      @include media-breakpoint-up(lg) {
+        flex: 0 0 auto;
+        width: 25%;
+      }
+    }
+
+
+  }
 }
