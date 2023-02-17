@@ -22,7 +22,6 @@ dependencies:
     - filter
     - layout_builder
     - node
-    - quickedit
     - system
     - toolbar
 _core:
@@ -36,7 +35,6 @@ permissions:
   - 'access comments'
   - 'access content overview'
   - 'access contextual links'
-  - 'access in-place editing'
   - 'access toolbar'
   - 'administer blocks'
   - 'administer comments'

@@ -1,12 +1,13 @@
-uuid: b7b470ae-a143-493a-9447-e96aa59f07ee
+uuid: 298cc660-7a01-4643-a21c-83143aea3b4e
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.accordion
     - field.storage.block_content.field_accordion_field
+    - paragraphs.paragraphs_type.accordion_item
   module:
-    - faqfield
+    - entity_reference_revisions
 id: block_content.accordion.field_accordion_field
 field_name: field_accordion_field
 entity_type: block_content
@@ -18,5 +19,25 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  default_format: plain_text
-field_type: faqfield
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion_item: accordion_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 6
+        enabled: true
+      demographic_item:
+        weight: 7
+        enabled: false
+      gallery_item:
+        weight: 8
+        enabled: false
+      image_gallery:
+        weight: 9
+        enabled: false
+      links:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions
