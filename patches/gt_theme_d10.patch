@@ -1,0 +1,37 @@
+diff --git a/gt.info.yml b/gt.info.yml
+index 289120f5..02a27b7d 100644
+--- a/gt.info.yml
++++ b/gt.info.yml
+@@ -2,7 +2,7 @@
+ name: 'GT'
+ type: theme
+ description: 'GT Bootstrap 4 theme for Drupal 9.'
+-core_version_requirement: ^8.8 || ^9
++core_version_requirement: ^8.8 || ^9 || ^10
+ package: GT
+ project: 'gt_theme'
+ project status url: https://repo.drupal.gatech.edu/release_history/gt_theme/3.x
+diff --git a/gt.theme b/gt.theme
+index 5d9bc69a..8b1a2441 100644
+--- a/gt.theme
++++ b/gt.theme
+@@ -16,7 +16,7 @@ use Drupal\taxonomy\Entity\Term;
+ function gt_preprocess_page(&$variables)
+ {
+     // GT images needs to be placed within specified folder on the root level
+-    $variables['gt_path'] = '/' . drupal_get_path('theme', 'gt') . '/images' . '/';
++    $variables['gt_path'] = '/' . \Drupal::service('extension.list.theme')->getPath('gt') . '/images' . '/';
+     $variables['cas_login'] = theme_get_setting('cas_login');
+     $variables['super_footer'] = theme_get_setting('super_footer');
+     $variables['footer_01_size'] = (!theme_get_setting('footer_01_size') || theme_get_setting('footer_01_size') == 0) ? 3 : theme_get_setting('footer_01_size');
+diff --git a/legacy/curie/curie.info.yml b/legacy/curie/curie.info.yml
+index a457ffa0..fb50d009 100644
+--- a/legacy/curie/curie.info.yml
++++ b/legacy/curie/curie.info.yml
+@@ -2,5 +2,5 @@
+ name: 'GT Curie'
+ type: theme
+ description: 'DO NOT INSTALL. This is a stub to ease transition away from individually named themes.'
+-core_version_requirement: ^8.8 || ^9
++core_version_requirement: ^8.8 || ^9 || ^10
+ base theme: gt

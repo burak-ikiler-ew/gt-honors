@@ -1,9 +1,9 @@
 name: 'GT Honors Program Theme'
 type: theme
 description: 'GT Honors Program Theme based on GT Bootstrap 4 Theme.'
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^8.8 || ^9 || ^10
 package: GT
-base theme: stable
+base theme: stable9
 
 regions:
   alert: 'Alert'
