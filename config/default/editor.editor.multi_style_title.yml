@@ -24,14 +24,6 @@ settings:
         - heading4
         - heading5
         - heading6
-    ckeditor5_style:
-      styles:
-        -
-          label: 'Title (Sans-serif)'
-          element: '<span class="h1">'
-        -
-          label: 'Title (Slab)'
-          element: '<span class="h1-slab">'
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<span>'
@@ -41,6 +33,14 @@ settings:
         - '<h4 id>'
         - '<h5 id>'
         - '<h6 id>'
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Title (Sans-serif)'
+          element: '<span class="h1">'
+        -
+          label: 'Title (Slab)'
+          element: '<span class="h1-slab">'
 image_upload:
   status: false
   scheme: public

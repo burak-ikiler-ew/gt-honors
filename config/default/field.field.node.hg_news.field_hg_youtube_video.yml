@@ -7,8 +7,6 @@ dependencies:
     - node.type.hg_news
   module:
     - video_embed_field
-_core:
-  default_config_hash: BTC0gjEQGRkyVgubIZKSzU540YAogtaR1MbezBqg3Xk
 id: node.hg_news.field_hg_youtube_video
 field_name: field_hg_youtube_video
 entity_type: node
