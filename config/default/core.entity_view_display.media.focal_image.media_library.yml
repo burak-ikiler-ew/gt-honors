@@ -5,9 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - field.field.media.focal_image.field_media_image
-    - image.style.medium
+    - image.style.focal_large_800x800_
     - media.type.focal_image
   module:
+    - fences
+    - field_formatter_class
     - image
 id: media.focal_image.media_library
 targetEntityType: media
@@ -19,10 +21,21 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: medium
+      image_style: focal_large_800x800_
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
     weight: 0
     region: content
 hidden:

@@ -21,7 +21,18 @@ content:
     type: text_default
     label: hidden
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
     weight: 1
     region: content
   field_media_image:
@@ -32,13 +43,13 @@ content:
       link: false
     third_party_settings:
       fences:
-        fences_field_tag: div
+        fences_field_tag: none
         fences_field_classes: ''
         fences_field_items_wrapper_tag: none
         fences_field_items_wrapper_classes: ''
-        fences_field_item_tag: div
+        fences_field_item_tag: none
         fences_field_item_classes: ''
-        fences_label_tag: div
+        fences_label_tag: none
         fences_label_classes: ''
       field_formatter_class:
         class: ''

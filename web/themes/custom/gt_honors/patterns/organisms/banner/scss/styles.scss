@@ -31,14 +31,16 @@
   }
 
   &__image {
-    padding: 0 !important;;
+    padding: 0 !important;
+    min-height: 550px;
 
-    & * {
+    & *:not(.contextual) {
       width: 100%;
       height: 100%;
     }
 
     img {
+      position: absolute;
       object-fit: cover;
     }
   }

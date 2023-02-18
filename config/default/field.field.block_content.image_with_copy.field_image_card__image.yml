@@ -1,0 +1,31 @@
+uuid: 3dd32840-25ca-4648-b693-02669ecfafb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_with_copy
+    - field.storage.block_content.field_image_card__image
+    - media.type.focal_image
+    - media.type.image
+id: block_content.image_with_copy.field_image_card__image
+field_name: field_image_card__image
+entity_type: block_content
+bundle: image_with_copy
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      focal_image: focal_image
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: focal_image
+field_type: entity_reference

@@ -1,6 +1,6 @@
 uuid: 2cda19ee-c029-4f59-9ab4-2a7307fcf36f
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - gt_honors

@@ -6,12 +6,12 @@ dependencies:
     - block_content.type.modal_image
     - field.field.block_content.modal_image.field_image
     - field.field.block_content.modal_image.field_quote
-    - field.field.block_content.modal_image.field_video_url
+    - field.field.block_content.modal_image.field_video
+    - field.field.block_content.modal_image.field_video_provider
     - image.style.large
   module:
     - field_formatter_class
     - image
-    - video_embed_field
 id: block_content.modal_image.default
 targetEntityType: block_content
 bundle: modal_image
@@ -19,33 +19,24 @@ mode: default
 content:
   field_image:
     type: image
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: large
       image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
     third_party_settings:
       field_formatter_class:
         class: ''
+    weight: 0
+    region: content
   field_quote:
     type: basic_string
-    weight: 2
-    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-  field_video_url:
-    weight: 1
-    label: hidden
-    settings:
-      responsive: true
-      width: 854
-      height: 480
-      autoplay: false
-    third_party_settings:
-      field_formatter_class:
-        class: ''
-    type: video_embed_field_video
+    weight: 2
     region: content
-hidden: {  }
+hidden:
+  field_video: true
+  field_video_provider: true

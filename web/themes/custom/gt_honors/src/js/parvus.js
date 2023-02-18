@@ -13,7 +13,7 @@
       $('body', context)
         .once('parvusJS')
         // eslint-disable-next-line func-names
-        .each(function () {
+        .each(() => {
           // eslint-disable-next-line no-undef
           const prvs = new Parvus({
             selector: '.lightbox',

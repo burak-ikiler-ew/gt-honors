@@ -32,6 +32,8 @@ module:
   file: 0
   filter: 0
   focal_point: 0
+  gin_lb: 0
+  gin_toolbar: 0
   gt_tools: 0
   help: 0
   hg_reader: 0
@@ -56,6 +58,7 @@ module:
   path_alias: 0
   quickedit: 0
   rdf: 0
+  responsive_image: 0
   search: 0
   shortcut: 0
   social_media_links: 0
@@ -85,4 +88,6 @@ theme:
   seven: 0
   gt: 0
   gt_honors: 0
+  claro: 0
+  gin: 0
 profile: gt_profile

@@ -1,0 +1,23 @@
+{% set prefix = 'image-card' %}
+{% set classes = [
+  prefix,
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="{{ prefix }}__image">{{ image }}</div>
+  <div class="{{ prefix }}__content">
+    {% if title %}
+      <h3>{{ title }}</h3>
+    {% endif %}
+
+    {% if body %}
+      <div class="{{ prefix }}__body">{{ body }}</div>
+    {% endif %}
+
+    {% if link %}
+      <div class="{{ prefix }}__link">
+        {{ link }}
+      </div>
+    {% endif %}
+  </div>
+</div>

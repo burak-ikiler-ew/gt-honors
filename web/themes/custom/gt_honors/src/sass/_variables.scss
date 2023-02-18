@@ -3,6 +3,7 @@
 * These variables will override bootstrap defaults.
 * To override more variables take a look at @node_modules/bootstrap/scss/_variables.scss
 */
+$grid-gutter-width: 2.5rem;
 
 /* Colors common colors */
 // Style guide: Colors.colors
@@ -99,7 +100,7 @@ $color-neutral500: #F4F4F4;
 
 /* Fonts */
 $font-primary: sans-serif;
-$font-secondary: serif;
+$font-secondary: 'Roboto Slab', serif;
 $heading_font: $font-primary;
 $body_font: $font-secondary;
 $font-icons: "theme-icons";
