@@ -1,0 +1,45 @@
+uuid: caa7ece9-cc05-49a7-bc88-ef73df50295e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.semesters.field_semester_start_date
+    - taxonomy.vocabulary.semesters
+  module:
+    - datetime
+    - fences
+    - field_formatter_class
+    - text
+id: taxonomy_term.semesters.default
+targetEntityType: taxonomy_term
+bundle: semesters
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_semester_start_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+hidden: {  }

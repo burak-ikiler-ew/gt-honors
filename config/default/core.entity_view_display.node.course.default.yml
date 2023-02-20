@@ -1,0 +1,86 @@
+uuid: 926427b4-84dd-4e3c-8471-bcd28569a713
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.course.field_course_crn
+    - field.field.node.course.field_course_days
+    - field.field.node.course.field_course_hours
+    - field.field.node.course.field_course_instructor
+    - field.field.node.course.field_course_location
+    - field.field.node.course.field_course_semester
+    - field.field.node.course.field_course_time
+    - field.field.node.course.field_course_title
+    - node.type.course
+  module:
+    - user
+id: node.course.default
+targetEntityType: node
+bundle: course
+mode: default
+content:
+  field_course_crn:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_course_days:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_course_hours:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_course_instructor:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_course_location:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_course_semester:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_course_time:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_course_title:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true

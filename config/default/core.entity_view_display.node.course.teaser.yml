@@ -1,0 +1,36 @@
+uuid: 65bf4cad-3572-4b7b-ae1a-ec0a777f3e76
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.course.field_course_crn
+    - field.field.node.course.field_course_days
+    - field.field.node.course.field_course_hours
+    - field.field.node.course.field_course_instructor
+    - field.field.node.course.field_course_location
+    - field.field.node.course.field_course_semester
+    - field.field.node.course.field_course_time
+    - field.field.node.course.field_course_title
+    - node.type.course
+  module:
+    - user
+id: node.course.teaser
+targetEntityType: node
+bundle: course
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_course_crn: true
+  field_course_days: true
+  field_course_hours: true
+  field_course_instructor: true
+  field_course_location: true
+  field_course_semester: true
+  field_course_time: true
+  field_course_title: true
