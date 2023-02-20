@@ -1,0 +1,74 @@
+diff --git a/gt_tools.info.yml b/gt_tools.info.yml
+index d4415f4..62c5aa7 100644
+--- a/gt_tools.info.yml
++++ b/gt_tools.info.yml
+@@ -2,7 +2,7 @@ name: GT Tools
+ description: Miscellaneous functionality for GT sites
+ package: GT
+ type: module
+-core_version_requirement: ^9
++core_version_requirement: ^9 || ^10
+ version: "3.0.10"
+ project: "GT Tools"
+ project status url: http://repo.drupal.gatech.edu/release_history/gt_tools/3.x
+diff --git a/gt_tools.install b/gt_tools.install
+index 70ab249..2a1b080 100644
+--- a/gt_tools.install
++++ b/gt_tools.install
+@@ -159,7 +159,7 @@ function gt_tools_reconfigure_user_blocks($current_theme) {
+ function gt_tools_update_terms() {
+   $query = \Drupal::entityQuery('taxonomy_term');
+   $query->condition('vid', 'style');
+-  $result = $query->execute();
++  $result = $query->accessCheck(FALSE)->execute();
+ 
+   foreach($result as $term_id) {
+     $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term_id);
+diff --git a/gt_tools.module b/gt_tools.module
+index 321460c..d1b443e 100644
+--- a/gt_tools.module
++++ b/gt_tools.module
+@@ -23,7 +23,7 @@ function gt_tools_theme() {
+ }
+ 
+ function gt_tools_preprocess_gt_footer_logo(&$variables, $hook) {
+-    $variables['logo_path'] = file_create_url(drupal_get_path('module', 'gt_tools') . '/images/gt-logo.svg');
++    $variables['logo_path'] = \Drupal::service('file_url_generator')->generateAbsoluteString(\Drupal::service('extension.list.module')->getPath('gt_tools') . '/images/gt-logo.svg');
+     $variables['cas_login'] = theme_get_setting('cas_login');
+ }
+ 
+diff --git a/modules/gt_footerdaemon/gt_footerdaemon.info.yml b/modules/gt_footerdaemon/gt_footerdaemon.info.yml
+index 262ce5c..26ad6cb 100644
+--- a/modules/gt_footerdaemon/gt_footerdaemon.info.yml
++++ b/modules/gt_footerdaemon/gt_footerdaemon.info.yml
+@@ -2,4 +2,4 @@ name: GT Footer Daemon
+ type: module
+ description: This module has been deprecated, and what you're looking at is just a stub to prevent errors on legacy installs. Get over it.
+ package: GT
+-core_version_requirement: ^8.8 || ^9
++core_version_requirement: ^8.8 || ^9 || ^10
+diff --git a/modules/gt_tools_search/gt_tools_search.info.yml b/modules/gt_tools_search/gt_tools_search.info.yml
+index d9c39b5..996fde5 100644
+--- a/modules/gt_tools_search/gt_tools_search.info.yml
++++ b/modules/gt_tools_search/gt_tools_search.info.yml
+@@ -2,7 +2,7 @@ name: GT Tools Search
+ description: Search functionality for GT sites. Search is optional. Uninstall if you are going to use a different search module
+ package: GT
+ type: module
+-core_version_requirement: ^9
++core_version_requirement: ^9 || ^10
+ version: "3.0.5"
+ project: "GT Tools"
+ project status url: http://repo.drupal.gatech.edu/release_history/gt_tools/3.x
+diff --git a/src/Form/GTToolsSettingsForm.php b/src/Form/GTToolsSettingsForm.php
+index e022cad..7d90b7c 100644
+--- a/src/Form/GTToolsSettingsForm.php
++++ b/src/Form/GTToolsSettingsForm.php
+@@ -35,6 +35,7 @@ class GTToolsSettingsForm extends ConfigFormBase {
+ 
+     // get all y'all's text formats
+     $formats = \Drupal::entityQuery('filter_format')
++        ->accessCheck(FALSE)
+         ->execute();
+     // use limited_html if it exists
+     $default_format = array_search('limited_html', $formats) ? 'limited_html' : 'plain_text';

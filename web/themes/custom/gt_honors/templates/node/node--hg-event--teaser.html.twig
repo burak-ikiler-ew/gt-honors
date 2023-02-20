@@ -112,8 +112,10 @@
         {% endif %}
 
         {# Render remaining Images #}
-        {% for key, item in content.field_hg_images if key > 0 %}
-            <div class="">{{ item }}</div>
+        {% for key, item in content.field_hg_images %}
+            {% if key > 0 %}
+                <div class="">{{ item }}</div>
+            {% endif %}
         {% endfor %}
 
     </div>

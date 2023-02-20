@@ -1,0 +1,10 @@
+diff --git a/gt_profile.info.yml b/gt_profile.info.yml
+index 79c03f1..0c124f1 100644
+--- a/gt_profile.info.yml
++++ b/gt_profile.info.yml
+@@ -45,4 +45,4 @@ themes:
+   - seven
+ version: '3.0.6'
+ project status url: http://repo.drupal.gatech.edu/release_history/gt_profile/3.x
+-core_version_requirement: ^8.8 || ^9
++core_version_requirement: ^8.8 || ^9 || ^10

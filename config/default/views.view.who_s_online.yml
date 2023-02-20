@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: xAgL0CRy7-KjxZzUIIyQU7iN6whYS_MnOWdmslN5XPI
 id: who_s_online
-label: 'Who''s online block'
+label: "Who's online block"
 module: user
 description: 'Shows the user names of the most recently active users, and the total number of active users.'
 tag: default
@@ -173,7 +173,7 @@ display:
           plugin_id: date
           entity_type: user
           entity_field: access
-      title: 'Who''s online'
+      title: "Who's online"
       header:
         result:
           id: result
@@ -211,10 +211,10 @@ display:
   who_s_online_block:
     display_plugin: block
     id: who_s_online_block
-    display_title: 'Who''s online'
+    display_title: "Who's online"
     position: 1
     display_options:
-      block_description: 'Who''s online'
+      block_description: "Who's online"
       display_description: 'A list of users that are currently logged in.'
       display_extenders: {  }
     cache_metadata:

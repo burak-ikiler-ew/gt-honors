@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.hg_event.field_hg_event_time
     - field.field.node.hg_event.field_hg_extras
     - field.field.node.hg_event.field_hg_fee
+    - field.field.node.hg_event.field_hg_groups
     - field.field.node.hg_event.field_hg_id
     - field.field.node.hg_event.field_hg_images
     - field.field.node.hg_event.field_hg_importer
@@ -28,7 +29,6 @@ dependencies:
     - node.type.hg_event
   module:
     - datetime_range
-    - text
     - user
 _core:
   default_config_hash: s8VmzALnH1tNFNOdZzFGKGEuv3G_0lAX9EdkE-TIbZs
@@ -37,16 +37,9 @@ targetEntityType: node
 bundle: hg_event
 mode: teaser
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_hg_event_time:
     type: daterange_default
-    label: hidden
+    label: above
     settings:
       timezone_override: ''
       format_type: medium
@@ -54,29 +47,24 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_hg_location:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  body: true
   field_hg_contact: true
   field_hg_event_categories: true
   field_hg_extras: true
   field_hg_fee: true
+  field_hg_groups: true
   field_hg_id: true
   field_hg_images: true
   field_hg_importer: true
   field_hg_invited_audience: true
   field_hg_keywords: true
+  field_hg_location: true
   field_hg_location_email: true
   field_hg_location_phone: true
   field_hg_location_url: true

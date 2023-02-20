@@ -1,0 +1,101 @@
+diff --git a/composer.json b/composer.json
+index c700e90..f189660 100644
+--- a/composer.json
++++ b/composer.json
+@@ -5,7 +5,7 @@
+   "keywords": ["Drupal"],
+   "license": "GPL-2.0+",
+   "require": {
+-    "drupal/jquery_ui_accordion": "^1.1"
++    "drupal/jquery_ui_accordion": "^2.0"
+   },
+   "homepage": "http://drupal.org/project/faqfield",
+   "minimum-stability": "dev",
+diff --git a/faqfield.info.yml b/faqfield.info.yml
+index 34d8d77..886ebf0 100644
+--- a/faqfield.info.yml
++++ b/faqfield.info.yml
+@@ -2,7 +2,7 @@ name: 'FAQ Field'
+ type: module
+ description: 'Provides a field for frequently asked questions.'
+ package: Field types
+-core_version_requirement: ^8 || ^9
++core_version_requirement: ^8 || ^9 || ^10
+ dependencies:
+   - drupal:field
+   - jquery_ui_accordion:jquery_ui_accordion
+diff --git a/templates/faqfield-anchor-list-formatter.html.twig b/templates/faqfield-anchor-list-formatter.html.twig
+index 5768cb8..e5a7d82 100644
+--- a/templates/faqfield-anchor-list-formatter.html.twig
++++ b/templates/faqfield-anchor-list-formatter.html.twig
+@@ -15,7 +15,6 @@
+  * @ingroup themeable
+  */
+ #}
+-{% spaceless %}
+   <div class="faqfield-anchor-list">
+     <{{ list_type }}>
+     {% for item in items %}
+@@ -29,4 +28,3 @@
+       <div class="faqfield-answer">{{ item.answer }}</div>
+     {% endfor %}
+   </div>
+-{% endspaceless %}
+diff --git a/templates/faqfield-definition-list-formatter.html.twig b/templates/faqfield-definition-list-formatter.html.twig
+index a51706d..8f7b787 100644
+--- a/templates/faqfield-definition-list-formatter.html.twig
++++ b/templates/faqfield-definition-list-formatter.html.twig
+@@ -14,11 +14,9 @@
+  * @ingroup themeable
+  */
+ #}
+-{% spaceless %}
+   <dl class="faqfield-definition-list">
+     {% for item in items %}
+       <dt class="faqfield-question">{{ item.question }}</dt>
+       <dd class="faqfield-answer">{{ item.answer }}</dd>
+     {% endfor %}
+   </dl>
+-{% endspaceless %}
+diff --git a/templates/faqfield-details-formatter.html.twig b/templates/faqfield-details-formatter.html.twig
+index 7c6f04e..546562b 100644
+--- a/templates/faqfield-details-formatter.html.twig
++++ b/templates/faqfield-details-formatter.html.twig
+@@ -14,9 +14,7 @@
+  * @ingroup themeable
+  */
+ #}
+-{% spaceless %}
+   <details class="faqfield-details">
+     <summary class="faqfield-question">{{ question }}</summary>
+     <div class="faqfield-answer">{{ answer }}</div>
+   </details>
+-{% endspaceless %}
+diff --git a/templates/faqfield-jquery-accordion-formatter.html.twig b/templates/faqfield-jquery-accordion-formatter.html.twig
+index 838957f..f269e56 100644
+--- a/templates/faqfield-jquery-accordion-formatter.html.twig
++++ b/templates/faqfield-jquery-accordion-formatter.html.twig
+@@ -15,11 +15,9 @@
+  * @ingroup themeable
+  */
+ #}
+-{% spaceless %}
+   <div id="{{ id }}">
+     {% for item in items %}
+       <h3 class="faqfield-question">{{ item.question }}</h3>
+       <div class="faqfield-answer">{{ item.answer }}</div>
+     {% endfor %}
+   </div>
+-{% endspaceless %}
+diff --git a/templates/faqfield-simple-text-formatter.html.twig b/templates/faqfield-simple-text-formatter.html.twig
+index 130ed70..3592d09 100644
+--- a/templates/faqfield-simple-text-formatter.html.twig
++++ b/templates/faqfield-simple-text-formatter.html.twig
+@@ -14,7 +14,5 @@
+  * @ingroup themeable
+  */
+ #}
+-{% spaceless %}
+   <h3 class="faqfield-question">{{ question }}</h3>
+   <div class="faqfield-answer">{{ answer }}</div>
+-{% endspaceless %}

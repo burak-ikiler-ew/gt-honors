@@ -7,7 +7,7 @@ dependencies:
     - field.field.block_content.accordion.body
     - field.field.block_content.accordion.field_accordion_field
   module:
-    - faqfield
+    - entity_reference_revisions
     - text
 id: block_content.accordion.default
 targetEntityType: block_content
@@ -15,24 +15,19 @@ bundle: accordion
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
     region: content
   field_accordion_field:
-    weight: 1
-    label: hidden
+    type: entity_reference_revisions_entity_view
+    label: above
     settings:
-      active: 0
-      heightStyle: auto
-      collapsible: false
-      event: click
-      animate:
-        easing: linear
-        duration: 200
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: faqfield_accordion
+    weight: 1
     region: content
 hidden: {  }
