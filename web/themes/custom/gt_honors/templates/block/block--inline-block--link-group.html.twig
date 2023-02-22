@@ -31,6 +31,7 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
+    'container-lg',
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
@@ -38,13 +39,6 @@
   {{ title_suffix }}
 
   {% block content %}
-    {% if label %}
-      <div class="container">
-        <h2>{{ label }}</h2>
-      </div>
-    {% endif %}
-    <div class="some-class-for-column-wrapper">
-    {{ content }}
-    </div>
+    {{ pattern('quicklinks', { content }) }}
   {% endblock %}
 </div>

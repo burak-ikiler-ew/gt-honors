@@ -1,0 +1,13 @@
+quicklinks:
+  label: Quicklinks
+  description: 3-column layout for groups of links.
+  fields:
+    content:
+      type: mixed
+      label: Groups of links 
+  libraries:
+    -
+      quicklinks:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }

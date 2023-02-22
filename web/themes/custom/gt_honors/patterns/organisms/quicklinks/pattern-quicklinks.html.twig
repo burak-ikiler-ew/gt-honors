@@ -1,0 +1,12 @@
+{% set prefix = 'quicklinks' %}
+
+{%
+  set classes = [
+    prefix
+  ]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  <div class="{{ prefix }}__hatch"></div>
+  {{ content }}
+</div>

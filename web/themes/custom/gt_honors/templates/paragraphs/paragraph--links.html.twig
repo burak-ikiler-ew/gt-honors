@@ -38,12 +38,13 @@
  * @ingroup themeable
  */
 #}
-<div class="some-column-class">
-  <h3>{{ content.field_title }}</h3>
-  <div>{{ content.field_sub_title }}</div>
+{% set prefix = 'quicklinks' %}
+<div class="{{ prefix }}__group">
+  <h3 class="{{ prefix }}__group-title h4">{{ content.field_title }}</h3>
+  <div class="{{ prefix }}__subtitle">{{ content.field_sub_title }}</div>
   {% for key, item in content.field_links %}
     {% if key|first != '#' %}
-      <div>{{ item }}</div>
+      <div class="{{ prefix }}__link">{{ item }}</div>
     {% endif %}
   {% endfor %}
 </div>
