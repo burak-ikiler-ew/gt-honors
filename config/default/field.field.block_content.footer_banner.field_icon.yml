@@ -1,0 +1,29 @@
+uuid: 60b274dd-edbe-4c49-96b7-ef55f9668d86
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_banner
+    - field.storage.block_content.field_icon
+    - taxonomy.vocabulary.icons
+id: block_content.footer_banner.field_icon
+field_name: field_icon
+entity_type: block_content
+bundle: footer_banner
+label: icon
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      icons: icons
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

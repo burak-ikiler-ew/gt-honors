@@ -1,0 +1,36 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.basic-content {
+  &__title {
+    margin-bottom: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+  }
+
+  &__icon {
+    &::before {
+      color: $color-tech-gold;
+      @extend %icon;
+    }
+  }
+
+  &__body {
+    font-size: $font-22;
+    line-height: $font-36;
+  }
+}
+
+// Apply only inside two-column sections.
+.layout--twocol-section {
+  .basic-content {
+    @include media-breakpoint-up(sm) {
+      max-width: 90%;
+
+      &__title {
+        max-width: 70%;
+      }
+    }
+  }
+}
