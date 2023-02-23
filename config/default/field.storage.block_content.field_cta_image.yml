@@ -1,18 +1,16 @@
-uuid: e51dd61d-5a05-44af-b9f0-3663252c3390
+uuid: 69834530-90db-40a6-a0be-c7d0caf32d49
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - taxonomy
-_core:
-  default_config_hash: F23x7Gtc6L3QUdqRxAGBxDNDYp_jseNl9x4pjOkQx9k
-id: block_content.field_style
-field_name: field_style
+    - media
+id: block_content.field_cta_image
+field_name: field_cta_image
 entity_type: block_content
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: media
 module: core
 locked: false
 cardinality: 1

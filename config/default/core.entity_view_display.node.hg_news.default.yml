@@ -26,6 +26,8 @@ dependencies:
     - node.type.hg_news
   module:
     - datetime
+    - fences
+    - field_formatter_class
     - file
     - image
     - link
@@ -74,8 +76,19 @@ content:
     label: above
     settings:
       timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
+      format_type: month_day_year
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
     weight: 5
     region: content
   field_hg_email:
