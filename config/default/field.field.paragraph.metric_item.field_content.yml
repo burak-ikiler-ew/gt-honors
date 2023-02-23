@@ -1,0 +1,26 @@
+uuid: 724ee9c5-a8c6-4574-b59c-76a4d30bd08a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.metric_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: paragraph.metric_item.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: metric_item
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

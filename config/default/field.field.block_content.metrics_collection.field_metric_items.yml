@@ -1,0 +1,46 @@
+uuid: dafb8b22-0131-46b6-8a22-ede5bec82088
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.metrics_collection
+    - field.storage.block_content.field_metric_items
+    - paragraphs.paragraphs_type.metric_item
+  module:
+    - entity_reference_revisions
+id: block_content.metrics_collection.field_metric_items
+field_name: field_metric_items
+entity_type: block_content
+bundle: metrics_collection
+label: 'Metric Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      metric_item: metric_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 7
+        enabled: false
+      demographic_item:
+        weight: 8
+        enabled: false
+      gallery_item:
+        weight: 9
+        enabled: false
+      image_gallery:
+        weight: 10
+        enabled: false
+      links:
+        weight: 11
+        enabled: false
+      metric_item:
+        weight: 12
+        enabled: true
+field_type: entity_reference_revisions

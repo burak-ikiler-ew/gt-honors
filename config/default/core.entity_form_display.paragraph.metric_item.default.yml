@@ -1,0 +1,34 @@
+uuid: 6233b3aa-ceea-483a-8257-2cfbaab68122
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.metric_item.field_content
+    - field.field.paragraph.metric_item.field_title
+    - paragraphs.paragraphs_type.metric_item
+  module:
+    - text
+id: paragraph.metric_item.default
+targetEntityType: paragraph
+bundle: metric_item
+mode: default
+content:
+  field_content:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

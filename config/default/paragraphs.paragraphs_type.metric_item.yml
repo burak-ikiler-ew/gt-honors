@@ -1,0 +1,10 @@
+uuid: ecbc96ff-8e6a-4e28-b5c0-6363141bcc0a
+langcode: en
+status: true
+dependencies: {  }
+id: metric_item
+label: 'Metric Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
