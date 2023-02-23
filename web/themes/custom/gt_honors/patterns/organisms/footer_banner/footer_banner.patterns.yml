@@ -1,0 +1,20 @@
+footer_banner:
+  label: Footer Banner
+  description: Footer Banner with a title, body text, and a link.
+  fields:
+    title:
+      type: text
+      label: Footer Banner title
+    icon_class:
+      type: text
+      label: Footer Banner icon
+    body:
+      type: mixed
+      label: Footer Banner body
+
+  libraries:
+    -
+      footer_banner:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }

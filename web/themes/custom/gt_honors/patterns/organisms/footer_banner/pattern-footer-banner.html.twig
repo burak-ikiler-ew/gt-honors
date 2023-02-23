@@ -1,0 +1,19 @@
+{% set prefix = 'footer-banner' %}
+
+{%
+  set classes = [
+    prefix
+  ]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  {% if title %}
+    <h2 class="{{ prefix }}__title">
+      <i class="{{ prefix }}__icon icon-{{ icon_class }}"></i>
+      {{ title }}
+    </h2>
+  {% endif %}
+  <div class="{{ prefix }}__body">
+    {{ body }}
+  </div>
+</div>
