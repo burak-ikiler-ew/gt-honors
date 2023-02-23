@@ -1,0 +1,31 @@
+uuid: dd5c9146-9d7d-4e35-a24a-ec50617ba955
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.metric_item.field_content
+    - field.field.paragraph.metric_item.field_title
+    - paragraphs.paragraphs_type.metric_item
+  module:
+    - text
+id: paragraph.metric_item.default
+targetEntityType: paragraph
+bundle: metric_item
+mode: default
+content:
+  field_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

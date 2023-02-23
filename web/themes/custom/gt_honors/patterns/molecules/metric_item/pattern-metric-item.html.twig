@@ -1,0 +1,9 @@
+{% set prefix = 'metric-item' %}
+{% set classes = [
+  prefix
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="{{ prefix }}__title">{{ title }}</div>
+  <div class="{{ prefix }}__description">{{ description }}</div>
+</div>

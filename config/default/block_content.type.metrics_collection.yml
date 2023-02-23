@@ -1,0 +1,8 @@
+uuid: 7e678556-536f-413f-ba58-94f64f617324
+langcode: en
+status: true
+dependencies: {  }
+id: metrics_collection
+label: 'Metrics Collection'
+revision: 0
+description: ''
