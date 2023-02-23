@@ -1,0 +1,105 @@
+{% set prefix = 'event-card' %}
+
+{%
+  set classes = [
+    prefix,
+    variant ? prefix ~ '--' ~ variant : '',
+    'container-xl',
+  ]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+
+  <a href="{{ url }}" aria-label="{{ title }}">
+
+    <div class="{{ prefix }}__inner">
+
+      {# Date #}
+      {% if event_start is not null %}
+        <div class="{{ prefix }}__date">
+
+          {# Day #}
+          {% if event_start|date('j') is not empty and event_start|date('j') is same as(event_end|date('j')) %}
+            <div class="{{ prefix }}__day">
+                {{ event_start|date('j') }}
+            </div>
+          {% else %}
+            {# Multi #}
+            <div class="{{ prefix }}__day">
+                {{ event_start|date('j')  ~ ' - ' ~ event_end|date('j') }}
+            </div>
+          {% endif %}
+
+          {# Month #}
+          {% if event_start|date('M') is not empty and event_start|date('M') is same as(event_end|date('M')) %}
+            <div class="{{ prefix }}__month">
+                {{ event_start|date('M') }}
+            </div>
+          {% else %}
+            {# Multi #}
+            <div class="{{ prefix }}__month">
+                {{ event_start|date('M')  ~ ' - ' ~ event_end|date('M') }}
+            </div>
+          {% endif %}
+
+          {# Year #}
+          {% if event_start|date('Y') is not empty and event_start|date('Y') is same as(event_end|date('Y')) %}
+            <div class="{{ prefix }}__year">
+                {{ event_start|date('Y') }}
+            </div>
+          {% else %}
+            {# Multi #}
+            <div class="{{ prefix }}__year">
+                {{ event_start|date('Y')  ~ ' - ' ~ event_end|date('Y') }}
+            </div>
+          {% endif %}
+
+        </div>
+      {% endif %}
+
+      {# Main Content #}
+      <div class="{{ prefix }}__main">
+
+        {# Title #}
+        <div class="event-card__title">
+          <h3 class="h4">{{ title }}</h3>
+        </div>
+
+        {# Summary  #}
+        <div class="{{ prefix }}__summary">
+          {% if summary is not empty and summary is same as(summary) %}
+            {{ summary_sentence }}
+          {% else %}
+            {# Multi #}
+            {{ summary_sentence }}<br>{{ summary }}
+          {% endif %}
+        </div>
+
+        {# Time #}
+        {% if event_start is not null %}
+          {% if event_start|date('g:iA', UTC) is not empty %}
+            <div class="{{ prefix }}__time">
+              {% if event_start|date('g:iA', 'UTC') is same as(event_end|date('g:iA', 'UTC')) %}
+                All day
+              {% else %}
+                {# Multi #}
+                {{ event_start|date('g:iA', false)  ~ ' - ' ~ event_end|date('g:iA', false) }}
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endif %}
+
+        {# Location  #}
+        {% if location|render is not empty %}
+          <div class="{{ prefix }}__location">
+            {{ location }}
+          </div>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </a>
+
+</div>

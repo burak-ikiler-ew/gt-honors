@@ -1,0 +1,107 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.event-card {
+  // TODO: Probably there's a better way.
+  margin-bottom: px-to-rem(24);
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: px-to-rem(40);
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__inner {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(24);
+    padding: px-to-rem(40);
+    border-radius: 10px;
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+      padding: px-to-rem(50);
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 20px rgba(0, 48, 87, 0.3);
+    }
+  }
+
+  &__date {
+    font-family: $font-secondary;
+    font-size: px-to-rem(20);
+    font-weight: 500;
+    line-height: px-to-rem(30);
+
+    @include media-breakpoint-up(sm) {
+      flex-basis: px-to-rem(240);
+      flex-shrink: 0;
+      padding: 0 px-to-rem(20);
+    }
+  }
+
+  &__day {
+    display: inline-block;
+    font-size: px-to-rem(80);
+    font-weight: 600;
+    line-height: px-to-rem(90);
+    background: url("/themes/custom/gt_honors/images/hexagon--grey.svg") no-repeat top right / px-to-rem(45);
+    padding-right: 1rem;
+  }
+
+  &__main {
+    @include media-breakpoint-up(sm) {
+      padding: 0 px-to-rem(20);
+    }
+  }
+
+  &__title,
+  &__summary {
+    margin-bottom: px-to-rem(24);
+  }
+
+  &__time {
+    &::before {
+      content: '\f017';
+    }
+  }
+
+  &__location {
+    &::before {
+      content: '\f3c5';
+      font-weight: 600;
+    }
+  }
+
+  &__time,
+  &__location {
+    position: relative;
+    line-height: px-to-rem(20);
+    padding-left: px-to-rem(30);
+
+    &::before {
+      position: absolute;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      width: px-to-rem(20);
+      font-family: 'Font Awesome 5\ Free';
+      font-size: px-to-rem(20);
+    }
+  }
+
+  &__time + &__location {
+    margin-top: px-to-rem(8);
+
+    @include media-breakpoint-up(sm) {
+      margin-top: 1rem;
+    }
+  }
+}

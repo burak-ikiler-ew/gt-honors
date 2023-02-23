@@ -29,6 +29,9 @@ dependencies:
     - node.type.hg_event
   module:
     - datetime_range
+    - fences
+    - field_formatter_class
+    - text
     - user
 _core:
   default_config_hash: s8VmzALnH1tNFNOdZzFGKGEuv3G_0lAX9EdkE-TIbZs
@@ -39,13 +42,80 @@ mode: teaser
 content:
   field_hg_event_time:
     type: daterange_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: medium
       separator: '-'
-    third_party_settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
     weight: 1
+    region: content
+  field_hg_location:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+  field_hg_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+  field_hg_summary_sentence:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 2
     region: content
   links:
     settings: {  }
@@ -64,7 +134,6 @@ hidden:
   field_hg_importer: true
   field_hg_invited_audience: true
   field_hg_keywords: true
-  field_hg_location: true
   field_hg_location_email: true
   field_hg_location_phone: true
   field_hg_location_url: true
@@ -72,5 +141,3 @@ hidden:
   field_hg_related_links: true
   field_hg_sidebar: true
   field_hg_source_updated: true
-  field_hg_summary: true
-  field_hg_summary_sentence: true
