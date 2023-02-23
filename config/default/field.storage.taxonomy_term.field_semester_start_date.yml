@@ -1,0 +1,20 @@
+uuid: 9293a5b4-1934-4e78-a476-fc0988d30739
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - taxonomy
+id: taxonomy_term.field_semester_start_date
+field_name: field_semester_start_date
+entity_type: taxonomy_term
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
