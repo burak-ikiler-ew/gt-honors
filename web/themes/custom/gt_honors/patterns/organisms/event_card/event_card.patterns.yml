@@ -1,0 +1,39 @@
+event_card:
+  label: Event card
+  description: Card with date, title, summary, and location of the event.
+  variants:
+    default:
+      label: Default
+      description: 'Event details page.'
+    teaser:
+      label: Teaser
+      description: 'Event teaser card.'
+  fields:
+    event_start:
+      type: mixed
+      label: Event start
+    event_end:
+      type: mixed
+      label: Event end
+    url:
+      type: mixed
+      label: Event url
+    title:
+      type: mixed
+      label: Event title
+    summary:
+      type: mixed
+      label: Event summary
+    summary_sentence:
+      type: mixed
+      label: Event summary sentence
+    location:
+      type: mixed
+      label: Event location
+
+  libraries:
+    -
+      event_card:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }
