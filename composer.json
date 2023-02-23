@@ -60,6 +60,7 @@
   "require": {
     "php": ">=7.3",
     "acquia/blt": "^13.0",
+    "apvarun/toastify-js": "^1.11",
     "composer/installers": "^1.9",
     "drupal/admin_toolbar": "^3.0",
     "drupal/allowed_formats": "^2.0",
@@ -78,6 +79,7 @@
     "drupal/gin_toolbar": "^1.0@RC",
     "drupal/layout_builder_modal": "^1.1",
     "drupal/layout_builder_restrictions": "^2.7",
+    "drupal/lb_claro": "^2.0@alpha",
     "drupal/paragraphs": "^1.15",
     "drupal/pathauto": "^1.8",
     "drupal/social_media_links": "^2.7",

@@ -1,0 +1,12 @@
+{% set cta %}
+  <a href="{{ path('entity.node.canonical', {'node': node.id}) }}" class="btn--secondary" title="{{ node.title.value }}">{{ 'Read News'|t }}</a>
+{% endset %}
+
+{{ pattern('postcard', {
+  title:      node.title.value,
+  pre_title:  content.field_hg_dateline,
+  image:      content.field_hg_images[0],
+  body:       content.field_hg_summary_sentence,
+  position:   'left',
+  link:       cta
+}) }}

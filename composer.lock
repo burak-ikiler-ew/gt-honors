@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c620a70fac2ae6d9c002f0fceb2b5fc",
+    "content-hash": "87c2427a446ba41f680f8c6b15b56fee",
     "packages": [
         {
             "name": "acquia/blt",
@@ -151,6 +151,15 @@
                 "source": "https://github.com/acquia/drupal-environment-detector/tree/1.5.3"
             },
             "time": "2022-12-15T16:49:52+00:00"
+        },
+        {
+            "name": "apvarun/toastify-js",
+            "version": "v1.11.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/apvarun/toastify-js/archive/refs/tags/1.11.2.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "asm89/stack-cors",
@@ -3028,6 +3037,62 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/layout_builder_restrictions",
                 "issues": "https://www.drupal.org/project/issues/layout_builder_restrictions"
+            }
+        },
+        {
+            "name": "drupal/lb_claro",
+            "version": "2.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/lb_claro.git",
+                "reference": "2.0.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/lb_claro-2.0.0-alpha1.zip",
+                "reference": "2.0.0-alpha1",
+                "shasum": "58fa081fb021c2159ba8eb87186fd8fe197b9503"
+            },
+            "require": {
+                "drupal/core": "^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-alpha1",
+                    "datestamp": "1676588279",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "acbramley",
+                    "homepage": "https://www.drupal.org/user/1036766"
+                },
+                {
+                    "name": "jptaranto",
+                    "homepage": "https://www.drupal.org/user/135234"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                },
+                {
+                    "name": "rikki_iki",
+                    "homepage": "https://www.drupal.org/user/1068918"
+                }
+            ],
+            "description": "Attemps to match Layout Builder styles with Claro admin theme.",
+            "homepage": "https://www.drupal.org/project/lb_claro",
+            "support": {
+                "source": "https://git.drupalcode.org/project/lb_claro"
             }
         },
         {
@@ -8635,7 +8700,8 @@
         "drupal/focal_point": 15,
         "drupal/gin": 5,
         "drupal/gin_lb": 20,
-        "drupal/gin_toolbar": 5
+        "drupal/gin_toolbar": 5,
+        "drupal/lb_claro": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -8643,5 +8709,5 @@
         "php": ">=7.3"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
