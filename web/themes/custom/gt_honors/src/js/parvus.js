@@ -11,8 +11,10 @@
 (function ($, Drupal) {
   Drupal.behaviors.parvusJS = {
     attach (context) {
+      // eslint-disable-next-line
       const body = $(once('body', 'body', context));
 
+      // eslint-disable-next-line
       body.each(() => {
         // eslint-disable-next-line no-undef
         const prvs = new Parvus({

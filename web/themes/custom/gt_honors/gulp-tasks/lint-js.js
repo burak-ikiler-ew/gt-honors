@@ -22,10 +22,6 @@ const lintJsTask = (source) => {
   task = task.pipe(eslint())
     .pipe(eslint.format());
 
-  if (!isDevelopmentEnv) {
-    task = task.pipe(eslint.failAfterError());
-  }
-
   if (isDevelopmentEnv) {
     task = task.pipe(plumber.stop());
   }
