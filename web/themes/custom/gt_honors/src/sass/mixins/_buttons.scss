@@ -178,7 +178,7 @@
     color: $color-neutral000;
 
     &::after {
-      background: transparent url('/themes/custom/gtl_theme/dist/assets/chevron-right--white.svg') no-repeat center center / 10px;
+      background: transparent url('/themes/custom/gt_honors/images/assets/chevron-right--white.svg') no-repeat center center / 10px;
     }
 
     &::before {
@@ -210,28 +210,28 @@
   position: relative;
   color: $color-neutral100;
   font-weight: $font-weight-regular;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom-color $transition-duration;
+  text-decoration: none;
+  border: none;
+  padding-right: 30px;
   @include instant-transition-on-touch-devices;
 
   &::after {
     content: '';
     position: absolute;
-    margin-left: 5px;
-    width: 8px;
-    height: 12px;
-    transform: translateY(8px);
-    background: url('/themes/custom/gtl_theme/dist/assets/chevron-right--yellow.svg') no-repeat center center / 8px;
+    margin-left: 16px;
+    width: 16px;
+    height: 15px;
+    transform: translateY(5px);
+    background: url('/themes/custom/gt_honors/images/arrow.svg') no-repeat center center / 16px;
     transition: margin-left $transition-duration;
     @include instant-transition-on-touch-devices;
   }
 
   &:hover {
     text-decoration: none;
-    border-bottom: 2px solid $color-secondary000;
 
     &::after {
-      margin-left: 10px;
+      margin-left: 25px;
     }
   }
 }

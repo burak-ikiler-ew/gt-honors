@@ -35,14 +35,24 @@
 %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-  {% if content['#block_content'].field_icon.value %}
-    <span class="{{ content['#block_content'].field_icon.value }}"></span>
-  {% endif %}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {% if content.field_link|render %}
-    {{ content.field_link }}
-  {% endif %}
   {{ title_suffix }}
+
+  {% if content.field_link|render %}
+    {% set cta %}
+      <a href="{{ content.field_link.0["#url"] }}" class="btn--text-and-arrow">{{ content.field_link.0["#title"] }}</a>
+    {% endset %}
+  {% endif %}
+
+  {% if content.field_heading_type.0["#markup"] %}
+    {% set heading_tag = content.field_heading_type.0["#markup"] %}
+  {% else %}
+    {% set heading_tag = 'h2' %}
+  {% endif %}
+
+  {{ pattern('heading', {
+    title:        label,
+    heading_type: heading_tag|clean_class,
+    icon_class:   content.field_icon.0['#taxonomy_term'].field_icon_class.value|clean_class,
+    link:         cta
+  }) }}
 </div>

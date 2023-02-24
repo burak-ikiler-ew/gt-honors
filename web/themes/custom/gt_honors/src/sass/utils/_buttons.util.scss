@@ -47,6 +47,10 @@
     @include gtl-button--tertiary;
   }
 
+  &--text-and-arrow {
+    @include gtl-button-text-and-arrow;
+  }
+
   &--back {
     @include gtl-button--back;
   }

@@ -14,6 +14,12 @@
 
     & > .row {
       min-height: 37.5rem;
+
+      .float-left & {
+        @include media-breakpoint-up(lg) {
+          flex-direction: row-reverse;
+        }
+      }
     }
   }
 
@@ -34,9 +40,13 @@
   &__content {
     display: flex;
     flex-direction: column;
-    padding: 6.25rem 3.438rem 4.375rem 3.438rem;
+    padding: 2.25rem;
     height: 100%;
     justify-content: center;
+
+    @include media-breakpoint-up(lg) {
+      padding: 6.25rem;
+    }
   }
 
   h2 {

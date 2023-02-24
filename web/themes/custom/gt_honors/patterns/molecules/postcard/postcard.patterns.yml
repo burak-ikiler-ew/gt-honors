@@ -16,6 +16,11 @@ postcard:
       label: Title
       description: Card title.
       preview: 'Norman Vorano'
+    position:
+      type: text
+      label: Image position
+      description: Position of the image
+      preview: 'Right'
     image:
       type: string
       label: Image

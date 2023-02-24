@@ -1,0 +1,20 @@
+{% set prefix = 'heading' %}
+
+{%
+  set classes = [
+  prefix,
+  'container-lg'
+]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  <div class="{{ prefix }}__title">
+    <{{ heading_type }}>
+      {% if icon_class %}
+        <i class="{{ prefix }}__icon icon-{{ icon_class }}"></i>
+      {% endif %}
+      {{ title }}
+    </{{ heading_type }}>
+  </div>
+  <div class="{{ prefix }}__link">{{ link }}</div>
+</div>
