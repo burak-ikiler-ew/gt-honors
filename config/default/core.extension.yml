@@ -57,6 +57,7 @@ module:
   search: 0
   shortcut: 0
   social_media_links: 0
+  structure_sync: 0
   system: 0
   taxonomy: 0
   telephone: 0
