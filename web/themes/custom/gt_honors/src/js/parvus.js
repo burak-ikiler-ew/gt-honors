@@ -1,3 +1,4 @@
+/* global once */
 /**
  * Isolate the context in an IIFE
  *
@@ -10,15 +11,16 @@
 (function ($, Drupal) {
   Drupal.behaviors.parvusJS = {
     attach (context) {
-      $('body', context)
-        .once('parvusJS')
-        // eslint-disable-next-line func-names
-        .each(() => {
-          // eslint-disable-next-line no-undef
-          const prvs = new Parvus({
-            selector: '.lightbox',
-          });
+      // eslint-disable-next-line
+      const body = $(once('body', 'body', context));
+
+      // eslint-disable-next-line
+      body.each(() => {
+        // eslint-disable-next-line no-undef
+        const prvs = new Parvus({
+          selector: '.lightbox',
         });
+      });
     },
   };
 })(jQuery, Drupal);

@@ -1,0 +1,23 @@
+heading:
+  label: Heading
+  description: Heading section with optional icon and link
+  fields:
+    title:
+      type: text
+      label: Heading title
+    icon_class:
+      type: mixed
+      label: Heading icon class name
+    link:
+      type: mixed
+      label: Heading link
+    heading_type:
+      type: mixed
+      label: Heading tag
+
+  libraries:
+    -
+      heading:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }

@@ -1,0 +1,46 @@
+postcard:
+  label: 'Postcard'
+  description: Post card.
+  variants:
+    default:
+      label: Default
+      description: The post card with linked image and title.
+  fields:
+    title:
+      type: text
+      label: Title
+      description: Card title.
+      preview: 'Norman Vorano'
+    pre_title:
+      type: text
+      label: Title
+      description: Card title.
+      preview: 'Norman Vorano'
+    position:
+      type: text
+      label: Image position
+      description: Position of the image
+      preview: 'Right'
+    image:
+      type: string
+      label: Image
+      description: Markup for an image. Alternatively, provide image_* properties.
+      preview:
+        theme: image
+        uri: https://picsum.photos/1280/560
+    body:
+      type: text
+      label: Body
+      description: Body.
+      preview: 'Donec lobortis euismod risus, sed vulputate odio tempor non'
+    link:
+      type: string
+      label: Link URL
+      description: URL to the content.
+      preview: ''
+  libraries:
+    -
+      postcard:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }

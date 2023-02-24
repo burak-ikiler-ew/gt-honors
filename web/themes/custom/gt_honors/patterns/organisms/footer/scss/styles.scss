@@ -53,6 +53,7 @@
   .gt-campus-map {
     display: block;
     margin-top: 1rem;
+    border: none;
 
     &::before {
       content: '';
@@ -136,6 +137,7 @@
         color: $color-black;
         text-underline-offset: 5px;
         font-size: $font-14;
+        border: none;
       }
     }
   }

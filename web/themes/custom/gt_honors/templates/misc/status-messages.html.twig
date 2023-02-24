@@ -23,31 +23,52 @@
 #}
 {{ attach_library('gt/status-messages') }}
 
-{% for type, messages in message_list %}
-  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
-    {% if type == 'error' %}
-      <div role="alert" class="status-message status-message--error">
-    {% elseif type == 'status' %}
-      <div role="status" class="status-message status-message--status">
-    {% elseif type == 'warning' %}
-      <div role="alert" class="status-message status-message--warning">
-    {% elseif type %}
-      <div role="info" class="status-message">
-    {% endif %}
-      {% if status_headings[type] %}
-        <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
-      {% endif %}
-      {% if messages|length > 1 %}
-        <ul>
-          {% for drupal_message in messages %}
-            <li>{{ drupal_message }}</li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        {{ messages|first }}
-      {% endif %}
-    {% if type %}
+<div data-drupal-messages>
+  <div class="modal fade" id="status-message" tabindex="-1" role="dialog">
+    <div class="modal-dialog max-w-[800px]">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="modal-header justify-end">
+            <button type="button" class="close border-0 bg-transparent" data-bs-dismiss="modal" aria-label="{{ 'Close message'|t }}">
+              <i class="icon-close"></i>
+            </button>
+          </div>
+          <div class="status-message-content">
+            {% block messages %}
+              {% for type, messages in message_list %}
+                {%
+                  set classes = [
+                  'messages',
+                  'messages--' ~ type,
+                ]
+                %}
+                <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
+                  {% if type == 'error' %}
+                  <div role="alert">
+                    {% endif %}
+                    {% if status_headings[type] %}
+                      <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+                    {% endif %}
+                    {% if messages|length > 1 %}
+                      <ul class="messages__list">
+                        {% for message in messages %}
+                          <li class="messages__item">{{ message }}</li>
+                        {% endfor %}
+                      </ul>
+                    {% else %}
+                      {{ messages|first }}
+                    {% endif %}
+                    {% if type == 'error' %}
+                  </div>
+                  {% endif %}
+                </div>
+                {# Remove type specific classes. #}
+                {% set attributes = attributes.removeClass(classes) %}
+              {% endfor %}
+            {% endblock messages %}
+          </div>
+        </div>
       </div>
-    {% endif %}
-      </div>
-{% endfor %}
+    </div>
+  </div>
+</div>

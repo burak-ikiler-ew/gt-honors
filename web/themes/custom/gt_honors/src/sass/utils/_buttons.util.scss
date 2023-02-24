@@ -1,3 +1,79 @@
+@import "src/sass/core";
+
+.btn,
+.btn-default,
+.button {
+  @include gtl-button;
+
+  &.btn-dark {
+    background-color: $color-tech-button-gold;
+    color: $color-white;
+    border: 2px solid $color-tech-gold;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-tech-button-gold, 5%);
+      color: $color-white;
+    }
+  }
+
+  &.btn-chevron {
+    display: flex;
+    color: $color-tech-gold;
+    align-items: center;
+
+    &::after {
+      content: '';
+      margin-left: 0.5rem;
+      width: 12px;
+      height: 12px;
+      background-image: url('../assets/double-chevron.svg');
+    }
+  }
+
+  &--primary {
+    @include gtl-button--primary;
+
+    &.webform-button--submit {
+      line-height: 1;
+    }
+  }
+
+  &--secondary {
+    @include gtl-button--secondary;
+  }
+
+  &--tertiary {
+    @include gtl-button--tertiary;
+  }
+
+  &--text-and-arrow {
+    @include gtl-button-text-and-arrow;
+  }
+
+  &--back {
+    @include gtl-button--back;
+  }
+}
+
+p {
+  a {
+    @include gtl-button--text-link;
+  }
+}
+
+.theme-dark-bg {
+  p {
+    a {
+      color: $color-white;
+
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+}
+
 .dropdown {
   &-toggle {
     &::after {

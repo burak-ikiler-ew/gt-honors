@@ -1,0 +1,45 @@
+{% set prefix = 'postcard' %}
+{% set classes = [
+  prefix,
+  position
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="container-lg">
+    <div class="{{ prefix }}__container">
+      <div class="row">
+        <div class="{{ prefix }}__image col-12 col-lg-6">
+          {{ image }}
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="{{ prefix }}__content">
+            <div class="{{ prefix }}__heading">
+              {% if pre_title %}
+                <div class="{{ prefix }}__heading_pre_title">
+                  {{ pre_title }}
+                </div>
+              {% endif %}
+
+              {% if title %}
+                <h2>{{ title }}</h2>
+              {% endif %}
+            </div>
+
+            {% if body %}
+              <div class="{{ prefix }}__text">
+                {{ body }}
+              </div>
+            {% endif %}
+
+            {% if link %}
+              <div class="{{ prefix }}__cta">
+                {{ link }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

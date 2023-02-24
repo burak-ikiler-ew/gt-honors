@@ -1,3 +1,4 @@
+/* global once */
 /**
  * Isolate the context in an IIFE
  *
@@ -35,6 +36,19 @@
           $body.addClass(CLASS_SCROLLED);
         } else if (!didPassThreshold && $body.hasClass(CLASS_SCROLLED)) {
           $body.removeClass(CLASS_SCROLLED);
+        }
+      });
+    },
+  };
+
+  Drupal.behaviors.statusMessage = {
+    attach (context) {
+      const statusMessages = $(once('status-message', '#status-message', context));
+
+      statusMessages.each((index, statusMessage) => {
+        if (statusMessage.length > 0) {
+          /* Status message modal initiate. */
+          statusMessage.modal('show');
         }
       });
     },

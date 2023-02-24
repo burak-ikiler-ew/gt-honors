@@ -1,0 +1,79 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.postcard {
+  position: relative;
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+
+  &__container {
+    padding: 0;
+    background-color: $color-white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    & > .row {
+      min-height: 37.5rem;
+
+      .float-left & {
+        @include media-breakpoint-up(lg) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+
+  &__image {
+    article,
+    div,
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 2.25rem;
+    height: 100%;
+    justify-content: center;
+
+    @include media-breakpoint-up(lg) {
+      padding: 6.25rem;
+    }
+  }
+
+  h2 {
+    @extend %h3;
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    font-size: $font-20;
+    line-height: $font-34;
+    color: $color-neutral100;
+    margin-bottom: 1rem;
+  }
+
+  &__heading_pre_title {
+    margin-bottom: 0.75rem;
+  }
+
+  &__cta {
+    margin-top: 2.25rem;
+  }
+
+  &.right {
+    .postcard__container {
+      @include media-breakpoint-up(lg) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}

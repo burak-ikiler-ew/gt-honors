@@ -8,9 +8,9 @@ $include-font: false !default;
 
     @font-face {
         font-family: $theme-icons-font;
-        src: url("../fonts/theme-icons.woff2?e35616176523e111b626f66e18d2491c") format("woff2"),
-url("../fonts/theme-icons.woff?e35616176523e111b626f66e18d2491c") format("woff"),
-url("../fonts/theme-icons.ttf?e35616176523e111b626f66e18d2491c") format("truetype");
+        src: url("../fonts/theme-icons.woff2?0c04d3a93edaa7f2f17367db18d2ee81") format("woff2"),
+url("../fonts/theme-icons.woff?0c04d3a93edaa7f2f17367db18d2ee81") format("woff"),
+url("../fonts/theme-icons.ttf?0c04d3a93edaa7f2f17367db18d2ee81") format("truetype");
     }
 
     i[class^="icon-"]:before, i[class*=" icon-"]:before {

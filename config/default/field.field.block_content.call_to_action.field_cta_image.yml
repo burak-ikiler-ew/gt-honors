@@ -1,0 +1,31 @@
+uuid: 443c44ee-f2cf-4d89-ba82-16cf1be770bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.call_to_action
+    - field.storage.block_content.field_cta_image
+    - media.type.focal_image
+    - media.type.image
+id: block_content.call_to_action.field_cta_image
+field_name: field_cta_image
+entity_type: block_content
+bundle: call_to_action
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      focal_image: focal_image
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: focal_image
+field_type: entity_reference
