@@ -16,7 +16,7 @@
   @extend %font-stack-base;
   font-size: $font-40;
   line-height: 2.813rem;
-  font-weight: $font-weight-regular;
+  font-weight: $font-weight-light;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-80;

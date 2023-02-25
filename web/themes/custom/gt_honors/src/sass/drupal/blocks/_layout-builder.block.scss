@@ -1,6 +1,12 @@
 .block-layout-builder {
   height: 100%;
 
+  .layout__region--first &,
+  .layout__region--second &,
+  .layout__region--third & {
+    height: unset;
+  }
+
   &.block-inline-blockimage-gallery {
     h2 {
       display: flex;

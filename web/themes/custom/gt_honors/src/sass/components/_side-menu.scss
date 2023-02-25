@@ -1,0 +1,28 @@
+nav[role="navigation"] {
+  .layout__region--first & {
+    position: sticky;
+    top: 150px;
+    max-width: 21.875rem;
+
+    h2 {
+      @extend %h4;
+    }
+
+    .menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      & > .menu-item {
+        padding: 1.375rem 1.875rem;
+        border-bottom: 1px solid $color-black-10;
+
+        a {
+          @extend %h5;
+          text-decoration: none;
+          color: $color-neutral000;
+        }
+      }
+    }
+  }
+}
