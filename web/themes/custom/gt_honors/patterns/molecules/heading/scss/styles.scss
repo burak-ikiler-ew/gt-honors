@@ -13,7 +13,7 @@
     display: block;
 
     @include media-breakpoint-up(lg) {
-      display: inline;
+      display: inline-flex;
     }
 
     &::before {
@@ -23,6 +23,9 @@
   }
 
   &__title {
+    display: flex;
+    align-items: center;
+
     & > * {
       margin-bottom: 0;
     }

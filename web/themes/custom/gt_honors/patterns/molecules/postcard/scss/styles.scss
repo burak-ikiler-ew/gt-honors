@@ -6,6 +6,15 @@
   margin-top: 2.25rem;
   margin-bottom: 2.25rem;
 
+  .container-lg {
+    .layout__region--first &,
+    .layout__region--second &,
+    .layout__region--third & {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   &__container {
     padding: 0;
     background-color: $color-white;
@@ -30,6 +39,7 @@
       width: 100%;
       height: 100%;
       display: block;
+      padding: 0;
     }
 
     img {
