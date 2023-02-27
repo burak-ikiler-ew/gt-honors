@@ -1,10 +1,34 @@
 @import "src/sass/core";
 @import "src/sass/placeholders/index";
 
-.demographic-item {
-  max-width: 100%;
+.metric-item {
+  &__title {
+    color: $color-navy-blue;
+    font-size: px-to-rem(48);
+    font-weight: 800;
+    line-height: px-to-rem(83);
+    letter-spacing: 0;
+    margin: px-to-rem(24) 0;
 
-  .row {
-    margin: 0;
+    @include media-breakpoint-up(lg) {
+      font-size: px-to-rem(85);
+    }
+
+    @include media-breakpoint-up(md) {
+      margin: 0 0 px-to-rem(16);
+    }
+  }
+
+  &__description {
+    max-width: 70%;
+  }
+}
+
+// TODO: Move to a separate file.
+.metrics-collection {
+  margin: px-to-rem(100) 0;
+
+  &__title {
+    margin-bottom: px-to-rem(24);
   }
 }

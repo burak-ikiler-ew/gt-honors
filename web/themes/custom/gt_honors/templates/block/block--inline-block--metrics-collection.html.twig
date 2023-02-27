@@ -31,21 +31,24 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'row'
   ]
 %}
 
+{% set prefix = 'metrics-collection' %}
+
+{# TODO: create a metrcis-collection pattern that could be used here and inside the metrics-card component. #}
+
 <div{{ attributes.addClass(classes) }}>
-  <div{{ attributes.addClass(classes) }}>
+  <div class="{{ prefix }}">
     {{ title_prefix }}
     {% if label %}
-      <h2{{ title_attributes }}>{{ label }}</h2>
+      <h2{{ title_attributes.addClass(prefix ~ '__title') }}>{{ label }}</h2>
     {% endif %}
     {{ title_suffix }}
 
     <div class="row">
       {% for item in content['#block_content'].field_metric_items %}
-        <div class="col-{{ 12/(content['#block_content'].field_metric_items|length) }}">   
+        <div class="col-md-{{ 12/(content['#block_content'].field_metric_items|length) }}">
           {{ pattern('metric_item', {
             title:        item.entity.field_title.value,
             description:  item.entity.field_content.value,
