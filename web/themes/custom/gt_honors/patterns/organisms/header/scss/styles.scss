@@ -172,8 +172,16 @@
     }
   }
 
+  .toolbar-horizontal.toolbar-fixed & {
+    top: 112px;
+  }
+
   .scroll-up & {
     top: 0;
+  }
+
+  .toolbar-horizontal.toolbar-fixed.scroll-up & {
+    top: 52px;
   }
 
   .scroll-down & {
