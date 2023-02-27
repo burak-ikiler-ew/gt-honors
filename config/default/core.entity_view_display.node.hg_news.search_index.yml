@@ -1,8 +1,9 @@
-uuid: a8ebc3e2-79c4-4c3a-b8d2-f2f41d706502
+uuid: fd7350af-8b7d-4b56-90f6-2616ed1c8878
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.field.node.hg_news.body
     - field.field.node.hg_news.field_hg_categories
     - field.field.node.hg_news.field_hg_contact
@@ -28,52 +29,46 @@ dependencies:
     - datetime
     - fences
     - field_formatter_class
-    - file
-    - image
+    - layout_builder
     - link
     - text
     - user
-    - video_embed_field
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: rUhL5yjW7GQtzf32SWw3UCRV-Aj-7qtMo56D5kz8UFw
-id: node.hg_news.default
+id: node.hg_news.search_index
 targetEntityType: node
 bundle: hg_news
-mode: default
+mode: search_index
 content:
   body:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
-    region: content
-  field_hg_categories:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 16
+    weight: 0
     region: content
   field_hg_contact:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_hg_core_research_areas:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 17
+    weight: 11
     region: content
   field_hg_dateline:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: month_day_year
@@ -89,79 +84,42 @@ content:
         fences_label_classes: ''
       field_formatter_class:
         class: ''
-    weight: 5
+    weight: 4
     region: content
   field_hg_email:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
-    region: content
-  field_hg_id:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 18
-    region: content
-  field_hg_images:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 13
-    region: content
-  field_hg_importer:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 12
+    weight: 5
     region: content
   field_hg_keywords:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
-    third_party_settings: {  }
-    weight: 14
-    region: content
-  field_hg_location:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  field_hg_news_room_topics:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 15
-    region: content
-  field_hg_related_files:
-    type: file_default
-    label: above
-    settings:
-      use_description_as_link_text: true
     third_party_settings: {  }
     weight: 9
     region: content
+  field_hg_location:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_hg_news_room_topics:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_hg_related_links:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -169,63 +127,39 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 8
-    region: content
-  field_hg_sidebar:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  field_hg_source_updated:
-    type: timestamp
-    label: above
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-    weight: 19
+    weight: 7
     region: content
   field_hg_subtitle:
     type: string
-    label: above
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_hg_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_hg_summary_sentence:
+    type: string
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
     region: content
-  field_hg_summary:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_hg_summary_sentence:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_hg_youtube_video:
-    type: video_embed_field_video
-    label: above
-    settings:
-      autoplay: true
-      responsive: true
-      width: 854
-      height: 480
-    third_party_settings: {  }
-    weight: 14
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
+  field_hg_categories: true
+  field_hg_id: true
+  field_hg_images: true
+  field_hg_importer: true
+  field_hg_related_files: true
+  field_hg_sidebar: true
+  field_hg_source_updated: true
+  field_hg_youtube_video: true
+  links: true
   search_api_excerpt: true

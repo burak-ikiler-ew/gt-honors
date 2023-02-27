@@ -1,0 +1,5 @@
+name: 'gt_views'
+type: module
+description: 'View Handler Implementations for GT Honors'
+core_version_requirement: ^8 || ^9 || ^10
+package: 'Custom'
