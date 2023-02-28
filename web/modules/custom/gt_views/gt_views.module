@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
@@ -59,8 +60,21 @@ function gt_views_views_data() {
  * Implements hook_theme_preprocess_views_exposed_form().
  */
 function gt_views_preprocess_views_exposed_form(&$variables) {
-  if ($variables['form']['past_event_filter']) {
+  // if ($variables['form']['past_event_filter']) {
+  if (array_key_exists('past_event_filter', $variables['form'])) {
     $past_event_filter = &$variables['form']['past_event_filter'];
     $past_event_filter['#required'] = false;
+  }
+}
+
+/**
+ * Implements hook_preprocess_node. Process Mercury images and event times
+ */
+function gt_views_preprocess_node(&$variables) {
+  // set up event_start and event_end vars.
+  if (isset($variables['elements']['field_hg_event_time']) && isset($variables['elements']['#node'])) {
+    $node = $variables['elements']['#node'];
+    $variables['event_start_time'] = \Drupal::service('date.formatter')->format($node->get('field_hg_event_time')->start_date->getTimestamp(), 'custom', DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
+    $variables['event_end_time'] = \Drupal::service('date.formatter')->format($node->get('field_hg_event_time')->end_date->getTimestamp(), 'custom', DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
   }
 }
