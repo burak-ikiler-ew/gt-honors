@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Contains gt_views.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_help().
+ */
+function gt_views_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the gt_views module.
+    case 'help.page.gt_views':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Views Handler Implementations for GT Honors') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function gt_views_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'views_exposed_form':
+      // Force to remove sorting by relevanc desc.
+      unset($form["sort_bef_combine"]["#options"]["search_api_relevance_DESC"]);
+      break;
+  }
+}
+
+/**
+ * Implements hook_views_data().
+ */
+function gt_views_views_data() {
+  $data = [];
+
+  $data['views']['past_event_filter'] = [
+    'title' => t('Past Events Filter'),
+    'help' => t('Adds boolean filter functionality for filtering out past events.'),
+    'filter' => [
+      'id' => 'past_events_filter',
+      'type' => 'true-false',
+    ],
+  ];
+
+  return $data;
+}
+
+/**
+ * Implements hook_theme_preprocess_views_exposed_form().
+ */
+function gt_views_preprocess_views_exposed_form(&$variables) {
+  if ($variables['form']['past_event_filter']) {
+    $past_event_filter = &$variables['form']['past_event_filter'];
+    $past_event_filter['#required'] = false;
+  }
+}
