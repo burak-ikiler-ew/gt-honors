@@ -11,6 +11,9 @@ footer_banner:
     body:
       type: mixed
       label: Footer Banner body
+    link:
+      type: mixed
+      label: Footer Banner link
 
   libraries:
     -
