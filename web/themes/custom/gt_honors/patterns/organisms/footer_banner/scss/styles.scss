@@ -1,36 +1,42 @@
 @import "src/sass/core";
 @import "src/sass/placeholders/index";
 
-.basic-content {
-  &__title {
-    margin-bottom: 2.25rem;
-    display: flex;
-    flex-direction: column;
-    font-weight: 600;
+.footer-banner {
+  padding: px-to-rem(60) 0;
+  background: $color-navy-blue url("/themes/custom/gt_honors/images/footer-banner_hexagons.svg") no-repeat;
+  background-size: px-to-rem(400px);
+  background-position: left 1rem top 3rem;
+  color: $color-white;
+
+  @include media-breakpoint-up(sm) {
+    background-position: right 3rem center;
   }
 
-  &__icon {
-    &::before {
-      color: $color-tech-gold;
-      @extend %icon;
+  &__title {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin-bottom: px-to-rem(36px);
+
+    @include media-breakpoint-up(xl) {
+      flex-direction: row;
     }
   }
 
-  &__body {
-    font-size: $font-22;
-    line-height: $font-36;
+  &__icon {
+    margin-right: px-to-rem(26px);
   }
-}
 
-// Apply only inside two-column sections.
-.layout--twocol-section {
-  .basic-content {
-    @include media-breakpoint-up(sm) {
-      max-width: 90%;
+  &__link {
+    margin-top: px-to-rem(40px);
 
-      &__title {
-        max-width: 70%;
-      }
+    @include media-breakpoint-up(lg) {
+      margin-top: px-to-rem(64px);
+    }
+
+    a,
+    button {
+      @include gtl-button--primary;
     }
   }
 }
