@@ -1,11 +1,22 @@
 @import "../variables";
 
+$m-desktop: 6.25rem;
+$m-mobile: 3.125rem;
+
 %margin-default {
-  margin-top: 3.125rem;
-  margin-bottom: 3.125rem;
+  margin-top: $m-mobile;
+  margin-bottom: $m-mobile;
 
   @include media-breakpoint-up(lg) {
-    margin-top: 6.25rem;
-    margin-bottom: 6.25rem;
+    margin-top: $m-desktop;
+    margin-bottom: $m-desktop;
+  }
+}
+
+%no-margin-bottom {
+  margin-bottom: -$m-mobile;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: -$m-desktop;
   }
 }

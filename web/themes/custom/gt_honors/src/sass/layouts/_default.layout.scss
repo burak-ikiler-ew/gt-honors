@@ -5,6 +5,10 @@
   &:first-child {
     margin-top: 0;
   }
+
+  .footer-banner {
+    @extend %no-margin-bottom;
+  }
 }
 
 .layout {
