@@ -10,7 +10,6 @@ dependencies:
   module:
     - fences
     - field_formatter_class
-    - link
     - text
 _core:
   default_config_hash: IuxBIOMxHvxO1S6RPT3iqmieY-qc_2-z0o5mVKLC9_g
@@ -35,7 +34,7 @@ content:
         fences_label_classes: ''
       field_formatter_class:
         class: ''
-    weight: 1
+    weight: 0
     region: content
   field_icon:
     type: entity_reference_entity_view
@@ -55,29 +54,8 @@ content:
         fences_label_classes: ''
       field_formatter_class:
         class: ''
-    weight: 3
+    weight: 1
     region: content
-  field_link:
-    type: link
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
-    third_party_settings:
-      fences:
-        fences_field_tag: none
-        fences_field_classes: ''
-        fences_field_items_wrapper_tag: none
-        fences_field_items_wrapper_classes: ''
-        fences_field_item_tag: none
-        fences_field_item_classes: ''
-        fences_label_tag: none
-        fences_label_classes: ''
-      field_formatter_class:
-        class: ''
-    weight: 2
-    region: content
-hidden: {  }
+hidden:
+  field_link: true
+  search_api_excerpt: true

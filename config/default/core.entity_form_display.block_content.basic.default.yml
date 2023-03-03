@@ -8,7 +8,6 @@ dependencies:
     - field.field.block_content.basic.field_icon
     - field.field.block_content.basic.field_link
   module:
-    - link
     - text
 _core:
   default_config_hash: XZXnG6rTrVLYbS-QBgnmH985zTreDPVmjC2cHOKBJuo
@@ -33,14 +32,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_link:
-    type: link_default
-    weight: 3
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
   info:
     type: string_textfield
     weight: 1
@@ -49,4 +40,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_link: true
