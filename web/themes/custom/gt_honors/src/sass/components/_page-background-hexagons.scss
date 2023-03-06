@@ -1,0 +1,32 @@
+$top-margin-sm: px-to-rem(700px);
+$top-margin-lg: px-to-rem(1000px);
+$top-margin-xl: px-to-rem(1200px);
+$bottom-margin-sm: px-to-rem(40px);
+$bottom-margin-lg: px-to-rem(500px);
+
+.node__main-content {
+  background-image: url("/themes/custom/gt_honors/images/hexagon-bg.svg"), url("/themes/custom/gt_honors/images/hexagon-bg-left.svg");
+  background-position: right top $top-margin-sm, left bottom $bottom-margin-sm;
+  background-repeat: no-repeat, no-repeat;
+  background-size: px-to-rem(400px);
+
+  &:has(.banner--with-image) {
+    background-position: right top $top-margin-lg, left bottom $bottom-margin-sm;
+
+    @include media-breakpoint-down(sm) {
+      background-position: right top $top-margin-xl, left bottom $bottom-margin-sm;
+    }
+  }
+
+  &:has(.footer-banner) {
+    background-position: right top $top-margin-sm, left bottom $bottom-margin-lg;
+  }
+
+  &:has(.banner--with-image, .footer-banner) {
+    background-position: right top $top-margin-lg, left bottom $bottom-margin-lg;
+
+    @include media-breakpoint-down(sm) {
+      background-position: right top $top-margin-xl, left bottom $bottom-margin-lg;
+    }
+  }
+}
