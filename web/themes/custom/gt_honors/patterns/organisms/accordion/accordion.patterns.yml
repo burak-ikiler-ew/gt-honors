@@ -1,0 +1,22 @@
+accordion:
+  label: Accordion
+  description: Accordion with a title and body text.
+  fields:
+    title:
+      type: text
+      label: Accordion title
+    body:
+      type: mixed
+      label: Accordion body
+    acc_id:
+      type: mixed
+      label: Accordion id
+
+  libraries:
+    -
+      accordion:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }
+        js:
+          dist/js/accordion.min.js: { minified: true }
