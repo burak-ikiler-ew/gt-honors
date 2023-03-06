@@ -22,7 +22,7 @@ $bottom-margin-lg: px-to-rem(500px);
     background-position: right top $top-margin-sm, left bottom $bottom-margin-lg;
   }
 
-  &:has(.banner--with-image, .footer-banner) {
+  &:has(.banner--with-image):has(.footer-banner) {
     background-position: right top $top-margin-lg, left bottom $bottom-margin-lg;
 
     @include media-breakpoint-down(sm) {
