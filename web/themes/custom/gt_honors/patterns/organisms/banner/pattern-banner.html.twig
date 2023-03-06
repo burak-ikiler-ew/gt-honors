@@ -1,6 +1,7 @@
 {% set prefix = 'banner' %}
 {% set classes = [
-  prefix
+  prefix,
+  image|render ? prefix ~ '--with-image' : '--no-image',
 ] %}
 
 <div{{ attributes.addClass(classes) }}>
