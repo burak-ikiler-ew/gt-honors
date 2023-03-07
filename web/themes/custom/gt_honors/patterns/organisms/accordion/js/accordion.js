@@ -16,11 +16,11 @@
       if (ACCORDIONS.length) {
         ACCORDIONS.forEach((accordion) => {
           const accordionButton = accordion.querySelector(ACOORDION_BUTTON_CLASS);
-          accordionButton.addEventListener('click', () => { switchAccordions(accordion); });
+          accordionButton.addEventListener('click', () => { switchAccordion(accordion); });
         });
       }
 
-      function switchAccordions (clickedAccordion) {
+      function switchAccordion (clickedAccordion) {
         toggle(clickedAccordion);
         collapseAllExcept(clickedAccordion);
       }
@@ -28,9 +28,13 @@
       function collapseAllExcept (clickedAccordion) {
         ACCORDIONS.forEach((accordion) => {
           if (accordion !== clickedAccordion) {
-            toggle(accordion, 'collapse');
+            collapse(accordion);
           }
         });
+      }
+
+      function collapse (accordion) {
+        toggle(accordion, 'collapse');
       }
 
       function toggle (accordion, mode = 'toggle') {
