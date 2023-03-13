@@ -102,6 +102,13 @@
   font-family: $font-icons;
 }
 
+%font-button {
+  font-family: $font-secondary;
+  font-size: $font-20;
+  line-height: 1.625rem;
+  font-weight: 400;
+}
+
 %icon {
   @extend %font-icons;
   font-style: normal;
