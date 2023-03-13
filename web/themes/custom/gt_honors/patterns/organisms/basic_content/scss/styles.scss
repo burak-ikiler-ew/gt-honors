@@ -31,8 +31,7 @@
   }
 
   &__body {
-    font-size: $font-22;
-    line-height: $font-36;
+    @extend %font-lg;
   }
 }
 

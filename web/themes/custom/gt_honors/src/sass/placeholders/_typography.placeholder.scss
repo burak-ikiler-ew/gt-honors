@@ -12,6 +12,20 @@
   font-family: 'Roboto Slab', serif;
 }
 
+%font-base {
+  @extend %font-stack-base;
+  font-size: $font-16;
+  line-height: 1.75rem;
+}
+
+%font-lg {
+  @extend %font-base;
+  @include media-breakpoint-up(lg) {
+    font-size: $font-23;
+    line-height: 2.5rem;
+  }
+}
+
 %h1-base {
   @extend %font-stack-base;
   font-size: $font-40;
@@ -52,7 +66,7 @@
   @extend %font-stack-slab;
   font-size: $font-20;
   line-height: 1.875rem;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-medium;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-32;
@@ -64,7 +78,7 @@
   @extend %font-stack-slab;
   font-size: $font-20;
   line-height: 1.625rem;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-medium;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-26;
@@ -76,7 +90,7 @@
   @extend %font-stack-slab;
   font-size: $font-16;
   line-height: 1.375rem;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-medium;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-20;
@@ -86,6 +100,13 @@
 
 %font-icons {
   font-family: $font-icons;
+}
+
+%font-button {
+  font-family: $font-secondary;
+  font-size: $font-20;
+  line-height: 1.625rem;
+  font-weight: 400;
 }
 
 %icon {
