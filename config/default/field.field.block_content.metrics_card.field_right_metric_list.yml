@@ -1,0 +1,49 @@
+uuid: 58e34797-1d3e-435c-a547-c3fd8db9d3ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.metrics_card
+    - field.storage.block_content.field_right_metric_list
+    - paragraphs.paragraphs_type.metric_list
+  module:
+    - entity_reference_revisions
+id: block_content.metrics_card.field_right_metric_list
+field_name: field_right_metric_list
+entity_type: block_content
+bundle: metrics_card
+label: 'Right Metric List'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      metric_list: metric_list
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 8
+        enabled: false
+      demographic_item:
+        weight: 9
+        enabled: false
+      gallery_item:
+        weight: 10
+        enabled: false
+      image_gallery:
+        weight: 11
+        enabled: false
+      links:
+        weight: 12
+        enabled: false
+      metric_item:
+        weight: 13
+        enabled: false
+      metric_list:
+        weight: 14
+        enabled: true
+field_type: entity_reference_revisions

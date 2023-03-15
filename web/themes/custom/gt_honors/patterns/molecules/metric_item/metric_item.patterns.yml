@@ -5,6 +5,12 @@ metric_item:
     default:
       label: Default
       description: 'Default article card.'
+    featured:
+      label: Featured
+      description: 'Featured article card.'
+    hexagon:
+      label: Hexagon
+      description: 'Hexagon article card.'
   fields:
     title:
       type: text

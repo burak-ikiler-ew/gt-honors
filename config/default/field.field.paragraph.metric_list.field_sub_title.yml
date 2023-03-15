@@ -1,0 +1,19 @@
+uuid: 757681cc-290f-4243-bf3d-102de649e820
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sub_title
+    - paragraphs.paragraphs_type.metric_list
+id: paragraph.metric_list.field_sub_title
+field_name: field_sub_title
+entity_type: paragraph
+bundle: metric_list
+label: 'Sub Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
