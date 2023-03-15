@@ -1,0 +1,8 @@
+uuid: 7e97cd68-2297-4e53-aee2-38ca0a007ac0
+langcode: en
+status: true
+dependencies: {  }
+id: metrics_card
+label: 'Metrics Card'
+revision: 0
+description: ''

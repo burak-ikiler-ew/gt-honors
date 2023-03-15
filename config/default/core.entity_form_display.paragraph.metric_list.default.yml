@@ -1,66 +1,61 @@
-uuid: a9d5b718-3060-4503-af28-93a3bc5b1076
+uuid: a5f00c00-748f-4595-a42f-ea2b5f6b7bdd
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.demographics
-    - field.field.block_content.demographics.field_display_type
-    - field.field.block_content.demographics.field_items
-    - field.field.block_content.demographics.field_sub_headline
-    - field.field.block_content.demographics.field_sub_title
+    - field.field.paragraph.metric_list.field_display_type
+    - field.field.paragraph.metric_list.field_metric_items
+    - field.field.paragraph.metric_list.field_sub_title
+    - field.field.paragraph.metric_list.field_title
+    - paragraphs.paragraphs_type.metric_list
   module:
     - paragraphs
-id: block_content.demographics.default
-targetEntityType: block_content
-bundle: demographics
+id: paragraph.metric_list.default
+targetEntityType: paragraph
+bundle: metric_list
 mode: default
 content:
   field_display_type:
     type: options_select
-    weight: 29
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_items:
+  field_metric_items:
     type: paragraphs
-    weight: 30
+    weight: 3
     region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       closed_mode: summary
       autocollapse: none
       closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: metric_item
       features:
+        add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_sub_headline:
-    type: string_textfield
-    weight: 28
-    region: content
-    settings:
-      size: 120
-      placeholder: ''
-    third_party_settings: {  }
   field_sub_title:
     type: string_textfield
-    weight: 27
+    weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  info:
+  field_title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  status: true

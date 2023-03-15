@@ -1,19 +1,19 @@
-uuid: b6a862ea-372d-4a21-8c55-af517ea354c1
+uuid: afa848a4-f761-4929-bfdb-ed9be21393d6
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.demographics
-    - field.field.block_content.demographics.field_display_type
-    - field.field.block_content.demographics.field_items
-    - field.field.block_content.demographics.field_sub_headline
-    - field.field.block_content.demographics.field_sub_title
+    - field.field.paragraph.metric_list.field_display_type
+    - field.field.paragraph.metric_list.field_metric_items
+    - field.field.paragraph.metric_list.field_sub_title
+    - field.field.paragraph.metric_list.field_title
+    - paragraphs.paragraphs_type.metric_list
   module:
     - entity_reference_revisions
     - options
-id: block_content.demographics.default
-targetEntityType: block_content
-bundle: demographics
+id: paragraph.metric_list.default
+targetEntityType: paragraph
+bundle: metric_list
 mode: default
 content:
   field_display_type:
@@ -21,24 +21,16 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
-  field_items:
+  field_metric_items:
     type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 4
-    region: content
-  field_sub_headline:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_sub_title:
     type: string
@@ -48,4 +40,13 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-hidden: {  }
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

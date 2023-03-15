@@ -1,0 +1,35 @@
+uuid: 5786978d-3400-4c64-a6da-3ef44256667c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.metrics_card
+    - field.field.block_content.metrics_card.field_left_metric_list
+    - field.field.block_content.metrics_card.field_right_metric_list
+  module:
+    - entity_reference_revisions
+id: block_content.metrics_card.default
+targetEntityType: block_content
+bundle: metrics_card
+mode: default
+content:
+  field_left_metric_list:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_right_metric_list:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

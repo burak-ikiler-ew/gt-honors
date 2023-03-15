@@ -1,0 +1,23 @@
+uuid: 2730ba14-aa66-4967-9b3c-655b665417a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_type
+    - paragraphs.paragraphs_type.metric_list
+  module:
+    - options
+id: paragraph.metric_list.field_display_type
+field_name: field_display_type
+entity_type: paragraph
+bundle: metric_list
+label: 'Display Type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: default_list
+default_value_callback: ''
+settings: {  }
+field_type: list_string

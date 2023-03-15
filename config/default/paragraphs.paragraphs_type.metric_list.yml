@@ -1,0 +1,10 @@
+uuid: a0bf7838-f6d4-4c55-bfbb-adbde6f906d7
+langcode: en
+status: true
+dependencies: {  }
+id: metric_list
+label: 'Metric List'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
