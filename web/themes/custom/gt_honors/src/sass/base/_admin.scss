@@ -58,6 +58,12 @@ header.header {
   }
 }
 
+body:has(#block-gt-honors-local-tasks) {
+  .footer {
+    padding-bottom: 70px;
+  }
+}
+
 .layout-builder {
   background-color: transparent;
 
