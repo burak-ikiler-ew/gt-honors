@@ -16,12 +16,16 @@
     padding: px-to-rem(78) px-to-rem(40) px-to-rem(62);
   }
 
-  &__group-title.h4 {
-    margin-bottom: px-to-rem(18);
+  &__group {
+    flex-basis: 33.3%;
   }
 
   &__group > * {
     margin-bottom: 1rem;
+  }
+
+  &__group-title.h4 {
+    margin-bottom: px-to-rem(18);
   }
 
   &__link a {
