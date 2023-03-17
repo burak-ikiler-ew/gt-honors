@@ -1,11 +1,10 @@
 {% set prefix = 'metric-item' %}
 {% set classes = [
   prefix,
-  'hexagon',
-  'row',
+  prefix ~ '--hexagon',
 ] %}
 
 <div{{ attributes.addClass(classes) }}>
-  <div class="{{ prefix }}__title col">{{ title }}</div>
-  <div class="{{ prefix }}__description col">{{ description }}</div>
+  <div class="{{ prefix }}__title">{{ title }}</div>
+  <div class="{{ prefix }}__description">{{ description }}</div>
 </div>

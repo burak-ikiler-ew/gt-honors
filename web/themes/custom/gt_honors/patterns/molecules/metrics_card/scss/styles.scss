@@ -1,0 +1,45 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.metrics-card {
+  background-image: url("/themes/custom/gt_honors/images/hexagon-bg.svg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: px-to-rem(320px);
+  background-color: $color-white;
+  padding: 2.25rem 1.5rem 3rem;
+  border-radius: 19px;
+
+  @include media-breakpoint-up(sm) {
+    padding: 3rem 3rem 3.5rem;
+  }
+
+  &__title {
+    @extend %h3;
+    margin-bottom: px-to-rem(23px);
+
+    @include media-breakpoint-up(sm) {
+      margin-bottom: px-to-rem(30px);
+    }
+  }
+}
+
+.metrics-list {
+  &__title {
+    @extend %h5;
+    margin-bottom: 0;
+  }
+  
+  &__subtitle {
+    margin-bottom: 2.125rem;
+  }
+
+  &__item + &__item {
+    margin-top: px-to-rem(30px);
+  }
+}
+
+// TODO: Refactor this temporary solution.
+.metrics-card {
+  margin-bottom: 48px;
+}

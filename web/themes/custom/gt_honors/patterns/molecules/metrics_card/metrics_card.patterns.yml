@@ -1,0 +1,20 @@
+metrics_card:
+  label: Metrics card
+  description: A card with two lists of metrics (left & right).
+  fields:
+    title:
+      type: text
+      label: Metrics card title
+    left_metrics_list:
+      type: mixed
+      label: Left metrics list
+    right_metrics_list:
+      type: mixed
+      label: Right metrics list
+
+  libraries:
+    -
+      metrics_card:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }

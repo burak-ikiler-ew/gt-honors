@@ -1,0 +1,13 @@
+{% set prefix = 'metrics-card' %}
+{% set classes = [
+  prefix,
+  'row',
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="{{ prefix }}__title">
+    <h3>{{ title }}</h3>
+  </div>
+  <div class="col-md-6 {{ prefix }}__left-metrics-list">{{ left_metrics_list }}</div>
+  <div class="col-md-6 {{ prefix }}__right-metrics-list">{{ right_metrics_list }}</div>
+</div>
