@@ -15,7 +15,8 @@
       img,
       article,
       picture,
-      .contextual-region {
+      .contextual-region,
+      & > div {
         width: 100%;
         height: 100%;
       }

@@ -1,0 +1,23 @@
+uuid: 5a7b3b82-82aa-4624-9d81-92951d4c074e
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_card_sm_1x
+label: 'Image Card SM 1X'
+effects:
+  e4094321-165a-4746-b513-d9ba2329a893:
+    uuid: e4094321-165a-4746-b513-d9ba2329a893
+    id: image_convert
+    weight: 1
+    data:
+      extension: jpg
+  c4577664-0b6a-40a5-8758-e03c40da7f4f:
+    uuid: c4577664-0b6a-40a5-8758-e03c40da7f4f
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 768
+      height: 591
+      crop_type: focal_point

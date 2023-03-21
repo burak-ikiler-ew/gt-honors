@@ -30,13 +30,27 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes }}>
+      <ul{{ attributes.addClass('menu', 'mx-0') }}>
     {% else %}
-      <ul>
+      <ul{{ attributes.addClass('menu', 'mx-sub') }}>
     {% endif %}
     {% for item in items %}
-      <li{{ item.attributes }}>
-        {{ link(item.title, item.url) }}
+      {%
+        set classes = [
+        'menu-item',
+        'nav-item',
+        item.is_expanded ? 'nav-item--expanded',
+        item.is_collapsed ? 'nav-item--collapsed',
+        item.in_active_trail ? 'nav-item--active-trail',
+      ]
+      %}
+      <li{{ item.attributes.addClass(classes) }}>
+        {% set attributes = {
+          'class': [
+            'menu-item',
+          ]
+        } %}
+        {{ link(item.title, item.url) | merge({'#attributes': attributes}) }}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}

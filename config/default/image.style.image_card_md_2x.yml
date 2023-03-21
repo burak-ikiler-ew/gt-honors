@@ -1,0 +1,23 @@
+uuid: 5f3ed14f-005f-46e6-8493-fc3ab17951db
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_card_md_2x
+label: 'Image Card MD 2X'
+effects:
+  e3101d32-4149-43fd-8a0b-d05e23d1a960:
+    uuid: e3101d32-4149-43fd-8a0b-d05e23d1a960
+    id: image_convert
+    weight: 1
+    data:
+      extension: jpg
+  6bf917ed-af1b-40b3-ae85-6deb3d1dfd89:
+    uuid: 6bf917ed-af1b-40b3-ae85-6deb3d1dfd89
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 1985
+      height: 1527
+      crop_type: focal_point

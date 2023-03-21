@@ -1,0 +1,68 @@
+uuid: 6a7a6468-f970-47c2-80a5-dca7613a6ed8
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.image_card_lg_1x
+    - image.style.image_card_lg_2x
+    - image.style.image_card_md_1x
+    - image.style.image_card_md_2x
+    - image.style.image_card_sm_1x
+    - image.style.image_card_sm_2x
+  theme:
+    - gt_honors
+id: image_card
+label: 'Image card'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_card_lg_1x
+    breakpoint_id: honors.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_card_lg_2x
+    breakpoint_id: honors.xl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_card_lg_1x
+    breakpoint_id: honors.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_card_lg_2x
+    breakpoint_id: honors.lg
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_card_md_1x
+    breakpoint_id: honors.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_card_md_2x
+    breakpoint_id: honors.md
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_card_sm_1x
+    breakpoint_id: honors.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_card_sm_2x
+    breakpoint_id: honors.sm
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_card_sm_1x
+    breakpoint_id: honors.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_card_sm_2x
+    breakpoint_id: honors.xs
+    multiplier: 2x
+breakpoint_group: gt_honors
+fallback_image_style: image_card_md_1x
