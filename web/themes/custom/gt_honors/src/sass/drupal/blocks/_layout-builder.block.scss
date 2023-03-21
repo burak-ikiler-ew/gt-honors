@@ -5,6 +5,11 @@
   .layout__region--second &,
   .layout__region--third & {
     height: unset;
+    padding-bottom: 1.5rem;
+
+    &.block-inline-blockimage-with-copy {
+      height: 100%;
+    }
   }
 
   &.block-inline-blockimage-gallery {
