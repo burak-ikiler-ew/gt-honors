@@ -16,10 +16,28 @@
 
   &__title {
     @extend %h3;
-    margin-bottom: px-to-rem(23px);
+    margin-bottom: 1rem;
 
     @include media-breakpoint-up(sm) {
       margin-bottom: px-to-rem(30px);
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__right {
+    padding-top: px-to-rem(30px);
+
+    @include media-breakpoint-up(sm) {
+      padding-top: 0;
     }
   }
 }
@@ -29,13 +47,20 @@
     @extend %h5;
     margin-bottom: 0;
   }
-  
+
   &__subtitle {
     margin-bottom: 2.125rem;
   }
 
   &__item + &__item {
     margin-top: px-to-rem(30px);
+  }
+
+  &#{&}--default,
+  &#{&}--hexagon {
+    @include media-breakpoint-up (sm) {
+      padding-top: px-to-rem(20px);
+    }
   }
 }
 

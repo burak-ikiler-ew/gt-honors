@@ -38,14 +38,10 @@
     font-weight: 800;
     line-height: px-to-rem(83);
     letter-spacing: 0;
-    margin: px-to-rem(24) 0;
 
     @include media-breakpoint-up(lg) {
       font-size: px-to-rem(85);
-    }
-
-    @include media-breakpoint-up(md) {
-      margin: 0 0 px-to-rem(16);
+      margin: px-to-rem(24) 0 px-to-rem(16);
     }
   }
 
