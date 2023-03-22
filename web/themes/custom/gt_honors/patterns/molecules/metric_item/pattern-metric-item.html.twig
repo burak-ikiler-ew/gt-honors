@@ -1,13 +1,10 @@
 {% set prefix = 'metric-item' %}
 {% set classes = [
-  prefix
+  prefix,
+  prefix ~ '--default',
 ] %}
 
 <div{{ attributes.addClass(classes) }}>
-  <div class="row">
-    <div class="{{ prefix }}__title col">{{ title }}</div>
-  </div>
-  <div class="row">
-    <div class="{{ prefix }}__description col">{{ description }}</div>
-  </div>
+  <div class="{{ prefix }}__title">{{ title }}</div>
+  <div class="{{ prefix }}__description">{{ description }}</div>
 </div>

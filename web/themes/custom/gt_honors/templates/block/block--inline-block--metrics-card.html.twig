@@ -31,17 +31,16 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'row'
   ]
 %}
 
 <div{{ attributes.addClass(classes) }}>
-  <div class="row">
-    <div class="col">
-      {{ content.field_left_metric_list }}
-    </div>
-    <div class="col">
-      {{ content.field_right_metric_list }}
-    </div>
-  </div>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {{ pattern ('metrics_card',{
+    title: label,
+    left_metrics_list: content.field_left_metric_list,
+    right_metrics_list: content.field_right_metric_list,
+  }) }}
 </div>

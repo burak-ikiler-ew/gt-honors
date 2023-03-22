@@ -4,23 +4,53 @@
 .metric-item {
   &__title {
     color: $color-navy-blue;
+  }
+
+  &--default,
+  &--hexagon {
+    display: flex;
+    align-items: center;
+  }
+
+  &--hexagon &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    width: px-to-rem(32px);
+    height: px-to-rem(37px);
+    margin-right: 2.25rem;
+    background-image: url("/themes/custom/gt_honors/images/hexagon--blue.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &--default &__title {
+    font-weight: $font-weight-medium;
+    font-size: $font-26;
+    line-height: 2.375rem;
+    margin-right: 1rem;
+  }
+
+  &--featured &__title {
     font-size: px-to-rem(48);
     font-weight: 800;
     line-height: px-to-rem(83);
     letter-spacing: 0;
-    margin: px-to-rem(24) 0;
 
     @include media-breakpoint-up(lg) {
       font-size: px-to-rem(85);
-    }
-
-    @include media-breakpoint-up(md) {
-      margin: 0 0 px-to-rem(16);
+      margin: px-to-rem(24) 0 px-to-rem(16);
     }
   }
 
   &__description {
     max-width: 70%;
+
+    p {
+      margin: 0;
+    }
   }
 }
 

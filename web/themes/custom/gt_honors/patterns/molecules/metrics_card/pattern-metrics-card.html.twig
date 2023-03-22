@@ -1,0 +1,28 @@
+{% set prefix = 'metrics-card' %}
+{% set classes = [
+  prefix,
+  'row',
+] %}
+
+{% set embed_main_title = right_metrics_list.0['#paragraph'].field_display_type.value != 'featured' %}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if not embed_main_title %}
+    <div class="{{ prefix }}__title">
+      <h3>{{ title }}</h3>
+    </div>
+  {% endif %}
+
+  <div class="col-md-6 {{ prefix }}__left">
+    {% if embed_main_title %}
+      <div class="{{ prefix }}__title {{ prefix }}__title--embedded">
+        <h3>{{ title }}</h3>
+      </div>
+    {% endif %}
+    {{ left_metrics_list }}
+  </div>
+
+  <div class="col-md-6 {{ prefix }}__right">
+    {{ right_metrics_list }}
+  </div>
+</div>

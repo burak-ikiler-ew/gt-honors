@@ -38,26 +38,31 @@
  * @ingroup themeable
  */
 #}
-{% set prefix = 'metric-list' %}
+{% set prefix = 'metrics-list' %}
 {% set display_type = paragraph.field_display_type.0.value %}
-{% set parent_field_name = paragraph._referringItem.parent.name %}
 
-<div class="{{ prefix }}__group">
-  {% if parent_field_name == 'field_left_metric_list' %}
-    <h2 class="{{ prefix }}__group-title">{{ content.field_title }}</h2>
-    <div class="{{ prefix }}__subtitle">{{ content.field_sub_title }}</div>
-  {% else %}
-    <h3 class="{{ prefix }}__group-title">{{ content.field_title }}</h3>
+{% set classes = [
+  prefix,
+  prefix ~ '--' ~ display_type,
+]%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if content.field_title|render %}
+    <h4 class="{{ prefix }}__title">{{ content.field_title }}</h4>
     <div class="{{ prefix }}__subtitle">{{ content.field_sub_title }}</div>
   {% endif %}
 
   {% for key, metric_item in paragraph.field_metric_items %}
     {% set item = metric_item.entity %}
-    {{ pattern('metric_item', {
-      title: item.field_title.0.value,
-      description: item.field_content.0.value,
-      metric_item_id: paragraph.id(),
-    }, display_type) }}
+
+    <div class="{{ prefix }}__item {{ prefix }}__item--{{ display_type }}">
+      {{ pattern('metric_item', {
+        title: item.field_title.0.value,
+        description: item.field_content.0.value,
+        metric_item_id: paragraph.id(),
+      }, display_type) }}
+    </div>
+
   {% endfor %}
 </div>
 
