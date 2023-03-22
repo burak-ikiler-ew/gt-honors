@@ -1,6 +1,6 @@
 .layout,
 .layout__wrapper {
-  @extend %margin-default;
+  @extend %margin-layout-default;
 
   &:first-child {
     margin-top: 0;
@@ -75,7 +75,22 @@
         width: 25%;
       }
     }
+  }
 
+  .block-layout-builder:not(:last-of-type) {
+    @extend %margin-block-default;
+    padding-bottom: 0;
 
+    &.block-inline-blockmetrics-card:not(:last-of-type) {
+      margin-bottom: 1.5rem;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: $m-mobile;
+      }
+    }
+
+    &.block-inline-blockheading-title {
+      margin-bottom: 3rem;
+    }
   }
 }
