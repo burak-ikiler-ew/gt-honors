@@ -3,12 +3,20 @@
 $m-desktop: 6.25rem;
 $m-mobile: 3.125rem;
 
-%margin-default {
+%margin-layout-default {
   margin-top: $m-mobile;
   margin-bottom: $m-mobile;
 
   @include media-breakpoint-up(lg) {
     margin-top: $m-desktop;
+    margin-bottom: $m-desktop;
+  }
+}
+
+%margin-block-default {
+  margin-bottom: $m-mobile;
+
+  @include media-breakpoint-up(lg) {
     margin-bottom: $m-desktop;
   }
 }

@@ -35,8 +35,8 @@
   }
 }
 
-// Apply only inside two-column sections.
-.layout--twocol-section {
+// Apply only inside layout__region--first.
+.layout__region--first {
   .basic-content {
     @include media-breakpoint-up(sm) {
       max-width: 90%;
