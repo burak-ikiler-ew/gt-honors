@@ -32,6 +32,11 @@
 
   &__body {
     @extend %font-lg;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -39,11 +44,16 @@
 .layout__region--first {
   .basic-content {
     @include media-breakpoint-up(sm) {
-      max-width: 90%;
-
       &__title {
         max-width: 70%;
       }
     }
+  }
+}
+
+.layout--twocol-section {
+  .basic-content.container-lg {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
