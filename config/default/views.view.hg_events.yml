@@ -346,7 +346,7 @@ display:
         row: false
         fields: false
       css_class: mb-5
-      use_more: true
+      use_more: false
       use_more_always: false
       use_more_text: 'More events'
       display_extenders: {  }
