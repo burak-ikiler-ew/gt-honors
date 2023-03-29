@@ -28,6 +28,8 @@ dependencies:
     - node.type.hg_event
   module:
     - datetime_range
+    - fences
+    - field_formatter_class
     - file
     - image
     - link
@@ -51,9 +53,20 @@ content:
     region: content
   field_hg_contact:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
     weight: 109
     region: content
   field_hg_event_categories:
@@ -144,10 +157,21 @@ content:
     region: content
   field_hg_location:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
     weight: 105
     region: content
   field_hg_location_email:
@@ -179,10 +203,21 @@ content:
     region: content
   field_hg_related_files:
     type: file_default
-    label: above
+    label: hidden
     settings:
       use_description_as_link_text: true
-    third_party_settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
     weight: 113
     region: content
   field_hg_related_links:
@@ -199,9 +234,20 @@ content:
     region: content
   field_hg_sidebar:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
     weight: 115
     region: content
   field_hg_source_updated:

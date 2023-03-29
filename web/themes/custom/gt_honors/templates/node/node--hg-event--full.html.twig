@@ -1,0 +1,281 @@
+{# PREPARING attributes. #}
+{% set prefix = 'gt-event' %}
+{% set classes = [
+    prefix,
+] %}
+
+
+{# PREPARING the markup elements. #}
+
+{# EVENT MAIN TITLE -- start #}
+{% set event_title %}
+  <h1>{{ node.title.value }}</h1>
+{% endset %}
+{# EVENT MAIN TITLE -- end #}
+
+{# EVENT CONTENT BODY -- start #}
+{% set event_content_body %}
+  {# Body #}
+  {% if content.body|render is not empty %}
+      <div class="description mb-4">
+          {{ content.body[0] }}
+      </div>
+  {% endif %}
+  {# Images #}
+  {% if content.field_hg_images|render is not empty %}
+    <div class="event-image mb-4">
+        <picture>
+            {{ content.field_hg_images[0] }}
+        </picture>
+    </div>
+  {% endif %}
+  {# Render remaining Images #}
+  {% if content.field_hg_images|render is not empty %}
+      <div class="row">
+          {% for key, item in content.field_hg_images %}
+              {% if key > 0 %}
+                  <div class="col-sm-5 event-image-remaining">
+                      <picture>
+                          {{ item }}
+                      </picture>
+                  </div>
+              {% endif %}
+          {% endfor %}
+      </div>
+  {% endif %}
+  {# Event Extras #}
+  <div class="{{ prefix }}__info-extra">
+      {# Related Links #}
+      {% if content.field_hg_related_links|render is not empty %}
+          <div class="related-links py-3">
+              <label class="h4 w-100">
+                  {% if content.field_hg_related_links['#items']|length == '1' %}
+                      {{ 'Link'|t }}
+                  {% else %}
+                      {{ 'Links'|t }}
+                  {% endif %}
+              </label>
+              <div>
+                {% for item in content.field_hg_related_links %}
+                    {% if item['#title'] %}
+                        <a href="{{ item['#url'] }}" class="hg-link"
+                            aria-label="{{ 'Related Link'|t ~ ' ' ~ item['#title'] }}"
+                            role="button">{{ item['#title'] }}</a>
+                    {% endif %}
+                {% endfor %}
+              </div>
+          </div>
+      {% endif %}
+      {# Related Files #}
+      {% if content.field_hg_related_files|render is not empty %}
+        <div class="related-files my-3">
+          <label class="h4">{{ 'Files'|t }}</label>
+          {{ content.field_hg_related_files }}
+        </div>
+      {% endif %}
+  </div>
+{% endset %}
+{# EVENT CONTENT BODY -- end #}
+
+{# EVENT DETAILS (sidebar) -- start #}
+{% set event_details %}
+  {# Date details. #}
+  {% if node.field_hg_event_time is not empty %}
+    <div class="{{ prefix }}__date-details mb-3">
+      {# Month #}
+      {% set month_start = node.field_hg_event_time.start_date|date('F') %}
+      {% set month_end = node.field_hg_event_time.end_date|date('F') %}
+      <label class="h5">{{ 'Date'|t }}</label>
+      <div>
+        {% if month_start is not empty and month_start is same as(month_end) %}
+            {{ month_start }}
+        {% else %}
+            {# Multi #}
+            {{ month_start  ~ ' - ' ~ month_end }}
+        {% endif %}
+        {# Date #}
+        {% set date_start = node.field_hg_event_time.start_date|date('j') %}
+        {% set date_end = node.field_hg_event_time.end_date|date('j') %}
+        {% if date_start is not empty and date_start is same as(date_end) %}
+            {{ date_start }}{{ ", "|t }}
+        {% else %}
+            {# Multi #}
+            {{ date_start  ~ ' - ' ~ date_end }}{{ ", "|t }}
+        {% endif %}
+        {# Year #}
+        {% set year_start = node.field_hg_event_time.start_date|date('Y') %}
+        {% set year_end = node.field_hg_event_time.end_date|date('Y') %}
+        {% if year_start is not empty and year_start is same as(year_end) %}
+            {{ year_start }}
+        {% else %}
+            {# Multi #}
+            {{ year_start }}
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+  {# Location details. #}
+  {% if content.field_hg_location is not empty %}
+    <div class="{{ prefix }}__location-details mb-3">
+      <label class="h5">{{ 'Location'|t }}</label>
+      <div>
+        {% if content.field_hg_location|render is not empty and content.field_hg_location_url|render is empty %}
+            {{ content.field_hg_location }}
+        {% else %}
+            {% if node.field_hg_location_url.0.url.external %}
+                <a href="{{ node.field_hg_location_url.uri }}"
+                    aria-label="{{ 'Location Information'|t }}" target="_blank">
+                    {{ 'Location Information'|t }}
+                </a>
+            {% elseif node.field_hg_location_url.0.url.routeName %}
+                <a href="{{ node.field_hg_location_url.uri }}"
+                    aria-label="{{ 'Location Information'|t }}">
+                    {{ 'Location Information'|t }}
+                </a>
+            {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+  {# Invited Audience #}
+  {% if content.field_hg_invited_audience|render is not empty %}
+      <div class="invited-audience">
+          <label class="h5 w-100">
+              {% if content.field_hg_invited_audience['#items']|length == '1' %}
+                  {{ 'Audience'|t }}
+              {% else %}
+                  {{ 'Audiences'|t }}
+              {% endif %}
+          </label>
+          <div>
+            {% for item in content.field_hg_invited_audience %}
+                {% if item['#title'] %}
+                    <a href="{{ item['#url'] }}" class="hg-link"
+                        aria-label="{{ 'Audience'|t ~ ' ' ~ item['#title'] }}"
+                        role="button">{{ item['#title'] }}</a>
+                {% endif %}
+            {% endfor %}
+          </div>
+      </div>
+  {% endif %}
+  {# Contact details. #}
+  {% if content.field_hg_contact|render is not empty %}
+    <div class="{{ prefix }}__contact-details mb-3">
+      <label class="h5">{{ 'Contact'|t }}</label>
+      <div>
+        {{ content.field_hg_contact }}
+      </div>
+    </div>
+  {% endif %}
+  {# Location Phone details. #}
+  {% if content.field_hg_location_phone|render is not empty %}
+    <div class="{{ prefix }}__phone-details mb-3">
+      <label class="h5">{{ 'Phone'|t }}</label>
+      <div class="phone">{{ content.field_hg_location_phone.0 }}</div>
+    </div>
+  {% endif %}
+  {# Location Email details. #}
+  {% if content.field_hg_location_email|render is not empty %}
+      <div class="location-email mb-4">
+        <label class="h5">
+            {{ 'Email'|t }}
+        </label>
+        <div>
+          <a href="mailto:{{ content.field_hg_location_email.0|raw }}">{{ content.field_hg_location_email.0|raw }}</a>
+        </div>
+      </div>
+  {% endif %}
+  {# Event Categories #}
+  {% if content.field_hg_event_categories|render is not empty %}
+      <div class="event-categories">
+          <label class="h5 w-100">
+              {% if content.field_hg_event_categories['#items']|length == '1' %}
+                  {{ 'Event Category'|t }}
+              {% else %}
+                  {{ 'Event Categories'|t }}
+              {% endif %}
+          </label>
+          <div>
+            {% for item in content.field_hg_event_categories %}
+                {% if item['#title'] %}
+                    <a href="{{ item['#url'] }}" class="hg-link"
+                        aria-label="{{ 'Event Category'|t ~ ' ' ~ item['#title'] }}"
+                        role="button">{{ item['#title'] }}</a>
+                {% endif %}
+            {% endfor %}
+          </div>
+      </div>
+  {% endif %}
+  {# Fee and Extra #}
+  {% if content.field_hg_fee|render is not empty and content.field_hg_extras|render is empty %}
+      {# Fee #}
+      <div class="fee-wrapper mb-4">
+          <div class="fee">
+              <label class="h5 w-100">
+                  {{ 'Fee'|t }}
+              </label>
+              <p>{{ content.field_hg_fee.0 }}</p>
+          </div>
+      </div>
+  {% else %}
+      {# Fee and Extras #}
+      {% if content.field_hg_fee|render is not empty and content.field_hg_extras|render is not empty %}
+          <div class="fee-wrapper-extras mb-4">
+              <div class="fee">
+                  <label class="h5 w-100">
+                      {{ 'Fee'|t }}
+                  </label>
+                  <p>{{ content.field_hg_fee.0 }}</p>
+              </div>
+              <div class="extras">
+                  <label class="h5 w-100">
+                      {{ 'Extras'|t }}
+                  </label>
+                  <p>{{ content.field_hg_extras.0 }}</p>
+              </div>
+          </div>
+      {% endif %}
+  {% endif %}
+  {# Sidebar Extra Content #}
+  {% if content.field_hg_sidebar|render is not empty %}
+      <label class="h5 w-100">{{ 'Additional information'|t }}</label>
+      <div class="extra-sidebar">
+          {{ content.field_hg_sidebar }}
+      </div>
+  {% endif %}
+{% endset %}
+{# EVENT DETAILS (sidebar) -- end #}
+
+{# FIRST and SECOND parts of the 2 COLUMN LAYOUT -- start #}
+{% set first %}
+  {{ pattern('basic_content', {
+    title: 'Event Information' ,
+    icon_class: 'events',
+    body: event_content_body,
+  }) }}
+{% endset %}
+{% set second %}
+  {{ pattern('alert', {
+    title: 'Event Info',
+    body: event_details,
+  }) }}
+{% endset %}
+{# FIRST and SECOND parts of the 2 COLUMN LAYOUT -- end #}
+
+{# RENDERING -- start #}
+{{ attach_library('layout_builder/twocol_section') }}
+
+<article{{ attributes.setAttribute('id', 'mercury').addClass(classes) }}>
+  <div class="layout layout--onecol">
+    {{ pattern('banner', {
+      title: event_title,
+    }) }}
+  </div>
+
+  {% include 'layout--twocol-section.html.twig' with {
+    content: { 'first': first, 'second': second },
+    region_attributes: { first: create_attribute(), second: create_attribute() },
+    attributes: create_attribute().addClass('layout layout--twocol-section layout--twocol-section--67-33'),
+  } %}
+</article>
+{# RENDERING -- end #}
