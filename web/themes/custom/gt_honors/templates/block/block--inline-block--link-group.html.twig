@@ -31,14 +31,21 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'container-lg',
   ]
 %}
+
+{% set display_mode = content.field_display_mode.0['#markup'] %}
+{% set icon_class = content.field_icon.0['#taxonomy_term'].field_icon_class.value|clean_class %}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
 
   {% block content %}
-    {{ pattern('quicklinks', { content }) }}
+    {{ pattern('quicklinks', {
+      icon_class,
+      title: configuration.label_display == 'visible' ? label : '',
+      content: content.field_link_groups,
+    }, display_mode) }}
   {% endblock %}
 </div>

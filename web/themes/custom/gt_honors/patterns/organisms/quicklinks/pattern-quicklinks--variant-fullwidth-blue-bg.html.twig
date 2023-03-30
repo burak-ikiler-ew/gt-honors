@@ -3,10 +3,12 @@
 {%
   set classes = [
     prefix,
+    prefix ~ '--fullwidth-blue-bg',
+    'container-lg',
   ]
 %}
 
-<div class="quicklinks-wrapper--default container-lg">
+<div class="quicklinks-wrapper--fullwidth-blue-bg">
   {% if title %}
     <div class="container-lg">
       <h2 class="{{ prefix }}__title">
@@ -16,7 +18,6 @@
     </div>
   {% endif %}
   <div {{ attributes.addClass(classes) }}>
-    <div class="{{ prefix }}__hatch"></div>
     {{ content }}
   </div>
 </div>

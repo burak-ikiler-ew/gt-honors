@@ -6,8 +6,15 @@
     margin-top: 0;
   }
 
-  .footer-banner {
-    @extend %no-margin-bottom;
+  &:last-of-type {
+    .block-layout-builder:last-of-type {
+      .footer-banner {
+        @extend %no-margin-bottom;
+      }
+      .quicklinks-wrapper--fullwidth-blue-bg {
+        @extend %no-margin-bottom;
+      }
+    }
   }
 }
 

@@ -16,6 +16,20 @@
     padding: px-to-rem(78) px-to-rem(40) px-to-rem(62);
   }
 
+  &__title {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+
+    @include media-breakpoint-up(xl) {
+      flex-direction: row;
+    }
+  }
+
+  &__icon {
+    margin-right: 1.625rem;
+  }
+
   &__group {
     flex-basis: 33.3%;
   }
@@ -43,6 +57,44 @@
 
     @include media-breakpoint-up(sm) {
       display: block;
+    }
+  }
+
+  &--fullwidth-blue-bg {
+    background-color: transparent;
+
+    .quicklinks__link a {
+      color: $color-white;
+
+      &:hover {
+        color: $color-tech-gold;
+        transition: color 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+.quicklinks-wrapper {
+  &--default {
+    .quicklinks {
+      &__title {
+        margin-bottom: 3.125rem;
+      }
+      &__icon {
+        color: $color-tech-gold;
+      }
+    }
+  }
+
+  &--fullwidth-blue-bg {
+    color: $color-white;
+    padding: px-to-rem(60) 0;
+    background: $color-navy-blue url("/themes/custom/gt_honors/images/footer-banner_hexagons.svg") no-repeat;
+    background-size: px-to-rem(400px);
+    background-position: left 1rem top 3rem;
+  
+    @include media-breakpoint-up(sm) {
+      background-position: right 3rem center;
     }
   }
 }
