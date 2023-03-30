@@ -1,0 +1,21 @@
+uuid: d9b93817-1d57-456b-a2e5-af8e984bee39
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.link_group
+    - field.storage.block_content.field_display_mode
+  module:
+    - options
+id: block_content.link_group.field_display_mode
+field_name: field_display_mode
+entity_type: block_content
+bundle: link_group
+label: 'Display mode'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
