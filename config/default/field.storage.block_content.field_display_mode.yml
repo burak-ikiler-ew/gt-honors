@@ -1,0 +1,27 @@
+uuid: f3e14f27-8233-45c6-a73a-4b80038d7b2e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_display_mode
+field_name: field_display_mode
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: Default
+    -
+      value: fullwidth_blue_bg
+      label: 'Full-width blue background'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

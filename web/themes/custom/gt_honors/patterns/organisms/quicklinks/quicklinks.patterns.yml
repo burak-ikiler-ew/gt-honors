@@ -1,7 +1,20 @@
 quicklinks:
   label: Quicklinks
   description: 3-column layout for groups of links.
+  variants:
+    default:
+      label: Default
+      description: 'Default quicklinks in a container.'
+    fullwidth_blue_bg:
+      label: Full-width blue background
+      description: 'Quicklinks with a full width blue background.'
   fields:
+    title:
+      type: text
+      label: Title
+    icon_class:
+      type: text
+      label: Title
     content:
       type: mixed
       label: Groups of links 
