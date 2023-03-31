@@ -11,6 +11,7 @@ dependencies:
     - field.storage.node.field_hg_event_time
     - field.storage.node.field_hg_extras
     - field.storage.node.field_hg_fee
+    - field.storage.node.field_image
     - field.storage.node.field_hg_images
     - field.storage.node.field_hg_invited_audience
     - field.storage.node.field_hg_keywords
@@ -22,6 +23,7 @@ dependencies:
     - field.storage.node.field_hg_subtitle
     - field.storage.node.field_hg_summary
     - field.storage.node.field_hg_summary_sentence
+    - field.storage.node.field_tags
     - search_api.server.database
     - core.entity_view_mode.node.search_index
   module:
@@ -208,6 +210,22 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_hg_summary_sentence
+  field_image:
+    label: Image
+    datasource_id: 'entity:node'
+    property_path: field_image
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_image
+  field_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: field_tags
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_tags
   langcode:
     label: Language
     datasource_id: 'entity:node'
@@ -278,8 +296,10 @@ datasource_settings:
     bundles:
       default: false
       selected:
+        - article
         - hg_event
         - hg_news
+        - page
     languages:
       default: true
       selected: {  }
