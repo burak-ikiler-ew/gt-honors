@@ -19,7 +19,7 @@ entity_type: paragraph
 bundle: accordion_item
 label: Content
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
