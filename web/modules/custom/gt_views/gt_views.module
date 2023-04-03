@@ -45,7 +45,7 @@ function gt_views_views_data() {
   $data = [];
 
   $data['views']['past_event_filter'] = [
-    'title' => t('Past Events Filter'),
+    'title' => t('Display past events'),
     'help' => t('Adds boolean filter functionality for filtering out past events.'),
     'filter' => [
       'id' => 'past_events_filter',

@@ -1,4 +1,10 @@
 .sidebar-menu {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+
   .layout__region--first & {
     position: sticky;
     top: 150px;

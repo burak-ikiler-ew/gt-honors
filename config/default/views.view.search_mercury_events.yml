@@ -401,7 +401,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: 'Past Events Filter'
+            label: 'Display past events'
             description: ''
             use_operator: false
             operator: past_event_filter_op
