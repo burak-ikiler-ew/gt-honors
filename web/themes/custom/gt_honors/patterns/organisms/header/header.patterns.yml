@@ -12,6 +12,11 @@ header:
       label: Main menu
       description: Content for the main navigation.
       preview: Menu block
+    homepage_url:
+      type: text
+      label: Homepage url
+      description: Url to the home page.
+      preview: "/"
     search:
       type: mixed
       label: Hero
