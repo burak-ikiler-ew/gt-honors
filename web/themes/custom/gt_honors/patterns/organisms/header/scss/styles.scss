@@ -115,6 +115,7 @@
     .menu-item {
       font-size: $font-14;
       font-weight: $font-weight-semibold;
+      line-height: 1.25rem;
       color: $color-neutral000;
       margin: 0 1rem;
       position: relative;
@@ -125,7 +126,7 @@
       a {
         text-decoration: none;
         position: relative;
-        font-weight: 500;
+        font-weight: $font-weight-semibold;
         color: $color-neutral000;
         padding: 1.5rem 0;
 
