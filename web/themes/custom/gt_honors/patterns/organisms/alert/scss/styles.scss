@@ -30,10 +30,18 @@
       margin-left: 25px;
       transform: scale(2.5) translateY(-3px);
       fill: $color-neutral000;
+
+      path {
+        stroke: $color-neutral000;
+      }
     }
 
     &:hover svg.ext {
       fill: $color-white;
+
+      path {
+        stroke: $color-white;
+      }
     }
   }
 }
