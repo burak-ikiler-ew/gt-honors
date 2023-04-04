@@ -31,10 +31,12 @@
       transform: scale(2.5) translateY(-3px);
       fill: $color-neutral000;
       transition: fill $transition;
+      @include instant-transition-on-touch-devices;
 
       path {
-        transition: stroke $transition;
         stroke: $color-neutral000;
+        transition: stroke $transition;
+        @include instant-transition-on-touch-devices;
       }
     }
 
