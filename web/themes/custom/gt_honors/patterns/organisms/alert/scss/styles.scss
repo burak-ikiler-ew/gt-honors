@@ -30,8 +30,10 @@
       margin-left: 25px;
       transform: scale(2.5) translateY(-3px);
       fill: $color-neutral000;
+      transition: fill $transition;
 
       path {
+        transition: stroke $transition;
         stroke: $color-neutral000;
       }
     }
