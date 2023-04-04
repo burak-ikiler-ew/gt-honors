@@ -1,0 +1,15 @@
+{% extends "page.html.twig" %}
+
+{% set prefix = 'page-4xx' %}
+
+{% block content %}
+  <div class="{{ prefix }}__content bg-hexagons">
+    <div class="{{ prefix }}__inner container-lg">
+      {{ pattern('alert', {
+        title: 'Page not found',
+        body: page.content,
+        link: { '#markup': '<a href="' ~ base_path ~ '">Home page</a>' },
+      }, '4xx') }}
+    </div>
+  </div>
+{% endblock %}

@@ -1,6 +1,13 @@
 alert:
   label: Alert box
   description: Alert box with a title, body text, and a link.
+  variants:
+    default:
+      label: Default
+      description: 'Default Alert box.'
+    4xx:
+      label: 4xx-page
+      description: 'Alert box for the 4xx-page.'
   fields:
     title:
       type: text
