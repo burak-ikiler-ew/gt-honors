@@ -5,7 +5,7 @@
 .alert-box {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: $color-white;
   padding: px-to-rem(40px);
   border: 2px solid $color-tech-gold;
   border-radius: px-to-rem(10px);
@@ -16,6 +16,7 @@
 
   &__link {
     margin-top: 2rem;
+
     @include media-breakpoint-down(sm) {
       align-self: center;
     }
@@ -23,6 +24,16 @@
     a,
     button {
       @include gtl-button--secondary;
+    }
+
+    svg.ext {
+      margin-left: 25px;
+      transform: scale(2.5) translateY(-3px);
+      fill: $color-neutral000;
+    }
+
+    &:hover svg.ext {
+      fill: $color-white;
     }
   }
 }
