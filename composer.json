@@ -71,6 +71,7 @@
     "drupal/core-project-message": "^10",
     "drupal/core-recommended": "^10",
     "drupal/entity_browser": "^2.9",
+    "drupal/extlink": "^1.7",
     "drupal/fences": "^3.0",
     "drupal/field_formatter_class": "^1.4",
     "drupal/field_group": "^3.1",

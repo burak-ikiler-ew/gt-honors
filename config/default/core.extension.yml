@@ -80,6 +80,7 @@ module:
   user: 0
   video_embed_field: 0
   views_ui: 0
+  extlink: 1
   pathauto: 1
   externalauth: 10
   views: 10
