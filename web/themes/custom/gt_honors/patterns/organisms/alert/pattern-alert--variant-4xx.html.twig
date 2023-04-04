@@ -1,0 +1,21 @@
+{% set prefix = 'alert-box' %}
+
+{%
+  set classes = [
+    prefix
+  ]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  {% if title %}
+    <h1 class="{{ prefix }}__title h3">
+      {{ title }}
+    </h1>
+  {% endif %}
+  <div class="{{ prefix }}__body">
+    {{ body }}
+  </div>
+  <div class="{{ prefix }}__link">
+    {{ link }}
+  </div>
+</div>

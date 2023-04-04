@@ -1,0 +1,21 @@
+.page-4xx {
+  &__content {
+    padding: $m-mobile 0;
+
+    @include media-breakpoint-up(sm) {
+      padding: $m-desktop 0;
+    }
+
+    .alert-box {
+      text-align: center;
+    }
+  }
+
+  &__inner {
+    @include media-breakpoint-up(sm) {
+      max-width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
