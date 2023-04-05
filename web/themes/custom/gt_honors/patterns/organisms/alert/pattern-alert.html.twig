@@ -12,10 +12,14 @@
       {{ title }}
     </h2>
   {% endif %}
-  <div class="{{ prefix }}__body">
-    {{ body }}
-  </div>
-  <div class="{{ prefix }}__link">
-    {{ link }}
-  </div>
+  {% if body|render is not empty %}
+    <div class="{{ prefix }}__body">
+      {{ body }}
+    </div>
+  {% endif %}
+  {% if link|render is not empty %}
+    <div class="{{ prefix }}__link">
+      {{ link }}
+    </div>
+  {% endif %}
 </div>

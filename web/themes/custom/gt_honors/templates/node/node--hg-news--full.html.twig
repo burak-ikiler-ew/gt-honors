@@ -1,0 +1,147 @@
+{# PREPARING attributes. #}
+{% set prefix = 'gt-news' %}
+{% set classes = [
+    prefix,
+    'bg-hexagons',
+] %}
+
+
+{# PREPARING the markup elements. #}
+
+{# NEWS MAIN TITLE -- start #}
+{% set news_title %}
+  <h1>{{ node.title.value }}</h1>
+{% endset %}
+{# NEWS MAIN TITLE -- end #}
+
+{# NEWS CONTENT BODY -- start #}
+{% set news_content_body %}
+  {# Body #}
+  {% if content.body|render is not empty %}
+      <div class="description mb-4">
+          {{ content.body[0] }}
+      </div>
+  {% endif %}
+  {# Render remaining Images #}
+  {% if content.field_hg_images|render is not empty %}
+      <div class="row">
+          {% for key, item in content.field_hg_images %}
+              {% if key > 0 %}
+                  <div class="col-sm-5 news-image-remaining">
+                      <picture>
+                          {{ item }}
+                      </picture>
+                  </div>
+              {% endif %}
+          {% endfor %}
+      </div>
+  {% endif %}
+  {# News Extras #}
+  <div class="{{ prefix }}__info-extra">
+      {# Related Links #}
+      {% if content.field_hg_related_links|render is not empty %}
+          <div class="related-links py-3">
+              <label class="h4 w-100">
+                  {% if content.field_hg_related_links['#items']|length == '1' %}
+                      {{ 'Related Link'|t }}
+                  {% else %}
+                      {{ 'Related Links'|t }}
+                  {% endif %}
+              </label>
+              <div>
+                {% for item in content.field_hg_related_links %}
+                    {% if item['#title'] %}
+                        <a href="{{ item['#url'] }}" class="hg-link"
+                            aria-label="{{ 'Related Link'|t ~ ' ' ~ item['#title'] }}"
+                            role="button">{{ item['#title'] }}</a>
+                    {% endif %}
+                {% endfor %}
+              </div>
+          </div>
+      {% endif %}
+      {# Related Files #}
+      {% if content.field_hg_related_files|render is not empty %}
+        <div class="related-files my-3">
+          <label class="h4">{{ 'Related Files'|t }}</label>
+          {{ content.field_hg_related_files }}
+        </div>
+      {% endif %}
+  </div>
+{% endset %}
+{# NEWS CONTENT BODY -- end #}
+
+{# NEWS DETAILS (sidebar) -- start #}
+{% set news_details %}
+  {# Published details. #}
+  <div class="{{ prefix }}__published-details mb-3">
+    <label class="h5">{{ 'Published'|t }}</label>
+    {# Published date. #}
+    {% if node.field_hg_dateline is not empty %}
+    <div class="{{ prefix }}__date-details">
+      {{ node.changed.value|date() }}
+    </div>
+    {% endif %}
+  </div>
+  {% if node.field_author_name.value %}
+  <div class="{{ prefix }}__author-details mb-3">
+    <label class="h5">{{ 'Author'|t }}</label>
+    <div class="{{ prefix }}__author">
+      {{ node.field_author_name.value }}
+      {# Author location. #}
+      {% if content.field_hg_location is not empty %}
+        {{ content.field_hg_location }}
+      {% endif %}
+    </div>
+    {# Author Email. #}
+    {% if content.field_hg_email|render is not empty %}
+      <div class="{{ prefix }}__author-email">
+        <a href="mailto:{{ content.field_hg_email.0|raw }}">{{ content.field_hg_email.0|raw }}</a>
+      </div>
+    {% endif %}
+  </div>
+  {% endif %}
+  {# Sidebar Extra Content #}
+  {% if content.field_hg_sidebar|render is not empty %}
+    <div class="{{ prefix }}__more">
+      <label class="h5 w-100">{{ 'More on this topic'|t }}</label>
+      <div class="extra-sidebar">
+        {{ content.field_hg_sidebar }}
+      </div>
+    </div>
+  {% endif %}
+{% endset %}
+{# NEWS DETAILS (sidebar) -- end #}
+
+{# FIRST and SECOND parts of the 2 COLUMN LAYOUT -- start #}
+{% set first %}
+  {{ pattern('basic_content', {
+    title: content.field_hg_subtitle ,
+    icon_class: 'news',
+    body: news_content_body,
+  }) }}
+{% endset %}
+{% set second %}
+  {{ pattern('alert', {
+    body: news_details,
+  }) }}
+{% endset %}
+{# FIRST and SECOND parts of the 2 COLUMN LAYOUT -- end #}
+
+{# RENDERING -- start #}
+{{ attach_library('layout_builder/twocol_section') }}
+
+<article{{ attributes.setAttribute('id', 'mercury').addClass(classes) }}>
+  <div class="layout layout--onecol">
+    {{ pattern('banner', {
+      title: news_title,
+      image: content.field_hg_images[0],
+    }) }}
+  </div>
+
+  {% include 'layout--twocol-section.html.twig' with {
+    content: { 'first': first, 'second': second },
+    region_attributes: { first: create_attribute(), second: create_attribute() },
+    attributes: create_attribute().addClass('layout layout--twocol-section layout--twocol-section--67-33'),
+  } %}
+</article>
+{# RENDERING -- end #}

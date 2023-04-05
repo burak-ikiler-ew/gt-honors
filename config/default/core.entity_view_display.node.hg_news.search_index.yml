@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_index
     - field.field.node.hg_news.body
+    - field.field.node.hg_news.field_author_name
     - field.field.node.hg_news.field_hg_categories
     - field.field.node.hg_news.field_hg_contact
     - field.field.node.hg_news.field_hg_core_research_areas
@@ -153,6 +154,7 @@ content:
     weight: 2
     region: content
 hidden:
+  field_author_name: true
   field_hg_categories: true
   field_hg_id: true
   field_hg_images: true
