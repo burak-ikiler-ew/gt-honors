@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.call_to_action
     - field.field.node.hg_news.body
+    - field.field.node.hg_news.field_author_name
     - field.field.node.hg_news.field_hg_categories
     - field.field.node.hg_news.field_hg_contact
     - field.field.node.hg_news.field_hg_core_research_areas
@@ -69,6 +70,7 @@ content:
     region: content
 hidden:
   body: true
+  field_author_name: true
   field_hg_categories: true
   field_hg_contact: true
   field_hg_core_research_areas: true
@@ -86,3 +88,4 @@ hidden:
   field_hg_summary_sentence: true
   field_hg_youtube_video: true
   links: true
+  search_api_excerpt: true
