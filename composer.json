@@ -90,6 +90,7 @@
     "drupal/twig_tweak": "^3.2",
     "drupal/ui_patterns": "^1.5",
     "drupal/video_embed_field": "^2.4",
+    "drupal/webform": "^6.2@beta",
     "drush/drush": "^11.0",
     "evolvingweb/drupal-ci": "^27301.0",
     "gt/gt_profile": "^4.0.0",
