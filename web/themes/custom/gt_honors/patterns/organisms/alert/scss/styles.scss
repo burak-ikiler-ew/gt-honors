@@ -24,11 +24,12 @@
     a,
     button {
       @include gtl-button--secondary;
+      display: flex;
+      gap: 1.75rem;
     }
 
     svg.ext {
-      margin-left: 25px;
-      transform: scale(2.5) translateY(-3px);
+      transform: scale(2.5);
       fill: $color-neutral000;
       transition: fill $transition;
       @include instant-transition-on-touch-devices;
