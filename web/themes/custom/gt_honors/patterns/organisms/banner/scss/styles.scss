@@ -17,7 +17,7 @@
     color: $color-white;
 
     @include media-breakpoint-up(lg) {
-      padding: 6.25rem !important;;
+      padding: 6.25rem !important;
     }
 
     span.h1,
@@ -33,6 +33,11 @@
   &__image {
     padding: 0 !important;
     min-height: 550px;
+    order: -1;
+
+    @include media-breakpoint-up(lg) {
+      order: unset;
+    }
 
     & *:not(.contextual) {
       width: 100%;
