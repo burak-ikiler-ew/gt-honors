@@ -3,11 +3,18 @@
     width: 100%;
     margin: 1rem 0 2rem;
   }
-  
+
+  tr {
+    border: 1px solid #EAEDE9;
+  }
+
+  td,
+  th {
+    padding: .75rem 1.5rem;
+  }
+
   tbody {
     tr {
-      border: 1px solid #EAEDE9;
-
       &:nth-child(odd) {
         background-color: $color-neutral300;
       }
@@ -16,16 +23,16 @@
         background-color: $color-white;
       }
     }
-
-    td {
-      padding: .75rem 1.5rem;
-    }
   }
 
   @include media-breakpoint-down(md) {
     table {
       display: flex;
       flex-direction: column;
+    }
+
+    thead {
+      @include visually-hidden();
     }
 
     tr {
