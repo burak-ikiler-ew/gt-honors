@@ -17,9 +17,9 @@
         <div class="primary-menu">
           {{ menu }}
         </div>
-        <button class="{{ prefix }}__search search-toggler">
+        <a href="/search" class="{{ prefix }}__search btn">
           <img src="/{{ active_theme_path() ~ '/src/icons/pictos/search.svg' }}" alt="{{ 'Search'|t }}"/>
-        </button>
+        </a>
         <a id="mobile-menu-toggler" class="d-lg-none mobile-menu-toggle" href="#mobile-menu">
           <span class="sr-only">{{ 'Show menu'|t }}</span>
         </a>

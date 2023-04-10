@@ -1,0 +1,25 @@
+{% extends "page.html.twig" %}
+
+{% set prefix = 'gt-search-page' %}
+
+{% block content %}
+  <div class="{{ prefix }} layout bg-hexagons">
+    {{ pattern('banner', {
+      title: { '#markup': '<h1>Site <span class="h1-slab">Search</span></h1>' },
+    }) }}
+
+    <div class="layout__wrapper">
+      <div class="{{ prefix }}__title block-layout-builder">
+        {{ pattern('heading', {
+          title: 'Search on the site',
+          icon_class: 'related-resources',
+          heading_type: 'h2',
+        }) }}
+      </div>
+
+      <div class="{{ prefix }}__content container-lg block-layout-builder">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
