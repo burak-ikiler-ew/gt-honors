@@ -50,6 +50,7 @@
     border: none;
     border-radius: 50px;
     padding: 0.25rem 1rem;
+    margin-left: 1.25rem;
   }
 
   .menu.dropdown-menu {
@@ -117,7 +118,7 @@
       font-weight: $font-weight-semibold;
       line-height: 1.25rem;
       color: $color-neutral000;
-      margin: 0 1rem;
+      margin: 0 1.25rem;
       position: relative;
       display: flex;
       flex-direction: column;
