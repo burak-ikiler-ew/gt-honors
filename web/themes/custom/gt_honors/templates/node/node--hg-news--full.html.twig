@@ -115,7 +115,7 @@
 {# FIRST and SECOND parts of the 2 COLUMN LAYOUT -- start #}
 {% set first %}
   {{ pattern('basic_content', {
-    title: content.field_hg_subtitle ,
+    title: content.field_hg_subtitle.0['#context'].value ,
     icon_class: 'news',
     body: news_content_body,
   }) }}
