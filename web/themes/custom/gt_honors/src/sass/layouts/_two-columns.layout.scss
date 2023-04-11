@@ -1,3 +1,9 @@
 .layout--two-columns {
   background: grey;
 }
+
+.layout--twocol-section {
+  .heading.container-lg {
+    padding: 0;
+  }
+}
