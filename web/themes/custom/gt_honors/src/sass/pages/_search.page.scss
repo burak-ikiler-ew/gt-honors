@@ -48,9 +48,9 @@
   }
 
   &__results {
-    li::marker {
-      @extend %h4;
-    }
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 
   .search-form + h2 {

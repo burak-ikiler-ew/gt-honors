@@ -28,11 +28,11 @@
   {%- endif -%}
 
   {%- if items -%}
-    <{{ list_type }}{{ attributes.addClass('gt-search-page__results') }}>
+    <ul{{ attributes.addClass('gt-search-page__results') }}>
       {%- for item in items -%}
         <li{{ item.attributes }}>{{ item.value }}</li>
       {%- endfor -%}
-    </{{ list_type }}>
+    </ul>
   {%- else -%}
     {{- empty -}}
   {%- endif -%}
