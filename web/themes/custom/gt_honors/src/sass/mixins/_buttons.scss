@@ -180,21 +180,10 @@
 }
 
 @mixin gtl-button--text-link {
-  color: $color-neutral000;
-  font-weight: $font-weight-bold;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  border-bottom: 2px solid $color-tertiary000;
-  background-color: transparent;
-  position: relative;
-  transition: border-bottom-width $transition;
-  @include instant-transition-on-touch-devices;
+  color: $color-navy-blue;
 
   &:hover {
-    color: $color-neutral000;
-    text-decoration: none;
-    border-bottom-width: 4px;
+    color: $color-tech-button-gold;
   }
 }
 
