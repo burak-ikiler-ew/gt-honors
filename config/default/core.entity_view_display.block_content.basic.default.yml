@@ -6,10 +6,12 @@ dependencies:
     - block_content.type.basic
     - field.field.block_content.basic.body
     - field.field.block_content.basic.field_icon
+    - field.field.block_content.basic.field_icon_position
     - field.field.block_content.basic.field_link
   module:
     - fences
     - field_formatter_class
+    - options
     - text
 _core:
   default_config_hash: IuxBIOMxHvxO1S6RPT3iqmieY-qc_2-z0o5mVKLC9_g
@@ -55,6 +57,24 @@ content:
       field_formatter_class:
         class: ''
     weight: 1
+    region: content
+  field_icon_position:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 2
     region: content
 hidden:
   field_link: true

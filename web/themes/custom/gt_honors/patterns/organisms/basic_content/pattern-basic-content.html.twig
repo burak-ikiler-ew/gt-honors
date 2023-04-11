@@ -10,7 +10,7 @@
 <div {{ attributes.addClass(classes) }}>
   {% if title %}
     <h2 class="{{ prefix }}__title">
-      <i class="{{ prefix }}__icon icon-{{ icon_class }}"></i>
+      <i class="{{ prefix }}__icon {{ prefix }}__icon--{{ icon_position }} icon-{{ icon_class }}"></i>
       {{ title }}
     </h2>
   {% endif %}

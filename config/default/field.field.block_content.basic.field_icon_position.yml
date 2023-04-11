@@ -1,0 +1,23 @@
+uuid: bb10a5d4-2db1-4f8a-9a5f-681f050b5255
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - field.storage.block_content.field_icon_position
+  module:
+    - options
+id: block_content.basic.field_icon_position
+field_name: field_icon_position
+entity_type: block_content
+bundle: basic
+label: 'Icon position'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: inline
+default_value_callback: ''
+settings: {  }
+field_type: list_string

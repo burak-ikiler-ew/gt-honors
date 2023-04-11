@@ -3,30 +3,28 @@
 
 .basic-content {
   &__title {
-    display: flex;
-    align-items: center;
+    vertical-align: center;
     margin-bottom: 2.25rem;
-
-    .layout__region--first & {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      font-weight: 600;
-    }
   }
 
   &__icon {
+    display: flex;
     vertical-align: middle;
     margin-right: 1.25rem;
-    display: block;
-
-    @include media-breakpoint-up(lg) {
-      display: flex;
-    }
 
     &::before {
       color: $color-tech-gold;
       @extend %icon;
+    }
+
+    @include media-breakpoint-up(lg) {
+      display: inline-flex;
+    }
+
+    &--above {
+      @include media-breakpoint-up(lg) {
+        display: flex;
+      }
     }
   }
 
