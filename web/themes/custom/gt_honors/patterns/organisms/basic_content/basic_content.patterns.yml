@@ -8,6 +8,9 @@ basic_content:
     icon_class:
       type: text
       label: Basic content icon
+    icon_position:
+      type: text
+      label: Basic content icon
     body:
       type: mixed
       label: Basic content body
