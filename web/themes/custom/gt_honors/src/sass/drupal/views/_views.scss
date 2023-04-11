@@ -12,14 +12,21 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 2rem;
-  // margin-bottom: $m-mobile;
   margin-bottom: $m-desktop;
+  gap: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    gap: 2rem;
+  }
 
   .form-item {
     display: flex;
-    gap: 1.5rem;
+    gap: 0.625rem;
     align-items: center;
+
+    @include media-breakpoint-up(lg) {
+      gap: 1.5rem;
+    }
 
     label {
       font-size: $font-14;
@@ -62,6 +69,25 @@
 
     .submit-btn {
       padding: px-to-rem(17px) 2rem;
+    }
+  }
+
+  .js-form-type-select {
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    // gap: 0.625rem;
+
+    @include media-breakpoint-up(lg) {
+      flex-basis: auto;
+      flex-wrap: unset;
+    }
+
+    .form-select {
+      flex-basis: 100%;
+
+      @include media-breakpoint-up(lg) {
+        flex-basis: auto;
+      }
     }
   }
 
