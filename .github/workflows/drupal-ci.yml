@@ -1,0 +1,23 @@
+name: Drupal Deploy
+
+on: [ push ]
+
+env:
+  THEME_DIR: docroot/themes/custom/yukonca_glider
+  BLT: ./vendor/bin/blt
+  BLT_DIR: ./vendor/acquia/blt
+  DRUPAL_CI_DIR: ./vendor/evolvingweb/drupal-ci
+  MYSQL_DATABASE: drupal
+  MYSQL_ROOT_PASSWORD: drupal
+
+jobs:
+  build:
+    container: evolvingweb/drupal-fpm:ci-8.1
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3          
+      
+    - name: Before build
+      run: |
+        echo "It is running"
