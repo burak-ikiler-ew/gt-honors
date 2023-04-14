@@ -5,6 +5,12 @@ image_card:
     default:
       label: Default
       description: The card with linked image and title.
+    single:
+      label: Single image
+      description: The card with image and optional link.
+    profile:
+      label: Profile card
+      description: The card with image and profile details.
   fields:
     title:
       type: text
@@ -23,6 +29,16 @@ image_card:
       label: Body
       description: Body.
       preview: 'Donec lobortis euismod risus, sed vulputate odio tempor non'
+    role:
+      type: text
+      label: Role
+      description: Role of the profile.
+      preview: 'Executive Director'
+    email:
+      type: text
+      label: Email
+      description: Email of the profile.
+      preview: 'name.surname@gatech.edu'
     link:
       type: string
       label: Link URL
