@@ -1,7 +1,9 @@
 @import "src/sass/core";
 @import "src/sass/placeholders/index";
 
-.image-card {
+$prefix: '.image-card';
+
+#{$prefix} {
   background-color: $color-white;
   border-radius: 10px;
   overflow: hidden;
@@ -39,6 +41,47 @@
       @include gtl-button--primary;
       text-decoration: none;
       margin-top: auto;
+    }
+  }
+
+  &#{$prefix}--single {
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  &#{$prefix}--profile {
+    background-color: transparent;
+    border-radius: 0;
+
+    #{$prefix} {
+      &__content {
+        padding: 2.375rem 0.75rem;
+        text-align: center;
+      }
+
+      &__image {
+        aspect-ratio: 1 / 1;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      &__role,
+      &__email {
+        @extend %h5;
+      }
+
+      &__email {
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+        color: $color-navy-blue;
+      }
+
+      &__body {
+        margin-top: 1rem;
+      }
     }
   }
 }

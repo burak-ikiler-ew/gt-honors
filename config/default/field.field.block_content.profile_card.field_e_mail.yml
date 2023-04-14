@@ -1,0 +1,19 @@
+uuid: 4f0b1a92-eb8c-41cb-a6aa-7a87e2e98a6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.profile_card
+    - field.storage.block_content.field_e_mail
+id: block_content.profile_card.field_e_mail
+field_name: field_e_mail
+entity_type: block_content
+bundle: profile_card
+label: E-mail
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

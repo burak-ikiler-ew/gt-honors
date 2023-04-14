@@ -8,6 +8,7 @@ dependencies:
     - field.field.block_content.image.field_image
     - field.field.block_content.image.field_link
   module:
+    - fences
     - field_formatter_class
     - image
     - link
@@ -20,33 +21,47 @@ bundle: image
 mode: default
 content:
   body:
-    weight: 3
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings:
       field_formatter_class:
         class: small
-    type: text_default
+    weight: 3
     region: content
   field_image:
-    weight: 1
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 1
     region: content
   field_link:
-    weight: 2
+    type: link
     label: hidden
     settings:
       trim_length: 80
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 2
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

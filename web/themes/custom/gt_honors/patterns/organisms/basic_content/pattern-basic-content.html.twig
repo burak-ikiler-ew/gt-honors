@@ -17,4 +17,14 @@
   <div class="{{ prefix }}__body">
     {{ body }}
   </div>
+  {% if additional_text %}
+    <div class="{{ prefix }}__additional_text">
+      {{ additional_text }}
+    </div>
+  {% endif %}
+  {% if link %}
+    <div class="{{ prefix }}__link">
+      {{ link }}
+    </div>
+  {% endif %}
 </div>

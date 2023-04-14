@@ -1,0 +1,15 @@
+{% set prefix = 'image-card' %}
+{% set classes = [
+  prefix,
+  variant ? prefix ~ '--' ~ variant : '',
+] %}
+
+{% if link %}
+  <a{{ attributes.addClass(classes) }} href="{{ link }}">
+    {{ image }}
+  </a>
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    {{ image }}
+  </div>
+{% endif %}
