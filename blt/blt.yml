@@ -49,8 +49,8 @@ command-hooks:
     dir: ${repo.root}
     command: ./scripts/pantheon/post-deploy-build
   frontend-reqs:
-    dir: ${docroot}/themes/custom/
-    command: 'bash -c "if [ -d ${project.theme.name} ] ; then cd ${project.theme.name} && nvm install && npm install && npm run build ; fi"'
+    dir: ${docroot}/themes/custom/${project.theme.name}
+    command: 'npm install && npm run build'
 
 # Drush.
 drush:
