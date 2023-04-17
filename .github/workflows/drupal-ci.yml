@@ -60,12 +60,7 @@ jobs:
         composer self-update --2
         composer validate --no-check-all --ansi
         composer install
-      
-    - uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
-        known_hosts: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
-        
+
     - name: Artifact Deploy
       run: |
         CI_PROJECT_DIR="$(pwd)"
