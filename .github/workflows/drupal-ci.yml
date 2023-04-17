@@ -16,8 +16,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3          
-      
+    - uses: actions/checkout@v3
+
+    - uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+
     - name: Before build
       run: |
         composer config -g cache-dir "$(pwd)/.composer-cache"
