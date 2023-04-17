@@ -50,7 +50,7 @@ command-hooks:
     command: ./scripts/pantheon/post-deploy-build
   frontend-reqs:
     dir: ${docroot}/themes/custom/
-    command: 'bash -c "if [ -d ${project.theme.name} ] ; then source ~/.profile && cd ${project.theme.name} && nvm install && npm install && npm run build ; fi"'
+    command: 'bash -c "if [ -d ${project.theme.name} ] ; then cd ${project.theme.name} && nvm install && npm install && npm run build ; fi"'
 
 # Drush.
 drush:
