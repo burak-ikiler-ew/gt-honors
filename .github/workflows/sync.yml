@@ -18,6 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Current Branch: ${GITHUB_REF_NAME}""
+          echo "Current Branch: ${GITHUB_REF_NAME}"
 
 
