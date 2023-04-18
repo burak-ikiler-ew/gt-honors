@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        git config remote.source.url >&- || git remote add source ${{ secrets.SOURCE_REPOSITORY }}
+        git config remote.source.url >&- || git remote add source ${secrets.SOURCE_REPOSITORY}
         git remote -v
         git checkout source ${GITHUB_REF_NAME}
         git push origin ${GITHUB_REF_NAME}
