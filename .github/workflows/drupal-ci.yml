@@ -7,8 +7,7 @@ env:
   BLT: ./vendor/bin/blt
   BLT_DIR: ./vendor/acquia/blt
   DRUPAL_CI_DIR: ./vendor/evolvingweb/drupal-ci
-  MYSQL_DATABASE: drupal
-  MYSQL_ROOT_PASSWORD: drupal
+  DEPLOYMENT_REMOTE: 'git@it.github.gatech.edu:honors-program/gt-honors-artifact.git'
 
 jobs:
   build:
@@ -70,4 +69,4 @@ jobs:
         nvm install
         cd $CI_PROJECT_DIR 
         GIT_COMMIT_MESSAGE="Automated commit by Drupal CI (${{ github.ref_name }} - ${{ github.sha }})"
-        $BLT artifact:deploy --commit-msg "$GIT_COMMIT_MESSAGE" --branch "${{ github.ref_name }}" --ignore-dirty --no-interaction --verbose
+        $BLT artifact:deploy -D git.remotes.0="$DEPLOYMENT_REMOTE" --commit-msg "$GIT_COMMIT_MESSAGE" --branch "${{ github.ref_name }}" --ignore-dirty --no-interaction --verbose
