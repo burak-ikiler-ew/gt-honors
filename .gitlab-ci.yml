@@ -4,6 +4,7 @@ image: evolvingweb/drupal-fpm:ci-8.1
 #  - mariadb:10.5
 
 stages:
+  - sync
   - build
   - deploy
 
@@ -23,12 +24,11 @@ cache:
     - .composer-cache/
 
 sync_repo:
-  stage: build
+  stage: sync
   script:
     - $SCRIPTS_DIR/ssh_key_add
-    - $SCRIPTS_DIR/composer_install
-    - $BLT validate
-    - $BLT source:build --ansi --verbose --no-interaction
+    - $SCRIPTS_DIR/sync_repository
+
   only:
     - master
     - deploy
