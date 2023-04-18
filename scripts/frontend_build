@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -ev
+
+nvm install
+npm install
+npm run build
+
+set +v

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -ev
+
+git remote add sync $SYNC_REPOSITORY
+git push sync ${CI_COMMIT_REF_NAME}
+
+set +v
