@@ -14,14 +14,17 @@
         </a>
       </div>
       <div class="col-6 col-lg-9 {{ prefix }}__menu">
-        <div class="primary-menu">
+        <a class="{{ prefix }}__mobile-menu-toggle btn" href="#mobile-menu" type="button" id="mobileMenuToggle" aria-haspopup="true" aria-expanded="false">
+          <img class="collapsed" style="pointer-events: none;" src="/{{ active_theme_path() ~ '/src/icons/pictos/hamburger.svg' }}" alt="{{ 'Show menu'|t }}"/>
+          <span class="collapsed sr-only">{{ 'Show menu'|t }}</span>
+          <img class="expanded" style="pointer-events: none;" src="/{{ active_theme_path() ~ '/src/icons/pictos/close-custom.svg' }}" alt="{{ 'Hide menu'|t }}"/>
+          <span class="expanded sr-only">{{ 'Hide menu'|t }}</span>
+        </a>
+        <div id="mainMenu" class="primary-menu" aria-labelledby="mobileMenuToggle">
           {{ menu }}
         </div>
         <a href="/search" class="{{ prefix }}__search btn">
           <img src="/{{ active_theme_path() ~ '/src/icons/pictos/search.svg' }}" alt="{{ 'Search'|t }}"/>
-        </a>
-        <a id="mobile-menu-toggler" class="d-lg-none mobile-menu-toggle" href="#mobile-menu">
-          <span class="sr-only">{{ 'Show menu'|t }}</span>
         </a>
       </div>
     </div>
