@@ -1,0 +1,11 @@
+.text-paragraph {
+  break-inside: avoid-column;
+
+  &.text-paragraph--parent-field--field_additional_text_block {
+    h2,
+    h3,
+    h4 {
+      @extend %h5;
+    }
+  }
+}

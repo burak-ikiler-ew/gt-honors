@@ -1,0 +1,37 @@
+.webform-submission-contact-us-form {
+  max-width: 37.5rem;
+  margin-bottom: 2rem;
+
+  .form-item {
+    margin-bottom: 0.625rem;
+
+    &-type-of-inquiry {
+      margin-bottom: 1.625rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: $font-weight-bold;
+    }
+
+    input,
+    select,
+    textarea {
+      color: $color-neutral100;
+      width: 100%;
+      border: none;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+    }
+
+    select {
+      border-radius: 50px;
+      padding: 1rem 1.75rem 1rem 1.25rem;
+      background: $color-white url("/themes/custom/gt_honors/src/icons/pictos/chevron-down.svg") no-repeat right 1.25rem center / 1.25rem;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+  }
+}

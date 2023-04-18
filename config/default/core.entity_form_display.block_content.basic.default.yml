@@ -5,11 +5,30 @@ dependencies:
   config:
     - block_content.type.basic
     - field.field.block_content.basic.body
+    - field.field.block_content.basic.field_additional_text_block
     - field.field.block_content.basic.field_icon
     - field.field.block_content.basic.field_icon_position
     - field.field.block_content.basic.field_link
   module:
+    - field_group
+    - link
+    - paragraphs
     - text
+third_party_settings:
+  field_group:
+    group_additional_text_blocks:
+      children:
+        - field_additional_text_block
+      label: 'Additional text blocks'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: accordion
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        effect: none
 _core:
   default_config_hash: XZXnG6rTrVLYbS-QBgnmH985zTreDPVmjC2cHOKBJuo
 id: block_content.basic.default
@@ -27,6 +46,24 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
+  field_additional_text_block:
+    type: paragraphs
+    weight: 5
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
   field_icon:
     type: options_select
     weight: 0
@@ -39,6 +76,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   info:
     type: string_textfield
     weight: 2
@@ -47,5 +92,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_link: true
+hidden: {  }

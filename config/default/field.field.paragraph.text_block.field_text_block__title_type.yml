@@ -1,0 +1,23 @@
+uuid: d68c95c8-dc97-4c78-a2b1-f3cf7c157a09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_block__title_type
+    - paragraphs.paragraphs_type.text_block
+  module:
+    - options
+id: paragraph.text_block.field_text_block__title_type
+field_name: field_text_block__title_type
+entity_type: paragraph
+bundle: text_block
+label: 'Title type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: h3
+default_value_callback: ''
+settings: {  }
+field_type: list_string
