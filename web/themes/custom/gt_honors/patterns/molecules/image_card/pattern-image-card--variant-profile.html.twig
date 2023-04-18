@@ -11,14 +11,16 @@
       <h3>{{ title }}</h3>
     {% endif %}
 
-    {% if body %}
-      <div class="{{ prefix }}__body">{{ body }}</div>
+    {% if role %}
+      <div class="{{ prefix }}__role">{{ role }}</div>
     {% endif %}
 
-    {% if link %}
-      <div class="{{ prefix }}__link">
-        {{ link }}
-      </div>
+    {% if email %}
+      <a class="{{ prefix }}__email" href="mailto:{{ email }}">{{ email }}</a>
+    {% endif %}
+
+    {% if body %}
+      <div class="{{ prefix }}__body">{{ body }}</div>
     {% endif %}
   </div>
 </div>

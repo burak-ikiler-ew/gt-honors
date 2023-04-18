@@ -36,6 +36,25 @@
       height: auto;
     }
   }
+
+  &__additional_text {
+    @include media-breakpoint-up(lg) {
+      column-count: 2;
+      column-gap: 15px;
+    }
+  }
+
+  &__link {
+    margin-top: 1.5rem;
+
+    a {
+      @include gtl-button--secondary;
+    }
+  }
+
+  .layout--twocol-section & {
+    max-width: unset;
+  }
 }
 
 // Apply only inside layout__region--first.
@@ -53,5 +72,17 @@
   .basic-content.container-lg {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+.layout--twocol-section--50-50 {
+  .basic-content {
+    @include media-breakpoint-up(md) {
+      &__title,
+      &__body,
+      &__additional_text {
+        max-width: 37.5rem;
+      }
+    }
   }
 }

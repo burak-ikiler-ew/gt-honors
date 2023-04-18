@@ -14,6 +14,12 @@ basic_content:
     body:
       type: mixed
       label: Basic content body
+    link:
+      type: mixed
+      label: Basic content link
+    additional_text:
+      type: mixed
+      label: Additional text blocks
 
   libraries:
     -

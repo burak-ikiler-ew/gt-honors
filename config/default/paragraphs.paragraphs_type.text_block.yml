@@ -1,0 +1,10 @@
+uuid: 777783c9-a578-4f9c-ae13-9e64b441871a
+langcode: en
+status: true
+dependencies: {  }
+id: text_block
+label: 'Text block'
+icon_uuid: null
+icon_default: null
+description: 'Simple text paragraph for the basic block with title and formatted text '
+behavior_plugins: {  }

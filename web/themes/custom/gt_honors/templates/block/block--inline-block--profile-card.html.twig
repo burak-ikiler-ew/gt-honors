@@ -38,13 +38,12 @@
   {{ title_suffix }}
 
   {% block content %}
-    {{ pattern('basic_content', {
-      title: label,
-      icon_class: content.field_icon.0['#taxonomy_term'].field_icon_class.value|clean_class,
-      body: content.body,
-      icon_position: content.field_icon_position.0['#markup']|clean_class,
-      additional_text: content.field_additional_text_block,
-      link: content.field_link,
-    }) }}
+    {{ pattern('image_card', {
+      image:  content.field_image_card__image,
+      title:  label,
+      body:   content.body,
+      role:   content.field_role,
+      email:  content.field_e_mail.0['#context'].value,
+    }, 'profile') }}
   {% endblock %}
 </div>

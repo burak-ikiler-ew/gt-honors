@@ -25,4 +25,12 @@
       }
     }
   }
+
+  &.block-inline-blockbasic + .block-webform-block {
+    transform: translateY(-2rem);
+
+    @include media-breakpoint-up(lg) {
+      transform: translateY(-3.5rem);
+    }
+  }
 }

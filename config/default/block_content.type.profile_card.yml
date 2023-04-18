@@ -1,0 +1,8 @@
+uuid: 6eeb33c1-179e-4f36-9141-eac678987084
+langcode: en
+status: true
+dependencies: {  }
+id: profile_card
+label: 'Profile card'
+revision: 0
+description: ''
