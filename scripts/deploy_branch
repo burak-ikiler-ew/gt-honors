@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
 
-set -ev
+set -e
 
-GIT_COMMIT_MESSAGE="Automated commit by Drupal CI (${CI_COMMIT_TITLE} - ${CI_COMMIT_SHA})"
-./vendor/bin/blt artifact:deploy --commit-msg "${GIT_COMMIT_MESSAGE}" --branch "${CI_COMMIT_REF_NAME}" --ignore-dirty --no-interaction --verbose
 
-set +v
+CI_COMMIT_REF_NAME=$(git rev-parse --abbrev-ref HEAD)
+CI_COMMIT_TITLE=$(git log -1 --pretty=%B)
+CI_COMMIT_SHA=$(git rev-parse HEAD)
+GIT_COMMIT_MESSAGE="Local commit for ($CI_COMMIT_TITLE - $CI_COMMIT_SHA)"
+DEPLOYMENT_REMOTE="git@it.github.gatech.edu:honors-program/gt-honors-artifact.git"
+
+./vendor/bin/blt validate
+echo "Build"
+./vendor/bin/blt source:build -D command-hooks.frontend-reqs.command="npm install && npm run build" -D command-hooks.frontend-reqs.dir='${docroot}/themes/custom/${project.theme.name}/' --ansi --verbose --no-interaction
+echo "Deploy"
+./vendor/bin/blt artifact:deploy -D git.remotes.0="$DEPLOYMENT_REMOTE" -D command-hooks.frontend-reqs.command='npm install && npm run build' -D command-hooks.frontend-reqs.dir='${docroot}/themes/custom/${project.theme.name}/' --commit-msg "$GIT_COMMIT_MESSAGE" --branch "$CI_COMMIT_REF_NAME" --ignore-dirty --no-interaction --verbose
+
+
+set +e
