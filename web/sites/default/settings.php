@@ -829,5 +829,11 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
   require $ddev_settings;
 }
 
+// Automatically generated include for settings managed by gatech.
+$gatech_settings = dirname(__FILE__) . '/settings.gatech.php';
+if (is_readable($gatech_settings)) {
+  require $gatech_settings;
+}
+
 # Skip permissions hardening to prevent Composer Update failure in Plesk environment
 $settings['skip_permissions_hardening'] = TRUE;
