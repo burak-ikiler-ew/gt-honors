@@ -17,8 +17,11 @@ jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-        git config remote.source.url >&- || git remote add source ${secrets.SOURCE_REPOSITORY}
+    - name: Sync Repository
+      env:
+        SOURCE_REPOSITORY: ${{ secrets.SOURCE_REPOSITORY }}
+      run: |
+        git config remote.source.url >&- || git remote add source $SOURCE_REPOSITORY
         git remote -v
         git checkout source ${GITHUB_REF_NAME}
         git push origin ${GITHUB_REF_NAME}
