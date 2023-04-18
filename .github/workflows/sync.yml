@@ -13,6 +13,9 @@ on:
         - warning
         - debug
 
+env:
+  SOURCE_REPOSITORY: git@gitlab.ewdev.ca:evolvingweb/georgia-tech/gt-honors.git
+
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
@@ -20,8 +23,6 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Sync Repository
-      env:
-        SOURCE_REPOSITORY: ${{ secrets.SOURCE_REPOSITORY }}
       run: |
         git config remote.source.url >&- || git remote add source $SOURCE_REPOSITORY
         git remote -v
