@@ -4,11 +4,16 @@
 .header {
   width: 100%;
   position: fixed;
+  min-height: 90px;
   left: 0;
   top: 0;
-  z-index: 99;
+  z-index: 1001;
   background-color: $color-tech-gold;
   transition: top $transition;
+
+  @include media-breakpoint-up(xl) {
+    min-height: unset;
+  }
 
   .header {
     &__hatch {
@@ -29,84 +34,112 @@
       position: absolute;
       left: 0;
       top: 0;
+      width: 10rem;
       background-color: $color-white;
       z-index: 1;
       box-shadow: 0 15px 12px rgba(0, 0, 0, 0.03);
       margin-left: $gutter-unit;
-      padding: 1.875rem 1.5rem 1.313rem 1.5rem;
+      padding: 2.125rem 1.125rem;
       border-radius: 0 0 10px 10px;
 
+      @include media-breakpoint-up(lg) {
+        width: 14.44rem;
+        padding: 1.875rem 1.5rem 1.31rem;
+      }
+
+      img {
+        width: 100%;
+      }
     }
 
     &__menu {
+      margin-top: 1rem;
       display: flex;
       align-items: center;
       justify-content: end;
+
+      @include media-breakpoint-up(xl) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__search.btn,
+  &__mobile-menu-toggle.btn {
+    display: flex;
+    width: 2.5rem;
+    height: 1.875rem;
+    padding: 0;
+    background: $color-white;
+    border: none;
+    border-radius: 50px;
+    padding: 0;
+    margin-left: 1.25rem;
+
+    @include media-breakpoint-up(lg) {
+      width: 2.875rem;
+      height: 2rem;
+    }
+
+    img {
+      margin: auto;
+    }
+
+    &[aria-expanded=true] {
+      background: none;
+
+      .collapsed {
+        display: none;
+      }
+    }
+
+    &[aria-expanded=false] {
+      .expanded {
+        display: none;
+      }
+    }
+  }
+
+  &__mobile-menu-toggle.btn {
+    @include media-breakpoint-up(xl) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
 
   &__search.btn {
-    background: $color-white;
-    border: none;
-    border-radius: 50px;
-    padding: 0.25rem 1rem;
-    margin-left: 1.25rem;
+    order: -1;
+
+    @include media-breakpoint-up(xl) {
+      order: unset;
+    }
+
+    img {
+      width: 80%;
+      height: 80%;
+    }
   }
 
-  .menu.dropdown-menu {
-    position: absolute;
-    width: 320px;
-    border-radius: 0;
-    box-shadow: 0 40px 25px rgba(0, 0, 0, 0.1);
-    margin: 0;
-    padding: 0.625rem 1.25rem 0.75rem;
-    border: none;
-    top: 69px;
+  // Desktop navbar.
+  .primary-menu:not(.primary-menu--expanded) {
+    display: none;
 
-    .list-spacer {
-      padding-top: 1.85rem;
+    .dropdown-toggle--mobile {
+      display: none;
+    }
+
+    .nav-link--mobile {
+      display: none;
+    }
+
+    @include media-breakpoint-up(xl) {
       display: block;
     }
 
-    .menu-item {
-      margin: 0 !important;
-
-      &:nth-last-child(1) {
-        .nav-link {
-          &::after {
-            display: none;
-          }
-        }
-      }
-    }
-
-    .nav-link {
-      font-size: $font-14;
-      background-color: transparent;
-      padding: 1.125rem 0;
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background: $color-neutral300;
-        transition: background $transition-duration;
-      }
-
-      &:hover,
-      &:focus {
-        &:after {
-          background: $color-neutral300;
-        }
-      }
-    }
-  }
-
-  .primary-menu {
     & > nav > ul.menu {
       display: flex;
       align-items: center;
@@ -129,7 +162,7 @@
         position: relative;
         font-weight: $font-weight-semibold;
         color: $color-neutral000;
-        padding: 1.5rem 0;
+        padding: 1.7rem 0;
 
         &::after {
           content: '';
@@ -152,37 +185,206 @@
         }
       }
     }
-  }
 
-  .dropdown {
-    .dropdown-toggle {
-      position: relative;
-      z-index: 1001;
+    .dropdown {
+      .dropdown-toggle--desktop {
+        position: relative;
+        z-index: 1000;
+      }
+
+      & > .dropdown-toggle--desktop[href="#"] {
+        pointer-events: none;
+        cursor: pointer;
+      }
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        & > .dropdown-menu {
+          display: block;
+        }
+      }
     }
 
-    & > .dropdown-toggle[href="#"] {
-      pointer-events: none;
-      cursor: pointer;
-    }
-
-    &:hover,
-    &:focus,
-    &:focus-within {
-      & > .dropdown-menu {
+    .menu.dropdown-menu {
+      position: absolute;
+      width: 320px;
+      border-radius: 0;
+      box-shadow: 0 40px 25px rgba(0, 0, 0, 0.1);
+      margin: 0;
+      padding: 0.625rem 1.25rem 0.75rem;
+      border: none;
+      top: 74px;
+  
+      .list-spacer {
+        padding-top: 1.85rem;
         display: block;
+      }
+  
+      .menu-item {
+        margin: 0 !important;
+  
+        &:nth-last-child(1) {
+          .nav-link {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+  
+      .nav-link {
+        font-size: $font-14;
+        background-color: transparent;
+        padding: 1.125rem 0;
+        position: relative;
+  
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: $color-neutral300;
+          transition: background $transition-duration;
+        }
+  
+        &:hover,
+        &:focus {
+          &:after {
+            background: $color-neutral300;
+          }
+        }
+
+        &:focus,
+        &:focus-within {
+          .dropdown-menu {
+            display: block;
+          }
+        }
       }
     }
   }
 
-  .toolbar-horizontal.toolbar-fixed & {
-    top: 112px;
+  // Mobile navbar menu (expandable).
+  .primary-menu--expanded {
+    position: fixed;
+    left: 0;
+    top: 90px;
+    // top: 202px;
+    bottom: 0;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: $color-white;
+    padding: 0 1.875rem;
+    box-shadow: inset 0px 10px 10px 8px rgba(0,0,0,.03);
+
+    .nav-link--desktop {
+      display: none;
+    }
+
+    & > nav > ul.menu {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .menu-item {
+      padding: 1.875rem 0 2.25rem;
+      
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-pie-mild;
+      }
+
+      a {
+        @extend %font-stack-slab;
+        font-size: $font-22;
+        line-height: $font-30;
+        font-weight: 500;
+        text-decoration: none;
+        color: $color-neutral000;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .dropdown-toggle--mobile {
+      float: right;
+      border: none;
+      padding: 0;
+      background: none;
+
+      .dropdown-toggle-icon {
+        font-size: $font-22;
+        line-height: $font-30;
+      }
+
+      .dropdown-toggle-icon--expanded {
+        display: none;
+      }
+
+      &.show {
+        .dropdown-toggle-icon--expanded {
+          display: inline-block;
+        }
+        .dropdown-toggle-icon--collapsed {
+          display: none;
+        }
+      }
+    }
+
+    .menu.dropdown-menu {
+      position: relative !important;
+      transform: none !important;
+      margin: 2.25rem 0 -2.25rem !important;
+      padding: 0 !important;
+      border: none;
+      border-radius: 0;
+      border-top: 1px solid $color-pie-mild;
+
+      .menu-item {
+        padding-left: 1.5rem;
+
+        a {
+          font-size: $font-16;
+          line-height: $font-28;
+          font-weight: 400;
+        }
+      }
+    }
   }
 
+  // Considering the admin theme toolbars sizes.
+  --adminPanelsOffset: 0px;
+
+  .gin--horizontal-toolbar & {
+    --adminPanelsOffset: 87px;
+  }
+
+  .toolbar-fixed.toolbar-horizontal & {
+    --adminPanelsOffset: 112px;
+  }
+
+  & {
+    top: var(--adminPanelsOffset);
+  }
+
+  & .primary-menu--expanded {
+    top: calc(var(--adminPanelsOffset) + 90px);
+  }
+
+  // Reacting to scroll.
   .scroll-up & {
     top: 0;
   }
 
-  .toolbar-horizontal.toolbar-fixed.scroll-up & {
+  .toolbar-fixed.toolbar-horizontal.scroll-up & {
     top: 52px;
   }
 

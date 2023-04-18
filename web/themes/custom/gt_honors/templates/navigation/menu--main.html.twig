@@ -30,42 +30,68 @@ We call a macro which calls itself to render the full tree.
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-<ul{{ attributes.addClass('menu', 'navbar-nav', 'mx-0') }}>
+      <ul{{ attributes.addClass('menu', 'navbar-nav', 'mx-0') }}>
   {% else %}
-  <ul class="menu dropdown-menu">
-    {% endif %}
-    {% for item in items %}
-      {%
-        set classes = [
-        'menu-item',
-        'nav-item',
-        item.is_expanded ? 'nav-item--expanded',
-        item.is_collapsed ? 'nav-item--collapsed',
-        item.in_active_trail ? 'nav-item--active-trail',
-        item.below ? 'dropdown'
-      ]
-      %}
-      <li{{ item.attributes.addClass(classes) }}>
-        {% set attributes = {
-          'class': [
-            'nav-link',
-            item.below ? 'dropdown-toggle'
-          ]
-        } %}
-        {% if item.url.isRouted() and item.url.getRouteName() == '<nolink>' and item.below %}
-          <a href="#"
-             class="nav-link dropdown-toggle"
-             data-toggle="dropdown"
-             aria-haspopup="true"
-             aria-expanded="false">{{ item.title }}</a>
-        {% else %}
-          {{ link(item.title, item.url) | merge({'#attributes': attributes}) }}
-        {% endif %}
-        {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+    <ul class="menu dropdown-menu">
+      {% endif %}
+      {% for item in items %}
+        {%
+          set classes = [
+          'menu-item',
+          'nav-item',
+          item.is_expanded ? 'nav-item--expanded',
+          item.is_collapsed ? 'nav-item--collapsed',
+          item.in_active_trail ? 'nav-item--active-trail',
+          item.below ? 'dropdown'
+        ]
+        %}
+        <li{{ item.attributes.addClass(classes) }}>
+          {% set attributes = {
+            'class': [
+              'nav-link',
+            ],
+          } %}
+          {% if item.below %}
+            {# Desktop markup #}
+              <a
+                href="{{ item.url ? item.url : '#' }}"
+                class="nav-link nav-link--desktop dropdown-toggle--desktop"
+                id="dropdownMenuButton"
+                data-unique-id="{{ menu_level }}--{{ loop.index }}"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                {{ item.title }}
+              </a>
+
+            {# Mobile markup #}
+              <a
+                href="{{ item.url ? item.url : '#' }}"
+                class="nav-link nav-link--mobile"
+              >
+                {{ item.title }}
+              </a>
+              <button
+                class="dropdown-toggle--mobile"
+                type="button"
+                id="dropdownMenuButton"
+                data-unique-id="{{ menu_level }}--{{ loop.index }}"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Dropdown menu toggler</span>
+                <i style="pointer-events: none;" class="dropdown-toggle-icon dropdown-toggle-icon--collapsed fa fa-plus"></i>
+                <i style="pointer-events: none;" class="dropdown-toggle-icon dropdown-toggle-icon--expanded fa fa-minus"></i>
+              </button>
+          {% else %}
+            {{ link(item.title, item.url) | merge({'#attributes': attributes}) }}
+          {% endif %}
+          {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
   {% endif %}
   {% endmacro %}

@@ -9,3 +9,7 @@ body {
     margin-top: 84px;
   }
 }
+
+body.noscroll {
+  overflow: hidden;
+}
