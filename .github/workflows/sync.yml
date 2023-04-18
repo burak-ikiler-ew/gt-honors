@@ -17,6 +17,8 @@ jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
+
     - name: Sync Repository
       env:
         SOURCE_REPOSITORY: ${{ secrets.SOURCE_REPOSITORY }}
