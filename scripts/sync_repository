@@ -2,7 +2,7 @@
 
 set -ev
 
-git remote add sync $SYNC_REPOSITORY
+git config remote.sync.url >&- || git remote add sync $SYNC_REPOSITORY
 git checkout ${CI_COMMIT_REF_NAME}
 git push sync ${CI_COMMIT_REF_NAME}
 
