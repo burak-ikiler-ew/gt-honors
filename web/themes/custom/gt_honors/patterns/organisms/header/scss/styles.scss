@@ -162,10 +162,7 @@
         position: relative;
         font-weight: $font-weight-semibold;
         color: $color-neutral000;
-
-        @include media-breakpoint-up(lg) {
-          padding: 1.5rem 0;
-        }
+        padding: 1.7rem 0;
 
         &::after {
           content: '';
@@ -217,7 +214,7 @@
       margin: 0;
       padding: 0.625rem 1.25rem 0.75rem;
       border: none;
-      top: 69px;
+      top: 74px;
   
       .list-spacer {
         padding-top: 1.85rem;
