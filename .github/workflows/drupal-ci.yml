@@ -1,6 +1,9 @@
 name: Drupal Deploy
 
-on: [ push ]
+on:
+  push:
+    branches:
+      - master
 
 env:
   THEME_DIR: web/themes/custom/gt_honors
@@ -69,4 +72,4 @@ jobs:
         nvm install
         cd $CI_PROJECT_DIR 
         GIT_COMMIT_MESSAGE="Automated commit by Drupal CI (${{ github.ref_name }} - ${{ github.sha }})"
-        $BLT artifact:deploy -D git.remotes.0="$DEPLOYMENT_REMOTE" --commit-msg "$GIT_COMMIT_MESSAGE" --branch "${{ github.ref_name }}" --ignore-dirty --no-interaction --verbose
+        $BLT artifact:deploy -D git.remotes.0="${{ secrets.DEPLOY_REPOSITORY }}" --commit-msg "$GIT_COMMIT_MESSAGE" --branch "${{ github.ref_name }}" --ignore-dirty --no-interaction --verbose
