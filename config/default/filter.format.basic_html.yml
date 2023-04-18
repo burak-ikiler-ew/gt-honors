@@ -2,6 +2,8 @@ uuid: 1c11eb11-01bb-423f-b217-0f2284246b21
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.ckeditor_image
   module:
     - editor
     - media
@@ -50,6 +52,7 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: default
+      default_view_mode: ckeditor_image
       allowed_view_modes: {  }
-      allowed_media_types: {  }
+      allowed_media_types:
+        image: image

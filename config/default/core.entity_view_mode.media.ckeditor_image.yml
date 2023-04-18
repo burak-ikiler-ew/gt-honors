@@ -1,0 +1,10 @@
+uuid: cdc4a963-487c-470f-9359-812c203b206b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.ckeditor_image
+label: 'CKEditor Image'
+targetEntityType: media
+cache: true
