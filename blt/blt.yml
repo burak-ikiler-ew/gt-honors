@@ -17,7 +17,7 @@ git:
     email: 'drupal-ci@ewdev.ca'
   default_branch: master
   remotes:
-    - tssh://codeserver.dev.d28318d0-2a61-4411-99e9-58700c82284c@codeserver.dev.d28318d0-2a61-4411-99e9-58700c82284c.drush.in:2222/~/repository.git
+    - ssh://codeserver.dev.d28318d0-2a61-4411-99e9-58700c82284c@codeserver.dev.d28318d0-2a61-4411-99e9-58700c82284c.drush.in:2222/~/repository.git
   commit-msg:
     pattern: "/(^refs #[0-9]+(: )[^ ].{15,}\\.)|(Merge branch (.)+)/"
     help_description: "The commit message should start with refs,
