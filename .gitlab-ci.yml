@@ -4,7 +4,6 @@ image: evolvingweb/drupal-fpm:ci-8.1
 #  - mariadb:10.5
 
 stages:
-  - sync
   - build
   - deploy
 
@@ -13,42 +12,44 @@ variables:
   BLT: ./vendor/bin/blt
   BLT_DIR: ./vendor/acquia/blt
   DRUPAL_CI_DIR: ./vendor/evolvingweb/drupal-ci
-  SCRIPTS_DIR: ./scripts
   MYSQL_DATABASE: drupal
   MYSQL_ROOT_PASSWORD: drupal
-  SYNC_REPOSITORY: git@it.github.gatech.edu:honors-program/gt-honors.git
 
 cache:
   paths:
     - $THEME_DIR/node_modules
     - .composer-cache/
 
-sync_repo:
-  stage: sync
-  script:
-    - $SCRIPTS_DIR/ssh_key_add
-    - $SCRIPTS_DIR/sync_repository
-
-  only:
-    - master
-    - deploy
-    - dev
-    - release
+# CI image default to composer v1 for backwords compatibiliy with old sites,
+# here we set to version 2. Change to v1 if needed refs #24677 #24833
+before_script:
+  - mkdir -p ~/.ssh
+  - eval $(ssh-agent -s)
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  - echo "$DEPLOY_PRIVATE_KEY" > ~/.ssh/id_rsa && chmod 0600 ~/.ssh/id_rsa
+  - ssh-add ~/.ssh/id_rsa
+  - composer config -g cache-dir "$(pwd)/.composer-cache"
+  - composer self-update --2
+  - composer validate --no-check-all --ansi
+  - composer install
+  - source ~/.bashrc
+  - cd $THEME_DIR && nvm install
+  - cd $CI_PROJECT_DIR
 
 build:
   stage: build
   script:
-    - $SCRIPTS_DIR/ssh_key_add
-    - $SCRIPTS_DIR/composer_install
     - $BLT validate
     - $BLT source:build --ansi --verbose --no-interaction
+    # Uncomment the following lines if you need a full Drupal. @dev alias needs to be added to the repo.
+    # - DRUSH="./vendor/bin/drush"
+    # - $DRUSH sql-sync @dev @self
 
 deploy_branch:
   stage: deploy
   script:
-    - $SCRIPTS_DIR/ssh_key_add
-    - $SCRIPTS_DIR/composer_install
-    - $SCRIPTS_DIR/deploy_branch
+    - $DRUPAL_CI_DIR/scripts/ssh_key_add
+    - $DRUPAL_CI_DIR/scripts/deploy_branch
   only:
     - branches
   except:
